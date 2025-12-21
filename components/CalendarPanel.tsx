@@ -378,8 +378,8 @@ function EventCard({ event }: { event: Event }) {
                     <span className="text-xs uppercase font-bold tracking-wider text-green-600 bg-green-100 px-2 py-0.5 rounded-full">Müsait</span>
                 </div>
             ) : (
-                <div className="flex flex-row items-center gap-4">
-                    <span className="font-bold opacity-90 whitespace-nowrap min-w-[5.5rem]">
+                <div className="flex flex-row xl:flex-col items-center xl:items-start gap-4 xl:gap-1">
+                    <span className="font-bold opacity-90 whitespace-nowrap min-w-[5.5rem] xl:min-w-0">
                         {startTime} - {endTime}
                     </span>
 
