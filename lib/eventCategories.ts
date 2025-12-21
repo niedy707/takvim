@@ -7,13 +7,18 @@ export function categorizeEvent(
     color?: string,
     start?: Date | string,
     end?: Date | string
-): 'Surgery' | 'Control' | 'Exam' | 'Online' | 'Busy' | 'Cancelled' {
+): 'Surgery' | 'Control' | 'Exam' | 'Online' | 'Busy' | 'Available' | 'Cancelled' | 'Anesthesia' {
     const lowerTitle = title.toLowerCase();
     const turkishLowerTitle = title.toLocaleLowerCase('tr-TR');
 
     // XXX Check: Treat as Busy (Mesai Dışı) - Overrides everything else
     if (turkishLowerTitle.includes('xxx')) {
         return 'Busy';
+    }
+
+    // ANESTHESIA Check: starts with "anest"
+    if (turkishLowerTitle.startsWith('anest')) {
+        return 'Anesthesia';
     }
 
     // BLOCKED: Red events, cancelled/postponed, info, holidays, meetings, etc.

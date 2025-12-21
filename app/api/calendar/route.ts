@@ -15,7 +15,7 @@ interface ProcessedEvent {
     title: string;
     start: string;
     end: string;
-    type: 'Surgery' | 'Control' | 'Exam' | 'Online' | 'Busy' | 'Available' | 'Cancelled';
+    type: 'Surgery' | 'Control' | 'Exam' | 'Online' | 'Busy' | 'Available' | 'Cancelled' | 'Anesthesia';
     count?: number; // For merged summaries
 }
 
@@ -66,6 +66,7 @@ export async function GET(request: NextRequest) {
 
             // STRICT PRIVACY: Map category to generic title
             if (category === 'Surgery') displayTitle = 'Ameliyat';
+            else if (category === 'Anesthesia') displayTitle = 'Anestezi';
             else if (category === 'Online') displayTitle = 'Online Görüşme';
             else if (category === 'Exam') displayTitle = 'Muayene';
             else if (category === 'Control') displayTitle = 'Kontrol';
@@ -89,8 +90,8 @@ export async function GET(request: NextRequest) {
         for (let i = 0; i < processedEvents.length; i++) {
             const current = processedEvents[i];
 
-            // If Surgery or Online -> Don't merge, push immediately (flush buffer first)
-            if (current.type === 'Surgery' || current.type === 'Online') {
+            // If Surgery or Online or Anesthesia -> Don't merge, push immediately (flush buffer first)
+            if (current.type === 'Surgery' || current.type === 'Online' || current.type === 'Anesthesia') {
                 if (buffer.length > 0) {
                     mergedEvents.push(createSummaryBlock(buffer));
                     buffer = [];
@@ -340,6 +341,9 @@ export async function GET(request: NextRequest) {
                 event.title = `${event.title} (${index + 1}/${total})`;
             });
         });
+
+        // 7. Final Sort (Crucial: mix Gaps and Events chronologically)
+        finalEvents.sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
         return NextResponse.json(finalEvents);
     } catch (error) {
