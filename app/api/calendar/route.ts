@@ -155,6 +155,66 @@ export async function GET(request: NextRequest) {
             }
         };
 
+        // Helper to apply blackout periods (Tue, Wed, Thu 19:30-20:30)
+        const applyBlackout = (startArg: string, endArg: string, baseDate: Date): ProcessedEvent[] => {
+            const startTs = new Date(startArg).getTime();
+            const endTs = new Date(endArg).getTime();
+
+            const zoned = toZonedTime(baseDate, timeZone);
+            const day = zoned.getDay();
+
+            // Tue(2), Wed(3), Thu(4)
+            if (day >= 2 && day <= 4) {
+                const blackoutStart = fromZonedTime(set(zoned, { hours: 19, minutes: 30, seconds: 0, milliseconds: 0 }), timeZone).getTime();
+                const blackoutEnd = fromZonedTime(set(zoned, { hours: 20, minutes: 30, seconds: 0, milliseconds: 0 }), timeZone).getTime();
+
+                // Check overlap
+                // If gap is completely before blackout
+                if (endTs <= blackoutStart) {
+                    return [{ id: '', title: 'Müsait', start: startArg, end: endArg, type: 'Available' }];
+                }
+                // If gap is completely after blackout
+                if (startTs >= blackoutEnd) {
+                    return [{ id: '', title: 'Müsait', start: startArg, end: endArg, type: 'Available' }];
+                }
+
+                // If overlap exists
+                const fragments: ProcessedEvent[] = [];
+
+                // Fragment before blackout
+                if (startTs < blackoutStart) {
+                    // Check min duration 15m
+                    if ((blackoutStart - startTs) / (1000 * 60) >= 15) {
+                        fragments.push({
+                            id: '',
+                            title: 'Müsait',
+                            start: startArg,
+                            end: new Date(blackoutStart).toISOString(),
+                            type: 'Available'
+                        });
+                    }
+                }
+
+                // Fragment after blackout
+                if (endTs > blackoutEnd) {
+                    if ((endTs - blackoutEnd) / (1000 * 60) >= 15) {
+                        fragments.push({
+                            id: '',
+                            title: 'Müsait',
+                            start: new Date(blackoutEnd).toISOString(),
+                            end: endArg,
+                            type: 'Available'
+                        });
+                    }
+                }
+
+                return fragments;
+            }
+
+            // No blackout for other days
+            return [{ id: '', title: 'Müsait', start: startArg, end: endArg, type: 'Available' }];
+        };
+
         for (let i = 0; i < groupedEvents.length; i++) {
             const current = groupedEvents[i];
             const currentStart = new Date(current.start);
@@ -172,12 +232,9 @@ export async function GET(request: NextRequest) {
                 if (eventStart > dayStart) {
                     const gapMinutes = (eventStart - dayStart) / (1000 * 60);
                     if (gapMinutes >= 15) {
-                        finalEvents.push({
-                            id: `gap-start-${current.id}`,
-                            title: 'Müsait',
-                            start: limits.start.toISOString(),
-                            end: current.start,
-                            type: 'Available'
+                        const fragments = applyBlackout(limits.start.toISOString(), current.start, currentStart);
+                        fragments.forEach(f => {
+                            finalEvents.push({ ...f, id: `gap-start-${current.id}-${Math.random()}` });
                         });
                     }
                 }
@@ -205,12 +262,9 @@ export async function GET(request: NextRequest) {
                     const gapMinutes = (effectiveEnd - effectiveStart) / (1000 * 60);
 
                     if (effectiveEnd > effectiveStart && gapMinutes >= 15) {
-                        finalEvents.push({
-                            id: `gap-${current.id}`,
-                            title: 'Müsait',
-                            start: new Date(effectiveStart).toISOString(),
-                            end: new Date(effectiveEnd).toISOString(),
-                            type: 'Available'
+                        const fragments = applyBlackout(new Date(effectiveStart).toISOString(), new Date(effectiveEnd).toISOString(), currentEnd);
+                        fragments.forEach(f => {
+                            finalEvents.push({ ...f, id: `gap-${current.id}-${Math.random()}` });
                         });
                     }
                 }
@@ -229,12 +283,9 @@ export async function GET(request: NextRequest) {
                     const gapMinutes = (dayEnd - currentEndTs) / (1000 * 60);
 
                     if (gapMinutes >= 15) {
-                        finalEvents.push({
-                            id: `gap-eod-${current.id}`,
-                            title: 'Müsait',
-                            start: currentEnd.toISOString(),
-                            end: limits.end.toISOString(),
-                            type: 'Available'
+                        const fragments = applyBlackout(currentEnd.toISOString(), limits.end.toISOString(), currentEnd);
+                        fragments.forEach(f => {
+                            finalEvents.push({ ...f, id: `gap-eod-${current.id}-${Math.random()}` });
                         });
                     }
                 }
