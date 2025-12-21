@@ -23,7 +23,26 @@ export default function CalendarPanel() {
     const [patientName, setPatientName] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
 
-    // ... (existing useEffect) ...
+    useEffect(() => {
+        // Fetch events
+        const fetchEvents = async () => {
+            try {
+                // Return start of the current day to ensure we see all of today's events, even past ones
+                const res = await fetch('/api/calendar?timeMin=' + startOfDay(new Date()).toISOString());
+                if (!res.ok) throw new Error('Failed to fetch');
+                const data = await res.json();
+                setEvents(data);
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchEvents();
+        const interval = setInterval(() => setCurrentTime(new Date()), 60000);
+        return () => clearInterval(interval);
+    }, []);
 
     const getWeeklyStats = () => {
         const today = new Date();
@@ -39,7 +58,54 @@ export default function CalendarPanel() {
         });
     };
 
-    // ... (existing helper functions) ...
+    const daysToShow = () => {
+        const today = new Date();
+        return eachDayOfInterval({
+            start: today,
+            end: addDays(today, 6)
+        });
+    };
+
+    const getEventsForDay = (date: Date) => {
+        return events.filter(e => isSameDay(new Date(e.start), date));
+    };
+
+    const handleSlotClick = (event: Event) => {
+        if (event.type === 'Available') {
+            setSelectedSlot(event);
+            setPatientName('');
+            setSelectedTime(format(new Date(event.start), 'HH:mm')); // Default to start time
+        }
+    };
+
+    const generateTimeSlots = (startStr: string, endStr: string) => {
+        const slots = [];
+        let current = new Date(startStr);
+        const end = new Date(endStr);
+
+        while (isBefore(current, end)) {
+            slots.push(format(current, 'HH:mm'));
+            current = addMinutes(current, 15);
+        }
+        return slots;
+    };
+
+    const handleBooking = (type: string) => {
+        if (!selectedSlot || !selectedTime) return;
+        if (patientName.length < 3) {
+            alert('Lütfen geçerli bir isim giriniz (en az 3 karakter).');
+            return;
+        }
+
+        const dateStr = format(new Date(selectedSlot.start), 'dd.MM.yyyy', { locale: tr });
+
+        // Updated Message Format: Name on new line
+        const message = `İbrahim Yağcı takvimi için ${dateStr} saat ${selectedTime} itibariyle bir ${type} randevusu talep ediyorum.\n\nHasta ismi: ${patientName}`;
+        const url = `https://wa.me/905511999963?text=${encodeURIComponent(message)}`;
+
+        window.open(url, '_blank');
+        setSelectedSlot(null);
+    };
 
     if (loading) return <div className="p-8 text-center text-gray-500">Yükleniyor...</div>;
 
@@ -131,28 +197,30 @@ export default function CalendarPanel() {
                             </button>
                         </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
-                            {getWeeklyStats().map((stat) => (
-                                <div key={stat.date.toISOString()} className={clsx(
-                                    "border rounded-xl p-3 flex flex-col items-center justify-between min-h-[100px] transition-colors",
-                                    isSameDay(stat.date, new Date()) ? "bg-blue-50 border-blue-200" : "bg-gray-50 border-gray-200"
-                                )}>
-                                    <span className="text-sm font-bold text-gray-600 mb-2">
-                                        {format(stat.date, 'd MMM EEE', { locale: tr })}
-                                    </span>
-
-                                    <span className={clsx(
-                                        "text-3xl font-bold",
-                                        stat.count > 0 ? "text-blue-600" : "text-gray-300"
+                        <div className="overflow-x-auto pb-2">
+                            <div className="grid grid-cols-7 gap-3 min-w-[800px]">
+                                {getWeeklyStats().map((stat) => (
+                                    <div key={stat.date.toISOString()} className={clsx(
+                                        "border rounded-xl p-3 flex flex-col items-center justify-between min-h-[100px] transition-colors",
+                                        isSameDay(stat.date, new Date()) ? "bg-blue-50 border-blue-200" : "bg-gray-50 border-gray-200"
                                     )}>
-                                        {stat.count}
-                                    </span>
+                                        <span className="text-sm font-bold text-gray-600 mb-2 whitespace-nowrap">
+                                            {format(stat.date, 'd EEE', { locale: tr })}
+                                        </span>
 
-                                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide mt-1">
-                                        Ameliyat
-                                    </span>
-                                </div>
-                            ))}
+                                        <span className={clsx(
+                                            "text-3xl font-bold",
+                                            stat.count > 0 ? "text-blue-600" : "text-gray-300"
+                                        )}>
+                                            {stat.count}
+                                        </span>
+
+                                        <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide mt-1">
+                                            Ameliyat
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
