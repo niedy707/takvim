@@ -14,7 +14,11 @@ interface Event {
     count?: number;
 }
 
-export default function CalendarPanel() {
+interface CalendarPanelProps {
+    lastUpdate?: string;
+}
+
+export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
     const [events, setEvents] = useState<Event[]>([]);
     const [showWeeklyModal, setShowWeeklyModal] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -330,6 +334,12 @@ export default function CalendarPanel() {
                             WhatsApp üzerinden yönlendirileceksiniz.
                         </p>
                     </div>
+                </div>
+            )}
+            {/* Footer Version Info */}
+            {lastUpdate && (
+                <div className="fixed bottom-2 right-2 text-xs font-semibold text-gray-500 bg-white/90 shadow-sm border border-gray-100 px-2 py-1 rounded-md z-[100] pointer-events-none select-none backdrop-blur-sm">
+                    {lastUpdate}
                 </div>
             )}
         </div>
