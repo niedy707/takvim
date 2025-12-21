@@ -171,11 +171,25 @@ export default function CalendarPanel() {
                                     </div>
                                 ) : (
                                     <div className="space-y-3">
-                                        {dayEvents.map(event => (
-                                            <div key={event.id} onClick={() => handleSlotClick(event)} className={clsx("transition-transform", event.type === 'Available' && "cursor-pointer active:scale-95")}>
-                                                <EventCard event={event} />
-                                            </div>
-                                        ))}
+                                        {dayEvents.map(event => {
+                                            const isPast = isBefore(new Date(event.start), new Date());
+                                            const isAvailable = event.type === 'Available';
+                                            const isDisabled = isAvailable && isPast;
+
+                                            return (
+                                                <div
+                                                    key={event.id}
+                                                    onClick={() => !isDisabled && handleSlotClick(event)}
+                                                    className={clsx(
+                                                        "transition-transform",
+                                                        isAvailable && !isDisabled && "cursor-pointer active:scale-95",
+                                                        isDisabled && "opacity-40 cursor-not-allowed grayscale"
+                                                    )}
+                                                >
+                                                    <EventCard event={event} />
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                 )}
                             </div>
