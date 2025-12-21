@@ -97,7 +97,7 @@ export default function CalendarPanel() {
     return (
         <div className="max-w-7xl mx-auto p-4 md:p-6 font-sans">
             {/* Header */}
-            <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+            <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm p-4 -mx-4 rounded-b-xl transition-all">
                 <h1 className="text-2xl font-bold text-gray-800">
                     Op.Dr. İbrahim YAĞCI randevu ekranı
                     <span className="text-sm font-normal text-gray-500 ml-2 block md:inline">
@@ -107,31 +107,46 @@ export default function CalendarPanel() {
             </header>
 
             {/* Grid */}
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
                 {daysToShow().map((day) => {
                     const dayEvents = getEventsForDay(day);
                     const isToday = isSameDay(day, new Date());
 
                     return (
-                        <div key={day.toISOString()} className={clsx("flex flex-col gap-2 min-h-[300px] border p-3 rounded-xl bg-white", isToday ? "border-blue-200 shadow-sm ring-1 ring-blue-100" : "border-gray-100")}>
-                            <h2 className={clsx("text-lg font-semibold mb-2 sticky top-0 bg-white/95 backdrop-blur-sm py-2 z-10 border-b", isToday ? "text-blue-700" : "text-gray-700")}>
-                                {format(day, 'EEEE', { locale: tr })}
-                                <span className="text-sm font-normal text-gray-400 block">
-                                    {format(day, 'd MMM')}
+                        <div key={day.toISOString()} className={clsx(
+                            "flex flex-col min-h-[300px] border-2 rounded-xl bg-white transition-all",
+                            isToday ? "border-blue-400 shadow-md ring-2 ring-blue-100" : "border-orange-200"
+                        )}>
+                            {/* Header with Background */}
+                            <h2 className={clsx(
+                                "text-lg font-bold sticky top-[84px] z-40 py-3 px-4 border-b-2 flex justify-between items-center backdrop-blur-md transition-all",
+                                isToday
+                                    ? "bg-blue-100/90 text-blue-800 border-blue-200"
+                                    : "bg-orange-100/95 text-orange-900 border-orange-200"
+                            )}>
+                                <span className="leading-none">{format(day, 'EEEE', { locale: tr })}</span>
+                                <span className={clsx("text-sm font-medium leading-none", isToday ? "text-blue-600" : "text-orange-600/70")}>
+                                    {format(day, 'd MMM', { locale: tr })}
                                 </span>
                             </h2>
 
-                            {dayEvents.length === 0 ? (
-                                <p className="text-gray-400 text-sm italic py-4 text-center">Etkinlik yok</p>
-                            ) : (
-                                <div className="space-y-2">
-                                    {dayEvents.map(event => (
-                                        <div key={event.id} onClick={() => handleSlotClick(event)} className={clsx("transition-transform", event.type === 'Available' && "cursor-pointer active:scale-95")}>
-                                            <EventCard event={event} />
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
+                            {/* Content Area */}
+                            <div className="p-3 flex flex-col gap-2 flex-grow bg-white/50">
+                                {dayEvents.length === 0 ? (
+                                    <div className="flex flex-col items-center justify-center h-full text-gray-400 text-sm italic py-4">
+                                        <span className="text-2xl mb-2 opacity-20">📅</span>
+                                        Etkinlik yok
+                                    </div>
+                                ) : (
+                                    <div className="space-y-3">
+                                        {dayEvents.map(event => (
+                                            <div key={event.id} onClick={() => handleSlotClick(event)} className={clsx("transition-transform", event.type === 'Available' && "cursor-pointer active:scale-95")}>
+                                                <EventCard event={event} />
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     );
                 })}
@@ -239,7 +254,7 @@ function EventCard({ event }: { event: Event }) {
     const endTime = format(new Date(event.end), 'HH:mm');
 
     const styles = {
-        Surgery: 'bg-violet-50 border-l-4 border-violet-500 text-violet-900',
+        Surgery: 'bg-violet-50 border-l-4 border-violet-500 text-violet-900 min-h-[7rem] flex flex-col justify-center',
         Control: 'bg-blue-50 border-l-4 border-blue-500 text-blue-900',
         Online: 'bg-indigo-50 border-l-4 border-indigo-500 text-indigo-900',
         Busy: 'bg-gray-50 border-l-4 border-gray-400 text-gray-700',
@@ -252,18 +267,24 @@ function EventCard({ event }: { event: Event }) {
             "p-3 rounded-md shadow-sm transition-all hover:shadow-md text-sm",
             styles[event.type]
         )}>
-            <div className="flex justify-between items-center mb-1">
-                <span className="font-bold opacity-90">
-                    {startTime} - {endTime}
-                </span>
-                {event.type === 'Available' && (
-                    <span className="text-xs uppercase font-bold tracking-wider text-green-600 bg-green-100 px-2 py-0.5 rounded-full">Seç</span>
-                )}
-            </div>
+            {/* New Layout: [Time] [Title] */}
+            {event.type === 'Available' ? (
+                // Available slots keep their own centering layout
+                <div className="flex justify-between items-center">
+                    <span className="font-bold opacity-90">
+                        {startTime} - {endTime}
+                    </span>
+                    <span className="text-xs uppercase font-bold tracking-wider text-green-600 bg-green-100 px-2 py-0.5 rounded-full">Müsait</span>
+                </div>
+            ) : (
+                <div className="flex flex-row items-center gap-4">
+                    <span className="font-bold opacity-90 whitespace-nowrap min-w-[5.5rem]">
+                        {startTime} - {endTime}
+                    </span>
 
-            {(event.type !== 'Available' || event.title !== 'Müsait') && (
-                <div className="font-medium leading-tight mt-1">
-                    {event.title}
+                    <span className="font-medium leading-tight text-left">
+                        {event.title}
+                    </span>
                 </div>
             )}
         </div>

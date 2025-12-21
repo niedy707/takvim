@@ -1,8 +1,11 @@
+
 import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
 import { CALENDAR_CONFIG } from '@/lib/calendarConfig';
+import { format, isSameDay, addDays, startOfWeek, endOfWeek, eachDayOfInterval, startOfDay, addMinutes, isBefore, set } from 'date-fns';
+import { toZonedTime, fromZonedTime } from 'date-fns-tz';
+import { tr } from 'date-fns/locale';
 import { categorizeEvent } from '@/lib/eventCategories';
-import { isSameDay } from 'date-fns';
 
 // Force dynamic usage
 export const dynamic = 'force-dynamic';
@@ -134,14 +137,23 @@ export async function GET(request: NextRequest) {
                 if (isSameDay(currentEnd, nextStart)) {
                     let effectiveStart = currentEnd;
                     let effectiveEnd = nextStart;
-                    const dateObj = new Date(currentEnd);
+                    const timeZone = 'Europe/Istanbul';
+                    // Convert timestamp to Istanbul time for logical Day checking
+                    const zonedDate = toZonedTime(currentEnd, timeZone);
 
                     // SUNDAY CHECK (Day 0)
-                    if (dateObj.getDay() === 0) {
-                        const sundayLimitStart = new Date(dateObj);
-                        sundayLimitStart.setHours(8, 0, 0, 0);
-                        const sundayLimitEnd = new Date(dateObj);
-                        sundayLimitEnd.setHours(9, 30, 0, 0);
+                    if (zonedDate.getDay() === 0) {
+                        // Construct 08:00 Istanbul Time (using 'set' on the zoned date structure)
+                        // Then convert BACK to UTC timestamp for comparison
+                        const sundayLimitStart = fromZonedTime(
+                            set(zonedDate, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }),
+                            timeZone
+                        );
+
+                        const sundayLimitEnd = fromZonedTime(
+                            set(zonedDate, { hours: 9, minutes: 30, seconds: 0, milliseconds: 0 }),
+                            timeZone
+                        );
 
                         // Intersect gap with 08:00-09:30 window
                         // Available Start = Max(GapStart, WindowStart)
@@ -155,7 +167,7 @@ export async function GET(request: NextRequest) {
                     // Only push if effective range is valid and long enough
                     if (effectiveEnd > effectiveStart && gapMinutes >= 15) {
                         finalEvents.push({
-                            id: `gap-${current.id}`,
+                            id: `gap - ${current.id} `,
                             title: 'Müsait',
                             start: new Date(effectiveStart).toISOString(),
                             end: new Date(effectiveEnd).toISOString(),
@@ -172,14 +184,24 @@ export async function GET(request: NextRequest) {
             if (isLastOfDay) {
                 const currentEnd = new Date(current.end);
 
+                const timeZone = 'Europe/Istanbul';
+                const zonedCurrentEnd = toZonedTime(currentEnd, timeZone);
+
                 // Determine End Target
-                let endOfDayTarget = new Date(currentEnd);
-                if (currentEnd.getDay() === 0) {
-                    // Sunday: End at 09:30 maximum
-                    endOfDayTarget.setHours(9, 30, 0, 0);
+                let endOfDayTarget;
+
+                if (zonedCurrentEnd.getDay() === 0) {
+                    // Sunday: End at 09:30 Istanbul Time
+                    endOfDayTarget = fromZonedTime(
+                        set(zonedCurrentEnd, { hours: 9, minutes: 30, seconds: 0, milliseconds: 0 }),
+                        timeZone
+                    );
                 } else {
-                    // Other days: End at 23:00
-                    endOfDayTarget.setHours(23, 0, 0, 0);
+                    // Other days: End at 23:00 Istanbul Time
+                    endOfDayTarget = fromZonedTime(
+                        set(zonedCurrentEnd, { hours: 23, minutes: 0, seconds: 0, milliseconds: 0 }),
+                        timeZone
+                    );
                 }
 
                 if (currentEnd.getTime() < endOfDayTarget.getTime()) {
@@ -187,9 +209,11 @@ export async function GET(request: NextRequest) {
                     const effectiveEnd = endOfDayTarget.getTime();
 
                     // Ensure Sunday start constraint (08:00) is met if gap starts too early
-                    if (currentEnd.getDay() === 0) {
-                        const sundayStartLimit = new Date(currentEnd);
-                        sundayStartLimit.setHours(8, 0, 0, 0);
+                    if (zonedCurrentEnd.getDay() === 0) {
+                        const sundayStartLimit = fromZonedTime(
+                            set(zonedCurrentEnd, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }),
+                            timeZone
+                        );
                         effectiveStart = Math.max(currentEnd.getTime(), sundayStartLimit.getTime());
                     }
 
@@ -197,7 +221,7 @@ export async function GET(request: NextRequest) {
 
                     if (effectiveEnd > effectiveStart && gapToEod >= 15) {
                         finalEvents.push({
-                            id: `gap-eod-${current.id}`,
+                            id: `gap - eod - ${current.id} `,
                             title: 'Müsait',
                             start: new Date(effectiveStart).toISOString(),
                             end: new Date(effectiveEnd).toISOString(),
@@ -230,11 +254,11 @@ function createSummaryBlock(events: ProcessedEvent[]): ProcessedEvent {
         typeCounts[t] = (typeCounts[t] || 0) + 1;
     });
 
-    const summaryParts = Object.entries(typeCounts).map(([type, count]) => `${count} ${type}`);
+    const summaryParts = Object.entries(typeCounts).map(([type, count]) => `${count} ${type} `);
     const title = summaryParts.join(', ');
 
     return {
-        id: `group-${events[0].id}`,
+        id: `group - ${events[0].id} `,
         title,
         start,
         end,
