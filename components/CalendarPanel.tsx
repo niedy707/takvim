@@ -98,9 +98,9 @@ export default function CalendarPanel() {
         <div className="max-w-7xl mx-auto p-4 md:p-6 font-sans">
             {/* Header */}
             <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm p-4 -mx-4 rounded-b-xl transition-all">
-                <h1 className="text-2xl font-bold text-gray-800">
+                <h1 className="text-lg md:text-2xl font-bold text-gray-800 whitespace-nowrap">
                     Op.Dr. İbrahim YAĞCI randevu ekranı
-                    <span className="text-sm font-normal text-gray-500 ml-2 block md:inline">
+                    <span className="text-xs md:text-sm font-normal text-gray-500 ml-2 block md:inline">
                         {format(currentTime, 'd MMMM yyyy HH:mm', { locale: tr })}
                     </span>
                 </h1>

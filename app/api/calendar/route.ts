@@ -123,51 +123,90 @@ export async function GET(request: NextRequest) {
 
         // Sort merged events by start time just in case
         const groupedEvents = mergedEvents.sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+        const timeZone = 'Europe/Istanbul';
+
+        // Helper to get day limits
+        const getDayLimits = (d: Date) => {
+            const zoned = toZonedTime(d, timeZone);
+            const day = zoned.getDay();
+
+            // Standard Weekday (Mon=1 ... Fri=5)
+            // User requested: Hafta içi 08:00 - 22:00
+            if (day >= 1 && day <= 5) {
+                return {
+                    start: fromZonedTime(set(zoned, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone),
+                    end: fromZonedTime(set(zoned, { hours: 22, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone)
+                };
+            }
+            // Sunday (0) - Preserving existing logic
+            else if (day === 0) {
+                return {
+                    start: fromZonedTime(set(zoned, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone),
+                    end: fromZonedTime(set(zoned, { hours: 9, minutes: 30, seconds: 0, milliseconds: 0 }), timeZone)
+                };
+            }
+            // Saturday (6) - Keeping as default "Other days" behavior (until 23:00) or maybe treat as weekday?
+            // Let's stick to old "else" behavior for now which was 23:00, or maybe 08:00-23:00?
+            else {
+                return {
+                    start: fromZonedTime(set(zoned, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone),
+                    end: fromZonedTime(set(zoned, { hours: 23, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone)
+                };
+            }
+        };
 
         for (let i = 0; i < groupedEvents.length; i++) {
             const current = groupedEvents[i];
+            const currentStart = new Date(current.start);
+            const currentEnd = new Date(current.end);
+
+            // 0. START OF DAY GAP (Check if this is the first event of the day)
+            // Check if previous event was on a different day or if this is the first event ever
+            const isFirstOfDay = i === 0 || !isSameDay(new Date(groupedEvents[i - 1].end), currentStart);
+
+            if (isFirstOfDay) {
+                const limits = getDayLimits(currentStart);
+                const dayStart = limits.start.getTime();
+                const eventStart = currentStart.getTime();
+
+                if (eventStart > dayStart) {
+                    const gapMinutes = (eventStart - dayStart) / (1000 * 60);
+                    if (gapMinutes >= 15) {
+                        finalEvents.push({
+                            id: `gap-start-${current.id}`,
+                            title: 'Müsait',
+                            start: limits.start.toISOString(),
+                            end: current.start,
+                            type: 'Available'
+                        });
+                    }
+                }
+            }
+
             finalEvents.push(current);
 
             // 1. GAP BETWEEN EVENTS
             if (i < groupedEvents.length - 1) {
                 const next = groupedEvents[i + 1];
-                const currentEnd = new Date(current.end).getTime();
                 const nextStart = new Date(next.start).getTime();
+                const currentEndTs = currentEnd.getTime();
 
-                if (isSameDay(currentEnd, nextStart)) {
-                    let effectiveStart = currentEnd;
-                    let effectiveEnd = nextStart;
-                    const timeZone = 'Europe/Istanbul';
-                    // Convert timestamp to Istanbul time for logical Day checking
-                    const zonedDate = toZonedTime(currentEnd, timeZone);
+                if (isSameDay(currentEnd, next.start)) {
+                    const limits = getDayLimits(currentEnd);
+                    const dayStart = limits.start.getTime();
+                    const dayEnd = limits.end.getTime();
 
-                    // SUNDAY CHECK (Day 0)
-                    if (zonedDate.getDay() === 0) {
-                        // Construct 08:00 Istanbul Time (using 'set' on the zoned date structure)
-                        // Then convert BACK to UTC timestamp for comparison
-                        const sundayLimitStart = fromZonedTime(
-                            set(zonedDate, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }),
-                            timeZone
-                        );
+                    // The gap exists between currentEnd ... nextStart
+                    // We must clamp this gap to the working hours [dayStart, dayEnd]
 
-                        const sundayLimitEnd = fromZonedTime(
-                            set(zonedDate, { hours: 9, minutes: 30, seconds: 0, milliseconds: 0 }),
-                            timeZone
-                        );
-
-                        // Intersect gap with 08:00-09:30 window
-                        // Available Start = Max(GapStart, WindowStart)
-                        effectiveStart = Math.max(currentEnd, sundayLimitStart.getTime());
-                        // Available End = Min(GapEnd, WindowEnd)
-                        effectiveEnd = Math.min(nextStart, sundayLimitEnd.getTime());
-                    }
+                    const effectiveStart = Math.max(currentEndTs, dayStart);
+                    const effectiveEnd = Math.min(nextStart, dayEnd);
 
                     const gapMinutes = (effectiveEnd - effectiveStart) / (1000 * 60);
 
-                    // Only push if effective range is valid and long enough
                     if (effectiveEnd > effectiveStart && gapMinutes >= 15) {
                         finalEvents.push({
-                            id: `gap - ${current.id} `,
+                            id: `gap-${current.id}`,
                             title: 'Müsait',
                             start: new Date(effectiveStart).toISOString(),
                             end: new Date(effectiveEnd).toISOString(),
@@ -179,52 +218,22 @@ export async function GET(request: NextRequest) {
 
             // 2. END OF DAY AVAILABILITY
             const isLastOfTotal = i === groupedEvents.length - 1;
-            const isLastOfDay = isLastOfTotal || !isSameDay(new Date(current.end).getTime(), new Date(groupedEvents[i + 1].start).getTime());
+            const isLastOfDay = isLastOfTotal || !isSameDay(currentEnd, groupedEvents[i + 1].start);
 
             if (isLastOfDay) {
-                const currentEnd = new Date(current.end);
+                const limits = getDayLimits(currentEnd);
+                const dayEnd = limits.end.getTime();
+                const currentEndTs = currentEnd.getTime();
 
-                const timeZone = 'Europe/Istanbul';
-                const zonedCurrentEnd = toZonedTime(currentEnd, timeZone);
+                if (currentEndTs < dayEnd) {
+                    const gapMinutes = (dayEnd - currentEndTs) / (1000 * 60);
 
-                // Determine End Target
-                let endOfDayTarget;
-
-                if (zonedCurrentEnd.getDay() === 0) {
-                    // Sunday: End at 09:30 Istanbul Time
-                    endOfDayTarget = fromZonedTime(
-                        set(zonedCurrentEnd, { hours: 9, minutes: 30, seconds: 0, milliseconds: 0 }),
-                        timeZone
-                    );
-                } else {
-                    // Other days: End at 23:00 Istanbul Time
-                    endOfDayTarget = fromZonedTime(
-                        set(zonedCurrentEnd, { hours: 23, minutes: 0, seconds: 0, milliseconds: 0 }),
-                        timeZone
-                    );
-                }
-
-                if (currentEnd.getTime() < endOfDayTarget.getTime()) {
-                    let effectiveStart = currentEnd.getTime();
-                    const effectiveEnd = endOfDayTarget.getTime();
-
-                    // Ensure Sunday start constraint (08:00) is met if gap starts too early
-                    if (zonedCurrentEnd.getDay() === 0) {
-                        const sundayStartLimit = fromZonedTime(
-                            set(zonedCurrentEnd, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }),
-                            timeZone
-                        );
-                        effectiveStart = Math.max(currentEnd.getTime(), sundayStartLimit.getTime());
-                    }
-
-                    const gapToEod = (effectiveEnd - effectiveStart) / (1000 * 60);
-
-                    if (effectiveEnd > effectiveStart && gapToEod >= 15) {
+                    if (gapMinutes >= 15) {
                         finalEvents.push({
-                            id: `gap - eod - ${current.id} `,
+                            id: `gap-eod-${current.id}`,
                             title: 'Müsait',
-                            start: new Date(effectiveStart).toISOString(),
-                            end: new Date(effectiveEnd).toISOString(),
+                            start: currentEnd.toISOString(),
+                            end: limits.end.toISOString(),
                             type: 'Available'
                         });
                     }
