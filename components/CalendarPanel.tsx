@@ -189,7 +189,7 @@ export default function CalendarPanel() {
                 <div className="fixed inset-0 bg-black/60 z-[60] flex items-center justify-center p-2 md:p-4 backdrop-blur-sm" onClick={() => setShowWeeklyModal(false)}>
                     <div className="bg-white rounded-2xl w-full max-w-5xl p-4 shadow-2xl transform transition-all" onClick={e => e.stopPropagation()}>
                         <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-lg md:text-2xl font-bold text-gray-900">Haftalık Cerrahi Programı</h3>
+                            <h3 className="text-lg md:text-2xl font-bold text-gray-900">Haftalık Ameliyat Programı</h3>
                             <button onClick={() => setShowWeeklyModal(false)} className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
                                 <span className="sr-only">Kapat</span>
                                 <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

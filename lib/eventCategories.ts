@@ -22,6 +22,11 @@ export function categorizeEvent(
         return 'Cancelled';
     }
 
+    // XXX Check: Treat as Busy (Mesai Dışı) - Overrides everything else
+    if (turkishLowerTitle.includes('xxx')) {
+        return 'Busy';
+    }
+
     // Check if contains blocked keywords
     const blockedKeywords = ['izin', 'kongre', 'toplantı', 'off', 'yokum', 'cumartesi', 'pazar', 'hasta görebiliriz', 'hasta görme', 'hasta görelim', 'çıkış', 'yok', 'gitmem', 'vizite'];
     if (blockedKeywords.some(keyword => turkishLowerTitle.includes(keyword))) {
