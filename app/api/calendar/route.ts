@@ -81,6 +81,8 @@ export async function GET(request: NextRequest) {
         }).filter((e): e is ProcessedEvent => e !== null && e.type !== 'Cancelled') as ProcessedEvent[];
 
         // 4. Merge Logic (Controls & Exams)
+
+        // 4. Merge Logic (Controls & Exams)
         const mergedEvents: ProcessedEvent[] = [];
         let buffer: ProcessedEvent[] = [];
 

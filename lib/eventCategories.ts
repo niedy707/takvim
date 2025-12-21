@@ -11,6 +11,11 @@ export function categorizeEvent(
     const lowerTitle = title.toLowerCase();
     const turkishLowerTitle = title.toLocaleLowerCase('tr-TR');
 
+    // XXX Check: Treat as Busy (Mesai Dışı) - Overrides everything else
+    if (turkishLowerTitle.includes('xxx')) {
+        return 'Busy';
+    }
+
     // BLOCKED: Red events, cancelled/postponed, info, holidays, meetings, etc.
     if (color === '#dc2127' || color === '#DC2127' || color === '11') { // 11 is 'Tomato' in GCal (often red)
         return 'Cancelled';
@@ -20,11 +25,6 @@ export function categorizeEvent(
     const blockedPrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi', 'ℹ️', 'ℹ'];
     if (blockedPrefixes.some(prefix => turkishLowerTitle.startsWith(prefix))) {
         return 'Cancelled';
-    }
-
-    // XXX Check: Treat as Busy (Mesai Dışı) - Overrides everything else
-    if (turkishLowerTitle.includes('xxx')) {
-        return 'Busy';
     }
 
     // Check if contains blocked keywords
