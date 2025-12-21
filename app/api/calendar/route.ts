@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
             const start = event.start?.dateTime || event.start?.date || '';
             const end = event.end?.dateTime || event.end?.date || '';
             const title = event.summary || 'Meşgul';
-            const color = event.colorId;
+            const color = event.colorId || undefined;
 
             // Check validity
             if (!start || !end) return null;
@@ -74,8 +74,8 @@ export async function GET(request: NextRequest) {
                 start,
                 end,
                 type: category
-            };
-        }).filter((e): e is ProcessedEvent => e !== null && e.type !== 'Cancelled');
+            } as ProcessedEvent;
+        }).filter((e): e is ProcessedEvent => e !== null && e.type !== 'Cancelled') as ProcessedEvent[];
 
         // 4. Merge Logic (Controls & Exams)
         const mergedEvents: ProcessedEvent[] = [];
