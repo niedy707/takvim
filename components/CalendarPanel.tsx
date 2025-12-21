@@ -10,7 +10,7 @@ interface Event {
     title: string;
     start: string;
     end: string;
-    type: 'Surgery' | 'Control' | 'Online' | 'Busy' | 'Available' | 'Cancelled';
+    type: 'Surgery' | 'Control' | 'Online' | 'Busy' | 'Available' | 'Cancelled' | 'Anesthesia' | 'Exam';
     count?: number;
 }
 
@@ -341,12 +341,14 @@ function EventCard({ event }: { event: Event }) {
     const endTime = format(new Date(event.end), 'HH:mm');
 
     const styles = {
-        Surgery: 'bg-violet-50 border-l-4 border-violet-500 text-violet-900 min-h-[7rem] flex flex-col justify-center',
+        Surgery: 'bg-violet-200/80 border-l-4 border-violet-600 text-violet-950 min-h-[7rem] flex flex-col justify-center',
         Control: 'bg-blue-50 border-l-4 border-blue-500 text-blue-900',
         Online: 'bg-indigo-50 border-l-4 border-indigo-500 text-indigo-900',
         Busy: 'bg-gray-50 border-l-4 border-gray-400 text-gray-700',
         Available: 'bg-green-50 border border-green-200 text-green-700 border-dashed opacity-80 hover:opacity-100 hover:bg-green-100/80 hover:border-green-300 hover:shadow-sm cursor-pointer',
-        Cancelled: 'hidden'
+        Cancelled: 'hidden',
+        Anesthesia: 'bg-fuchsia-100 border-l-4 border-fuchsia-600 text-fuchsia-950',
+        Exam: 'bg-teal-100 border-l-4 border-teal-600 text-teal-950'
     };
 
     return (

@@ -90,8 +90,8 @@ export async function GET(request: NextRequest) {
         for (let i = 0; i < processedEvents.length; i++) {
             const current = processedEvents[i];
 
-            // If Surgery or Online or Anesthesia -> Don't merge, push immediately (flush buffer first)
-            if (current.type === 'Surgery' || current.type === 'Online' || current.type === 'Anesthesia') {
+            // If Surgery -> Don't merge, push immediately (flush buffer first)
+            if (current.type === 'Surgery') {
                 if (buffer.length > 0) {
                     mergedEvents.push(createSummaryBlock(buffer));
                     buffer = [];
@@ -100,7 +100,7 @@ export async function GET(request: NextRequest) {
                 continue;
             }
 
-            // Logic for Controls/Exams/Busy: Check gaps
+            // Logic for Controls/Exams/Busy/Anesthesia/Online: Check gaps
             if (buffer.length === 0) {
                 buffer.push(current);
             } else {
@@ -224,7 +224,7 @@ export async function GET(request: NextRequest) {
         // but current logic mostly relies on day limits around known events or explicitly requested range.
         // For simplicity, let's stick to iterating the days we discovered events on, 
         // plus we should probably iterate the days in the requested view if we wanted to be perfect,
-        // but the previous logic relied on "groupedEvents" which implies we only cared about days with data?
+        // but the previous logic relied on "groupedEvents" which implies we only cared about days with data.
         // Wait, the previous logic: `isFirstOfDay`, `isLastOfDay` implies it filled empty space *around* events.
         // If a day has NO events, the previous logic wouldn't generate availability for it unless we iterated the full date range.
         // The previous code `for (let i = 0; i < groupedEvents.length; i++)` implies it only processed days with events.
@@ -362,20 +362,37 @@ function createSummaryBlock(events: ProcessedEvent[]): ProcessedEvent {
     // Create a nice summary string e.g. "3 Kontrol"
     // Count exact types
     const typeCounts: Record<string, number> = {};
+    const turkishMap: Record<string, string> = {
+        'Exam': 'Muayene',
+        'Control': 'Kontrol',
+        'Anesthesia': 'Anestezi',
+        'Online': 'Online Görüşme',
+        'Busy': 'Dolu',
+        'Surgery': 'Ameliyat', // Should not happen given logic, but good for completeness
+        'Available': 'Müsait',
+        'Cancelled': 'İptal'
+    };
+
     events.forEach(e => {
-        const t = e.type === 'Exam' ? 'Muayene' : (e.type === 'Control' ? 'Kontrol' : 'Diğer');
+        const t = turkishMap[e.type] || 'Diğer';
         typeCounts[t] = (typeCounts[t] || 0) + 1;
     });
 
-    const summaryParts = Object.entries(typeCounts).map(([type, count]) => `${count} ${type} `);
+    const summaryParts = Object.entries(typeCounts).map(([type, count]) => `${count} ${type}`);
     const title = summaryParts.join(', ');
 
+    // Determine representative type
+    // If all events are same type, use that type (preserves color)
+    // Otherwise use 'Control' as generic
+    const allSame = events.every(e => e.type === events[0].type);
+    const resultType = allSame ? events[0].type : 'Control';
+
     return {
-        id: `group - ${events[0].id} `,
+        id: `group-${events[0].id}`,
         title,
         start,
         end,
-        type: 'Control', // Generic type for styling
+        type: resultType,
         count
     };
 }
