@@ -130,27 +130,19 @@ export async function GET(request: NextRequest) {
             const zoned = toZonedTime(d, timeZone);
             const day = zoned.getDay();
 
-            // Standard Weekday (Mon=1 ... Fri=5)
-            // User requested: Hafta içi 08:00 - 22:00
-            if (day >= 1 && day <= 5) {
+            // Standard Weekday + Saturday (Mon=1 ... Sat=6)
+            // User requested: Pazartesi-Cumartesi 08:00 - 22:00
+            if (day >= 1 && day <= 6) {
                 return {
                     start: fromZonedTime(set(zoned, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone),
                     end: fromZonedTime(set(zoned, { hours: 22, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone)
                 };
             }
-            // Sunday (0) - Preserving existing logic
-            else if (day === 0) {
-                return {
-                    start: fromZonedTime(set(zoned, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone),
-                    end: fromZonedTime(set(zoned, { hours: 9, minutes: 30, seconds: 0, milliseconds: 0 }), timeZone)
-                };
-            }
-            // Saturday (6) - Keeping as default "Other days" behavior (until 23:00) or maybe treat as weekday?
-            // Let's stick to old "else" behavior for now which was 23:00, or maybe 08:00-23:00?
+            // Sunday (0)
             else {
                 return {
                     start: fromZonedTime(set(zoned, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone),
-                    end: fromZonedTime(set(zoned, { hours: 23, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone)
+                    end: fromZonedTime(set(zoned, { hours: 9, minutes: 30, seconds: 0, milliseconds: 0 }), timeZone)
                 };
             }
         };
