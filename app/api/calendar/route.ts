@@ -120,9 +120,6 @@ export async function GET(request: NextRequest) {
 
         // 5. Generate Availability Gaps
         const finalEvents: ProcessedEvent[] = [];
-
-        // Sort merged events by start time just in case
-        const groupedEvents = mergedEvents.sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
         const timeZone = 'Europe/Istanbul';
 
         // Helper to get day limits
@@ -207,82 +204,119 @@ export async function GET(request: NextRequest) {
             return [{ id: '', title: 'Müsait', start: startArg, end: endArg, type: 'Available' }];
         };
 
-        for (let i = 0; i < groupedEvents.length; i++) {
-            const current = groupedEvents[i];
-            const currentStart = new Date(current.start);
-            const currentEnd = new Date(current.end);
+        // --- NEW ALGORITHM: Interval Flattening ---
 
-            // 0. START OF DAY GAP (Check if this is the first event of the day)
-            // Check if previous event was on a different day or if this is the first event ever
-            const isFirstOfDay = i === 0 || !isSameDay(new Date(groupedEvents[i - 1].end), currentStart);
-
-            if (isFirstOfDay) {
-                const limits = getDayLimits(currentStart);
-                const dayStart = limits.start.getTime();
-                const eventStart = currentStart.getTime();
-
-                if (eventStart > dayStart) {
-                    const gapMinutes = (eventStart - dayStart) / (1000 * 60);
-                    if (gapMinutes >= 15) {
-                        const fragments = applyBlackout(limits.start.toISOString(), current.start, currentStart);
-                        fragments.forEach(f => {
-                            finalEvents.push({ ...f, id: `gap-start-${current.id}-${Math.random()}` });
-                        });
-                    }
-                }
-            }
-
-            finalEvents.push(current);
-
-            // 1. GAP BETWEEN EVENTS
-            if (i < groupedEvents.length - 1) {
-                const next = groupedEvents[i + 1];
-                const nextStart = new Date(next.start).getTime();
-                const currentEndTs = currentEnd.getTime();
-
-                if (isSameDay(currentEnd, next.start)) {
-                    const limits = getDayLimits(currentEnd);
-                    const dayStart = limits.start.getTime();
-                    const dayEnd = limits.end.getTime();
-
-                    // The gap exists between currentEnd ... nextStart
-                    // We must clamp this gap to the working hours [dayStart, dayEnd]
-
-                    const effectiveStart = Math.max(currentEndTs, dayStart);
-                    const effectiveEnd = Math.min(nextStart, dayEnd);
-
-                    const gapMinutes = (effectiveEnd - effectiveStart) / (1000 * 60);
-
-                    if (effectiveEnd > effectiveStart && gapMinutes >= 15) {
-                        const fragments = applyBlackout(new Date(effectiveStart).toISOString(), new Date(effectiveEnd).toISOString(), currentEnd);
-                        fragments.forEach(f => {
-                            finalEvents.push({ ...f, id: `gap-${current.id}-${Math.random()}` });
-                        });
-                    }
-                }
-            }
-
-            // 2. END OF DAY AVAILABILITY
-            const isLastOfTotal = i === groupedEvents.length - 1;
-            const isLastOfDay = isLastOfTotal || !isSameDay(currentEnd, groupedEvents[i + 1].start);
-
-            if (isLastOfDay) {
-                const limits = getDayLimits(currentEnd);
-                const dayEnd = limits.end.getTime();
-                const currentEndTs = currentEnd.getTime();
-
-                if (currentEndTs < dayEnd) {
-                    const gapMinutes = (dayEnd - currentEndTs) / (1000 * 60);
-
-                    if (gapMinutes >= 15) {
-                        const fragments = applyBlackout(currentEnd.toISOString(), limits.end.toISOString(), currentEnd);
-                        fragments.forEach(f => {
-                            finalEvents.push({ ...f, id: `gap-eod-${current.id}-${Math.random()}` });
-                        });
-                    }
-                }
-            }
+        // 1. Group by Day
+        const eventsByDay: Record<string, ProcessedEvent[]> = {};
+        for (const event of mergedEvents) {
+            // Use event start to determine day bucket
+            const dayKey = format(toZonedTime(new Date(event.start), timeZone), 'yyyy-MM-dd');
+            if (!eventsByDay[dayKey]) eventsByDay[dayKey] = [];
+            eventsByDay[dayKey].push(event);
         }
+
+        // Processing each day that has events (and potential gaps between them)
+        // Note: This logic only fills gaps between interactions. 
+        // We really want to iterate *each day in the range* to ensure empty days get full availability, 
+        // but current logic mostly relies on day limits around known events or explicitly requested range.
+        // For simplicity, let's stick to iterating the days we discovered events on, 
+        // plus we should probably iterate the days in the requested view if we wanted to be perfect,
+        // but the previous logic relied on "groupedEvents" which implies we only cared about days with data?
+        // Wait, the previous logic: `isFirstOfDay`, `isLastOfDay` implies it filled empty space *around* events.
+        // If a day has NO events, the previous logic wouldn't generate availability for it unless we iterated the full date range.
+        // The previous code `for (let i = 0; i < groupedEvents.length; i++)` implies it only processed days with events.
+        // Let's match that behavior for now to avoid scope creep, but ensure we handle the reported overlaps correctly.
+
+        Object.keys(eventsByDay).forEach(dayKey => {
+            const dayEvents = eventsByDay[dayKey];
+            finalEvents.push(...dayEvents); // Add original events
+
+            if (dayEvents.length === 0) return;
+
+            // Get day boundaries
+            const refDate = new Date(dayEvents[0].start);
+            const limits = getDayLimits(refDate);
+            const dayStart = limits.start.getTime();
+            const dayEnd = limits.end.getTime();
+
+            // 2. Create Busy Intervals
+            // We consider everything in `dayEvents` as blocking, EXCEPT 'Available' (which shouldn't exist yet) 
+            // and 'Cancelled' (already filtered).
+            // Actually, we should check if any 'Available' snuck in, but `mergedEvents` are mostly our processed ones.
+
+            let busyIntervals: { start: number, end: number }[] = dayEvents.map(e => ({
+                start: new Date(e.start).getTime(),
+                end: new Date(e.end).getTime()
+            }));
+
+            // Sort by start time
+            busyIntervals.sort((a, b) => a.start - b.start);
+
+            // 3. Flatten Intervals
+            const mergedBusy: { start: number, end: number }[] = [];
+            if (busyIntervals.length > 0) {
+                let current = busyIntervals[0];
+                for (let i = 1; i < busyIntervals.length; i++) {
+                    const next = busyIntervals[i];
+                    if (next.start < current.end) {
+                        // Overlap: Merge
+                        current.end = Math.max(current.end, next.end);
+                    } else {
+                        // No overlap: Push current, start new
+                        mergedBusy.push(current);
+                        current = next;
+                    }
+                }
+                mergedBusy.push(current);
+            }
+
+            // 4. Generate Gaps (Inverse of Busy)
+            // Cursor starts at dayStart
+            let cursor = dayStart;
+
+            for (const busy of mergedBusy) {
+                // If there's a gap between cursor and busy.start
+                const gapStart = Math.max(cursor, dayStart);
+                const gapEnd = Math.min(busy.start, dayEnd);
+
+                if (gapEnd > gapStart) {
+                    const gapDuration = (gapEnd - gapStart) / (1000 * 60);
+                    if (gapDuration >= 15) {
+                        const fragments = applyBlackout(
+                            new Date(gapStart).toISOString(),
+                            new Date(gapEnd).toISOString(),
+                            refDate
+                        );
+                        fragments.forEach(f => {
+                            finalEvents.push({ ...f, id: `gap-${Math.random()}` });
+                        });
+                    }
+                }
+                // Move cursor to busy.end
+                cursor = Math.max(cursor, busy.end);
+            }
+
+            // Final gap after last busy event
+            if (cursor < dayEnd) {
+                const gapDuration = (dayEnd - cursor) / (1000 * 60);
+                if (gapDuration >= 15) {
+                    const fragments = applyBlackout(
+                        new Date(cursor).toISOString(),
+                        new Date(dayEnd).toISOString(),
+                        refDate
+                    );
+                    fragments.forEach(f => {
+                        finalEvents.push({ ...f, id: `gap-eod-${Math.random()}` });
+                    });
+                }
+            }
+        });
+
+        // NOTE: This logic only adds availability for days that HAVE at least one event.
+        // Purely empty days (if any in the range) are not handled here, matching the old logic.
+        // If we need empty days to show up as fully available, we would need to generate them separately.
+        // Assuming Google Calendar returns *something* or we just accept this behavior.
+        // For the specific issue (Dec 25), there ARE events, so this logic covers it.
 
         // 6. Surgery Counters (Post-Processing)
         const surgeriesByDay: Record<string, ProcessedEvent[]> = {};
