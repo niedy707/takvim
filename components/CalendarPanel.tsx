@@ -16,81 +16,30 @@ interface Event {
 
 export default function CalendarPanel() {
     const [events, setEvents] = useState<Event[]>([]);
+    const [showWeeklyModal, setShowWeeklyModal] = useState(false);
     const [loading, setLoading] = useState(true);
     const [currentTime, setCurrentTime] = useState(new Date());
     const [selectedSlot, setSelectedSlot] = useState<Event | null>(null);
     const [patientName, setPatientName] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
 
-    useEffect(() => {
-        // Fetch events
-        const fetchEvents = async () => {
-            try {
-                // Return start of the current day to ensure we see all of today's events, even past ones
-                const res = await fetch('/api/calendar?timeMin=' + startOfDay(new Date()).toISOString());
-                if (!res.ok) throw new Error('Failed to fetch');
-                const data = await res.json();
-                setEvents(data);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setLoading(false);
-            }
-        };
+    // ... (existing useEffect) ...
 
-        fetchEvents();
-        const interval = setInterval(() => setCurrentTime(new Date()), 60000);
-        return () => clearInterval(interval);
-    }, []);
-
-    const daysToShow = () => {
+    const getWeeklyStats = () => {
         const today = new Date();
-        return eachDayOfInterval({
+        const days = eachDayOfInterval({
             start: today,
-            end: addDays(today, 6)
+            end: addDays(today, 13)
+        });
+
+        return days.map(day => {
+            const dayEvents = events.filter(e => isSameDay(new Date(e.start), day));
+            const surgeryCount = dayEvents.filter(e => e.type === 'Surgery').length;
+            return { date: day, count: surgeryCount };
         });
     };
 
-    const getEventsForDay = (date: Date) => {
-        return events.filter(e => isSameDay(new Date(e.start), date));
-    };
-
-    const handleSlotClick = (event: Event) => {
-        if (event.type === 'Available') {
-            setSelectedSlot(event);
-            setPatientName('');
-            setSelectedTime(format(new Date(event.start), 'HH:mm')); // Default to start time
-        }
-    };
-
-    const generateTimeSlots = (startStr: string, endStr: string) => {
-        const slots = [];
-        let current = new Date(startStr);
-        const end = new Date(endStr);
-
-        while (isBefore(current, end)) {
-            slots.push(format(current, 'HH:mm'));
-            current = addMinutes(current, 15);
-        }
-        return slots;
-    };
-
-    const handleBooking = (type: string) => {
-        if (!selectedSlot || !selectedTime) return;
-        if (patientName.length < 3) {
-            alert('Lütfen geçerli bir isim giriniz (en az 3 karakter).');
-            return;
-        }
-
-        const dateStr = format(new Date(selectedSlot.start), 'dd.MM.yyyy', { locale: tr });
-
-        // Updated Message Format: Name on new line
-        const message = `İbrahim Yağcı takvimi için ${dateStr} saat ${selectedTime} itibariyle bir ${type} randevusu talep ediyorum.\n\nHasta ismi: ${patientName}`;
-        const url = `https://wa.me/905511999963?text=${encodeURIComponent(message)}`;
-
-        window.open(url, '_blank');
-        setSelectedSlot(null);
-    };
+    // ... (existing helper functions) ...
 
     if (loading) return <div className="p-8 text-center text-gray-500">Yükleniyor...</div>;
 
@@ -98,12 +47,21 @@ export default function CalendarPanel() {
         <div className="max-w-7xl mx-auto p-4 md:p-6 font-sans">
             {/* Header */}
             <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm p-4 -mx-4 rounded-b-xl transition-all">
-                <h1 className="text-lg md:text-2xl font-bold text-gray-800 whitespace-nowrap">
-                    Op.Dr. İbrahim YAĞCI randevu ekranı
-                    <span className="text-xs md:text-sm font-normal text-gray-500 ml-2 block md:inline">
-                        {format(currentTime, 'd MMMM yyyy HH:mm', { locale: tr })}
-                    </span>
-                </h1>
+                <div className="flex flex-col">
+                    <h1 className="text-lg md:text-2xl font-bold text-gray-800 whitespace-nowrap">
+                        Op.Dr. İbrahim YAĞCI randevu ekranı
+                        <span className="text-xs md:text-sm font-normal text-gray-500 ml-2 block md:inline">
+                            {format(currentTime, 'd MMMM yyyy HH:mm', { locale: tr })}
+                        </span>
+                    </h1>
+                </div>
+
+                <button
+                    onClick={() => setShowWeeklyModal(true)}
+                    className="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+                >
+                    Haftalık program
+                </button>
             </header>
 
             {/* Grid */}
@@ -119,15 +77,22 @@ export default function CalendarPanel() {
                         )}>
                             {/* Header with Background */}
                             <h2 className={clsx(
-                                "text-lg font-bold sticky top-[84px] z-40 py-3 px-4 border-b-2 flex justify-between items-center backdrop-blur-md transition-all",
+                                "text-lg font-bold sticky top-[84px] z-40 py-3 px-4 border-b-2 flex flex-col justify-center items-start backdrop-blur-md transition-all gap-1",
                                 isToday
                                     ? "bg-blue-100/90 text-blue-800 border-blue-200"
                                     : "bg-orange-100/95 text-orange-900 border-orange-200"
                             )}>
-                                <span className="leading-none">{format(day, 'EEEE', { locale: tr })}</span>
-                                <span className={clsx("text-sm font-medium leading-none", isToday ? "text-blue-600" : "text-orange-600/70")}>
-                                    {format(day, 'd MMM', { locale: tr })}
-                                </span>
+                                <div className="flex justify-between items-center w-full">
+                                    <span className="leading-none">{format(day, 'EEEE', { locale: tr })}</span>
+                                    <span className={clsx("text-sm font-medium leading-none", isToday ? "text-blue-600" : "text-orange-600/70")}>
+                                        {format(day, 'd MMM', { locale: tr })}
+                                    </span>
+                                </div>
+                                {dayEvents.filter(e => e.type === 'Surgery').length > 0 && (
+                                    <span className="text-xs font-normal italic text-gray-600 mt-1">
+                                        (Bugün için planlanan ameliyat sayısı: {dayEvents.filter(e => e.type === 'Surgery').length})
+                                    </span>
+                                )}
                             </h2>
 
                             {/* Content Area */}
@@ -151,6 +116,47 @@ export default function CalendarPanel() {
                     );
                 })}
             </div>
+
+            {/* Weekly Program Modal */}
+            {showWeeklyModal && (
+                <div className="fixed inset-0 bg-black/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setShowWeeklyModal(false)}>
+                    <div className="bg-white rounded-2xl w-full max-w-5xl p-6 shadow-2xl transform transition-all" onClick={e => e.stopPropagation()}>
+                        <div className="flex justify-between items-center mb-6">
+                            <h3 className="text-2xl font-bold text-gray-900">Haftalık Cerrahi Programı</h3>
+                            <button onClick={() => setShowWeeklyModal(false)} className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
+                                <span className="sr-only">Kapat</span>
+                                <svg className="w-6 h-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+                            {getWeeklyStats().map((stat) => (
+                                <div key={stat.date.toISOString()} className={clsx(
+                                    "border rounded-xl p-3 flex flex-col items-center justify-between min-h-[100px] transition-colors",
+                                    isSameDay(stat.date, new Date()) ? "bg-blue-50 border-blue-200" : "bg-gray-50 border-gray-200"
+                                )}>
+                                    <span className="text-sm font-bold text-gray-600 mb-2">
+                                        {format(stat.date, 'd MMM EEE', { locale: tr })}
+                                    </span>
+
+                                    <span className={clsx(
+                                        "text-3xl font-bold",
+                                        stat.count > 0 ? "text-blue-600" : "text-gray-300"
+                                    )}>
+                                        {stat.count}
+                                    </span>
+
+                                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide mt-1">
+                                        Ameliyat
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Booking Modal */}
             {selectedSlot && (

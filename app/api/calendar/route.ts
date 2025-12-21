@@ -292,6 +292,27 @@ export async function GET(request: NextRequest) {
             }
         }
 
+        // 6. Surgery Counters (Post-Processing)
+        const surgeriesByDay: Record<string, ProcessedEvent[]> = {};
+
+        for (const event of finalEvents) {
+            if (event.type === 'Surgery') {
+                const dayKey = format(toZonedTime(new Date(event.start), timeZone), 'yyyy-MM-dd');
+                if (!surgeriesByDay[dayKey]) {
+                    surgeriesByDay[dayKey] = [];
+                }
+                surgeriesByDay[dayKey].push(event);
+            }
+        }
+
+        Object.values(surgeriesByDay).forEach(dailySurgeries => {
+            dailySurgeries.sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+            const total = dailySurgeries.length;
+            dailySurgeries.forEach((event, index) => {
+                event.title = `${event.title} (${index + 1}/${total})`;
+            });
+        });
+
         return NextResponse.json(finalEvents);
     } catch (error) {
         console.error('Calendar API Error:', error);
