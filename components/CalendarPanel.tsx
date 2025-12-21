@@ -112,11 +112,11 @@ export default function CalendarPanel() {
     return (
         <div className="max-w-7xl mx-auto p-4 md:p-6 font-sans">
             {/* Header */}
-            <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm p-4 -mx-4 rounded-b-xl transition-all">
-                <div className="flex flex-col">
-                    <h1 className="text-lg md:text-2xl font-bold text-gray-800 whitespace-nowrap">
+            <header className="flex flex-row justify-between items-start mb-8 gap-4 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm p-4 -mx-4 rounded-b-xl transition-all">
+                <div className="flex flex-col flex-1 min-w-0 mr-2">
+                    <h1 className="text-lg md:text-2xl font-bold text-gray-800 break-words leading-tight">
                         Op.Dr. İbrahim YAĞCI randevu ekranı
-                        <span className="text-xs md:text-sm font-normal text-gray-500 ml-2 block md:inline">
+                        <span className="text-xs md:text-sm font-normal text-gray-500 block mt-1">
                             {format(currentTime, 'd MMMM yyyy HH:mm', { locale: tr })}
                         </span>
                     </h1>
@@ -124,9 +124,10 @@ export default function CalendarPanel() {
 
                 <button
                     onClick={() => setShowWeeklyModal(true)}
-                    className="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+                    className="flex-shrink-0 px-3 py-1.5 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm flex flex-col items-center justify-center leading-tight h-full min-h-[44px]"
                 >
-                    Haftalık program
+                    <span>Haftalık</span>
+                    <span>program</span>
                 </button>
             </header>
 
@@ -185,42 +186,40 @@ export default function CalendarPanel() {
 
             {/* Weekly Program Modal */}
             {showWeeklyModal && (
-                <div className="fixed inset-0 bg-black/60 z-[60] flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setShowWeeklyModal(false)}>
-                    <div className="bg-white rounded-2xl w-full max-w-5xl p-6 shadow-2xl transform transition-all" onClick={e => e.stopPropagation()}>
-                        <div className="flex justify-between items-center mb-6">
-                            <h3 className="text-2xl font-bold text-gray-900">Haftalık Cerrahi Programı</h3>
+                <div className="fixed inset-0 bg-black/60 z-[60] flex items-center justify-center p-2 md:p-4 backdrop-blur-sm" onClick={() => setShowWeeklyModal(false)}>
+                    <div className="bg-white rounded-2xl w-full max-w-5xl p-4 shadow-2xl transform transition-all" onClick={e => e.stopPropagation()}>
+                        <div className="flex justify-between items-center mb-4">
+                            <h3 className="text-lg md:text-2xl font-bold text-gray-900">Haftalık Cerrahi Programı</h3>
                             <button onClick={() => setShowWeeklyModal(false)} className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
                                 <span className="sr-only">Kapat</span>
-                                <svg className="w-6 h-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
                         </div>
 
-                        <div className="overflow-x-auto pb-2">
-                            <div className="grid grid-cols-7 gap-3 min-w-[800px]">
-                                {getWeeklyStats().map((stat) => (
-                                    <div key={stat.date.toISOString()} className={clsx(
-                                        "border rounded-xl p-3 flex flex-col items-center justify-between min-h-[100px] transition-colors",
-                                        isSameDay(stat.date, new Date()) ? "bg-blue-50 border-blue-200" : "bg-gray-50 border-gray-200"
+                        <div className="grid grid-cols-7 gap-1 md:gap-3 w-full">
+                            {getWeeklyStats().map((stat) => (
+                                <div key={stat.date.toISOString()} className={clsx(
+                                    "border rounded-lg md:rounded-xl p-1 md:p-3 flex flex-col items-center justify-between min-h-[60px] md:min-h-[100px] transition-colors",
+                                    isSameDay(stat.date, new Date()) ? "bg-blue-50 border-blue-200" : "bg-gray-50 border-gray-200"
+                                )}>
+                                    <span className="text-[10px] md:text-sm font-bold text-gray-600 mb-1 md:mb-2 text-center leading-tight">
+                                        {format(stat.date, 'd EEE', { locale: tr })}
+                                    </span>
+
+                                    <span className={clsx(
+                                        "text-xl md:text-3xl font-bold",
+                                        stat.count > 0 ? "text-blue-600" : "text-gray-300"
                                     )}>
-                                        <span className="text-sm font-bold text-gray-600 mb-2 whitespace-nowrap">
-                                            {format(stat.date, 'd EEE', { locale: tr })}
-                                        </span>
+                                        {stat.count}
+                                    </span>
 
-                                        <span className={clsx(
-                                            "text-3xl font-bold",
-                                            stat.count > 0 ? "text-blue-600" : "text-gray-300"
-                                        )}>
-                                            {stat.count}
-                                        </span>
-
-                                        <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide mt-1">
-                                            Ameliyat
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
+                                    <span className="hidden md:block text-xs font-semibold text-gray-400 uppercase tracking-wide mt-1">
+                                        Ameliyat
+                                    </span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
