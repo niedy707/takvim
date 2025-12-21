@@ -338,8 +338,10 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
             )}
             {/* Footer Version Info */}
             {lastUpdate && (
-                <div className="fixed bottom-2 right-2 text-xs font-semibold text-gray-500 bg-white/90 shadow-sm border border-gray-100 px-2 py-1 rounded-md z-[100] pointer-events-none select-none backdrop-blur-sm">
-                    {lastUpdate}
+                <div className="flex justify-end mt-8 pb-4 pr-2 opacity-50 hover:opacity-100 transition-opacity">
+                    <span className="text-[10px] font-mono text-gray-400 select-none">
+                        {lastUpdate}
+                    </span>
                 </div>
             )}
         </div>

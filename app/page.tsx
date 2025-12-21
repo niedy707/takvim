@@ -6,15 +6,15 @@ export default function Home() {
     let lastUpdate = '';
     try {
         const stats = fs.statSync(__filename);
-        lastUpdate = stats.mtime.toLocaleString('tr-TR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        });
+        const day = stats.mtime.getDate().toString().padStart(2, '0');
+        const month = (stats.mtime.getMonth() + 1).toString().padStart(2, '0');
+        const year = stats.mtime.getFullYear().toString().slice(-2);
+        const hour = stats.mtime.getHours().toString().padStart(2, '0');
+        const minute = stats.mtime.getMinutes().toString().padStart(2, '0');
+
+        lastUpdate = `${day}${month}${year}-${hour}${minute}`;
     } catch (e) {
-        lastUpdate = new Date().toLocaleString('tr-TR');
+        lastUpdate = 'UNKNOWN';
     }
 
     return (
