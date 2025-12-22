@@ -16,6 +16,7 @@ interface ProcessedEvent {
     start: string;
     end: string;
     type: 'Surgery' | 'Control' | 'Exam' | 'Online' | 'Busy' | 'Available' | 'Cancelled' | 'Anesthesia';
+    patientName?: string;
     count?: number; // For merged summaries
 }
 
@@ -75,6 +76,7 @@ export async function GET(request: NextRequest) {
             return {
                 id: event.id || Math.random().toString(),
                 title: displayTitle,
+                patientName: title, // Pass original summary as patientName
                 start,
                 end,
                 type: category
