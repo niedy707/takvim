@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { format, isSameDay, addDays, startOfWeek, endOfWeek, eachDayOfInterval, startOfDay, addMinutes, isBefore } from 'date-fns';
-import { tr } from 'date-fns/locale';
+import { format, isSameDay, addDays, startOfWeek, endOfWeek, eachDayOfInterval, startOfDay, addMinutes, isBefore, subMinutes } from 'date-fns';
+import { tr, enUS } from 'date-fns/locale';
 import clsx from 'clsx';
 
 interface Event {
@@ -19,6 +19,85 @@ interface CalendarPanelProps {
     lastUpdate?: string;
 }
 
+const translations = {
+    tr: {
+        title: 'Op.Dr. İbrahim YAĞCI randevu ekranı',
+        plannedPatientsBtn: ['Planlı', 'hastalar'],
+        weeklyProgramBtn: ['Haftalık', 'program'],
+        surgeriesToday: 'Bugün için planlanan ameliyat sayısı:',
+        noEvents: 'Etkinlik yok',
+        plannedPatientsTitle: 'Planlı Hastalar',
+        noPlannedSurgeries: 'Planlanmış ameliyat bulunmamaktadır.',
+        patientCount: 'Hasta',
+        totalPlanned: 'Toplam',
+        totalPlannedSuffix: 'planlı hasta listelenmektedir.',
+        createAppointment: 'Randevu Oluştur',
+        nameLabel: 'Hasta Adı Soyadı:',
+        timeLabel: 'Randevu Saati',
+        placeholderName: 'Örn: Ahmet Yılmaz',
+        examBtn: 'Muayene',
+        surgeryBtn: 'Ameliyat',
+        controlBtn: 'Kontrol',
+        onlineBtn: 'Online Konsultasyon (OPD)',
+        validNameAlert: 'Lütfen geçerli bir isim giriniz (en az 3 karakter).',
+        available: 'Müsait',
+        weeklyProgramTitle: '2 Haftalık Program',
+        totalPlannedSurgery: 'ameliyat planlandı',
+        empty: 'Boş',
+        surgery: 'Ameliyat',
+        whatsappTemplate: 'İbrahim Yağcı takvimi için {date} saat {time} itibariyle bir {type} randevusu talep ediyorum.\n\nHasta ismi: {name}',
+        close: 'Kapat',
+        eventTypes: {
+            Surgery: 'Ameliyat',
+            Control: 'Kontrol',
+            Exam: 'Muayene',
+            Online: 'Online Konsultasyon',
+            Busy: 'Meşgul',
+            Available: 'Müsait',
+            Anesthesia: 'Anestezi',
+            Cancelled: 'İptal'
+        }
+    },
+    en: {
+        title: 'Op.Dr. İbrahim YAĞCI Appointment Screen',
+        plannedPatientsBtn: ['Planned', 'Patients'],
+        weeklyProgramBtn: ['Weekly', 'Program'],
+        surgeriesToday: 'Surgeries planned for today:',
+        noEvents: 'No events',
+        plannedPatientsTitle: 'Planned Patients',
+        noPlannedSurgeries: 'No planned surgeries found.',
+        patientCount: 'Patient',
+        totalPlanned: 'Total',
+        totalPlannedSuffix: 'planned patients listed.',
+        createAppointment: 'Create Appointment',
+        nameLabel: 'Patient Name Surname:',
+        timeLabel: 'Appointment Time',
+        placeholderName: 'Ex: John Doe',
+        examBtn: 'Examination',
+        surgeryBtn: 'Surgery',
+        controlBtn: 'Control',
+        onlineBtn: 'Online Consultation (OPD)',
+        validNameAlert: 'Please enter a valid name (min 3 characters).',
+        available: 'Available',
+        weeklyProgramTitle: '2 Week Program',
+        totalPlannedSurgery: 'surgeries planned',
+        empty: 'Empty',
+        surgery: 'Surgery',
+        whatsappTemplate: 'I am requesting a {type} appointment for Ibrahim Yagci calendar on {date} at {time}.\n\nPatient Name: {name}',
+        close: 'Close',
+        eventTypes: {
+            Surgery: 'Surgery',
+            Control: 'Control',
+            Exam: 'Examination',
+            Online: 'Online Consultation',
+            Busy: 'Busy',
+            Available: 'Available',
+            Anesthesia: 'Anesthesia',
+            Cancelled: 'Cancelled'
+        }
+    }
+};
+
 export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
     const [events, setEvents] = useState<Event[]>([]);
     const [showWeeklyModal, setShowWeeklyModal] = useState(false);
@@ -28,6 +107,10 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
     const [selectedSlot, setSelectedSlot] = useState<Event | null>(null);
     const [patientName, setPatientName] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
+    const [lang, setLang] = useState<'tr' | 'en'>('tr');
+
+    const t = translations[lang];
+    const locale = lang === 'tr' ? tr : enUS;
 
     useEffect(() => {
         // Fetch events
@@ -99,14 +182,35 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
     const handleBooking = (type: string) => {
         if (!selectedSlot || !selectedTime) return;
         if (patientName.length < 3) {
-            alert('Lütfen geçerli bir isim giriniz (en az 3 karakter).');
+            alert(t.validNameAlert);
             return;
         }
 
-        const dateStr = format(new Date(selectedSlot.start), 'dd.MM.yyyy', { locale: tr });
+        const dateStr = format(new Date(selectedSlot.start), 'dd.MM.yyyy', { locale: tr }); // Always Turkish Locale for date in msg
 
-        // Updated Message Format: Name on new line
-        const message = `İbrahim Yağcı takvimi için ${dateStr} saat ${selectedTime} itibariyle bir ${type} randevusu talep ediyorum.\n\nHasta ismi: ${patientName}`;
+        // Always use Turkish template
+        const trTemplate = translations['tr'].whatsappTemplate;
+
+        // Map generic types to Turkish if needed for the message body
+        const typeMap: Record<string, string> = {
+            'Surgery': 'Ameliyat',
+            'Exam': 'Muayene',
+            'Control': 'Kontrol',
+            'Online': 'Online Konsultasyon'
+        };
+
+        const typeInTR = typeMap[type] || type;
+
+        let message = trTemplate
+            .replace('{date}', dateStr)
+            .replace('{time}', selectedTime)
+            .replace('{type}', typeInTR)
+            .replace('{name}', patientName);
+
+        if (lang === 'en') {
+            message += "\n\n(This message was sent by an English speaking patient via the appointment system.)";
+        }
+
         const url = `https://wa.me/905511999963?text=${encodeURIComponent(message)}`;
 
         window.open(url, '_blank');
@@ -155,7 +259,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
         <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setShowWeeklyModal(false)}>
             <div className="bg-white rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl transform transition-all" onClick={e => e.stopPropagation()}>
                 <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-4 text-white flex justify-between items-center">
-                    <h3 className="text-lg font-bold">2 Haftalık Program</h3>
+                    <h3 className="text-lg font-bold">{t.weeklyProgramTitle}</h3>
                     <button onClick={() => setShowWeeklyModal(false)} className="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/20 transition-colors">
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -167,17 +271,19 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                         {getWeeklyStats().map((stat, idx) => (
                             <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100 hover:bg-blue-50 hover:border-blue-200 transition-all">
                                 <span className={clsx("font-medium", isSameDay(stat.date, new Date()) ? "text-blue-600 font-bold" : "text-gray-700")}>
-                                    {format(stat.date, 'd MMMM EEEE', { locale: tr })}
+                                    {format(stat.date, 'd MMMM EEEE', { locale })}
                                 </span>
                                 <span className={clsx("px-3 py-1 rounded-full text-sm font-bold shadow-sm", stat.count > 0 ? "bg-orange-100 text-orange-600" : "bg-green-100 text-green-600")}>
-                                    {stat.count > 0 ? `${stat.count} Ameliyat` : "Boş"}
+                                    {stat.count > 0 ? `${stat.count} ${t.surgery}` : t.empty}
                                 </span>
                             </div>
                         ))}
                     </div>
                 </div>
                 <div className="bg-gray-50 p-3 text-center border-t border-gray-100">
-                    <p className="text-xs text-gray-500 font-medium">Toplam {getWeeklyStats().reduce((a, b) => a + b.count, 0)} ameliyat planlandı</p>
+                    <p className="text-xs text-gray-500 font-medium">
+                        {t.totalPlanned} {getWeeklyStats().reduce((a, b) => a + b.count, 0)} {t.totalPlannedSurgery}
+                    </p>
                 </div>
             </div>
         </div>
@@ -189,28 +295,46 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
             <header className="flex flex-row justify-between items-start mb-8 gap-4 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm p-4 -mx-4 rounded-b-xl transition-all">
                 <div className="flex flex-col flex-1 min-w-0 mr-2">
                     <h1 className="text-lg md:text-2xl font-bold text-gray-800 break-words leading-tight">
-                        Op.Dr. İbrahim YAĞCI randevu ekranı
+                        {t.title}
                         <span className="text-xs md:text-sm font-normal text-gray-500 block mt-1">
-                            {format(currentTime, 'd MMMM yyyy HH:mm', { locale: tr })}
+                            {format(currentTime, 'd MMMM yyyy HH:mm', { locale })}
                         </span>
                     </h1>
                 </div>
 
                 <div className="flex gap-2">
+                    {/* Language Switcher */}
+                    <div className="flex flex-col gap-1 mr-2">
+                        <button
+                            onClick={() => setLang('tr')}
+                            className={clsx("text-xl transition-transform hover:scale-110 grayscale-0", lang !== 'tr' && "opacity-40 grayscale")}
+                            title="Türkçe"
+                        >
+                            🇹🇷
+                        </button>
+                        <button
+                            onClick={() => setLang('en')}
+                            className={clsx("text-xl transition-transform hover:scale-110 grayscale-0", lang !== 'en' && "opacity-40 grayscale")}
+                            title="English"
+                        >
+                            🇬🇧
+                        </button>
+                    </div>
+
                     <button
                         onClick={() => setShowPlannedModal(true)}
                         className="flex-shrink-0 px-3 py-1.5 bg-violet-600 text-white text-xs font-semibold rounded-lg hover:bg-violet-700 transition-colors shadow-sm flex flex-col items-center justify-center leading-tight h-full min-h-[44px]"
                     >
-                        <span>Planlı</span>
-                        <span>hastalar</span>
+                        <span>{t.plannedPatientsBtn[0]}</span>
+                        <span>{t.plannedPatientsBtn[1]}</span>
                     </button>
 
                     <button
                         onClick={() => setShowWeeklyModal(true)}
                         className="flex-shrink-0 px-3 py-1.5 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm flex flex-col items-center justify-center leading-tight h-full min-h-[44px]"
                     >
-                        <span>Haftalık</span>
-                        <span>program</span>
+                        <span>{t.weeklyProgramBtn[0]}</span>
+                        <span>{t.weeklyProgramBtn[1]}</span>
                     </button>
                 </div>
             </header>
@@ -234,14 +358,14 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                     : "bg-orange-100/95 text-orange-900 border-orange-200"
                             )}>
                                 <div className="flex justify-between items-center w-full">
-                                    <span className="leading-none">{format(day, 'EEEE', { locale: tr })}</span>
+                                    <span className="leading-none">{format(day, 'EEEE', { locale })}</span>
                                     <span className={clsx("text-sm font-medium leading-none", isToday ? "text-blue-600" : "text-orange-600/70")}>
-                                        {format(day, 'd MMM', { locale: tr })}
+                                        {format(day, 'd MMM', { locale })}
                                     </span>
                                 </div>
                                 {dayEvents.filter(e => e.type === 'Surgery').length > 0 && (
                                     <span className="text-xs font-normal italic text-gray-600 mt-1">
-                                        (Bugün için planlanan ameliyat sayısı: {dayEvents.filter(e => e.type === 'Surgery').length})
+                                        ({t.surgeriesToday} {dayEvents.filter(e => e.type === 'Surgery').length})
                                     </span>
                                 )}
                             </h2>
@@ -251,13 +375,19 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                 {dayEvents.length === 0 ? (
                                     <div className="flex flex-col items-center justify-center h-full text-gray-400 text-sm italic py-4">
                                         <span className="text-2xl mb-2 opacity-20">📅</span>
-                                        Etkinlik yok
+                                        {t.noEvents}
                                     </div>
                                 ) : (
                                     <div className="space-y-3">
                                         {dayEvents.map(event => {
-                                            const isPast = isBefore(new Date(event.start), new Date());
                                             const isAvailable = event.type === 'Available';
+
+                                            // Modified Logic: 
+                                            // If Available, expire 5 minutes before END (not at start).
+                                            // Else, standard "past" check (at start).
+                                            const isPast = isAvailable
+                                                ? isBefore(subMinutes(new Date(event.end), 5), new Date())
+                                                : isBefore(new Date(event.start), new Date());
                                             const isDisabled = isAvailable && isPast;
 
                                             return (
@@ -270,7 +400,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                                         isDisabled && "opacity-40 cursor-not-allowed grayscale"
                                                     )}
                                                 >
-                                                    <EventCard event={event} />
+                                                    <EventCard event={event} t={t} />
                                                 </div>
                                             );
                                         })}
@@ -290,9 +420,9 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                 <div className="fixed inset-0 bg-black/60 z-[60] flex items-center justify-center p-2 md:p-4 backdrop-blur-sm" onClick={() => setShowPlannedModal(false)}>
                     <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl transform transition-all" onClick={e => e.stopPropagation()}>
                         <div className="flex justify-between items-center p-4 md:p-6 border-b border-gray-100">
-                            <h3 className="text-lg md:text-2xl font-bold text-gray-900">Planlı Hastalar</h3>
+                            <h3 className="text-lg md:text-2xl font-bold text-gray-900">{t.plannedPatientsTitle}</h3>
                             <button onClick={() => setShowPlannedModal(false)} className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
-                                <span className="sr-only">Kapat</span>
+                                <span className="sr-only">{t.close}</span>
                                 <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
@@ -302,7 +432,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                         <div className="overflow-y-auto p-4 md:p-6">
                             {getPlannedPatients().length === 0 ? (
                                 <div className="text-center text-gray-500 py-8">
-                                    Planlanmış ameliyat bulunmamaktadır.
+                                    {t.noPlannedSurgeries}
                                 </div>
                             ) : (
                                 <div className="space-y-6">
@@ -318,14 +448,14 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                             <div className="bg-violet-50/50 px-4 py-3 border-b border-gray-100 flex justify-between items-center">
                                                 <div className="flex items-center gap-2">
                                                     <span className="font-bold text-gray-800">
-                                                        {format(new Date(dateKey), 'd MMMM yyyy', { locale: tr })}
+                                                        {format(new Date(dateKey), 'd MMMM yyyy', { locale })}
                                                     </span>
                                                     <span className="text-gray-400 font-normal">
-                                                        {format(new Date(dateKey), 'EEEE', { locale: tr })}
+                                                        {format(new Date(dateKey), 'EEEE', { locale })}
                                                     </span>
                                                 </div>
                                                 <span className="text-xs font-medium px-2 py-1 bg-violet-100 text-violet-700 rounded-full">
-                                                    {patients.length} Hasta
+                                                    {patients.length} {t.patientCount}
                                                 </span>
                                             </div>
 
@@ -352,7 +482,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
 
                         <div className="p-4 border-t border-gray-100 bg-gray-50/50 rounded-b-2xl">
                             <p className="text-xs text-center text-gray-400">
-                                Toplam {getPlannedPatients().length} planlı hasta listelenmektedir.
+                                {t.totalPlanned} {getPlannedPatients().length} {t.totalPlannedSuffix}
                             </p>
                         </div>
                     </div>
@@ -365,11 +495,11 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                     <div className="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl transform transition-all scale-100" onClick={e => e.stopPropagation()}>
                         <div className="bg-gradient-to-r from-violet-600 to-indigo-600 p-6 text-white text-center relative overflow-hidden">
                             <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_50%_120%,white_0%,transparent_50%)]"></div>
-                            <h3 className="text-2xl font-bold mb-1 relative z-10">Randevu Oluştur</h3>
+                            <h3 className="text-2xl font-bold mb-1 relative z-10">{t.createAppointment}</h3>
                             <p className="text-white/80 text-sm relative z-10">
-                                {format(new Date(selectedSlot.start), 'd MMMM yyyy EEEE', { locale: tr })}
+                                {format(new Date(selectedSlot.start), 'd MMMM yyyy EEEE', { locale })}
                             </p>
-                            <button onClick={() => setSelectedSlot(null)} className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-1 hover:bg-white/20 rounded-full">
+                            <button onClick={() => setSelectedSlot(null)} className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-1 hover:bg-white/20 rounded-full z-50">
                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
@@ -378,19 +508,19 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
 
                         <div className="p-6 md:p-8 space-y-6">
                             <div className="space-y-2">
-                                <label className="block text-sm font-semibold text-gray-700 pl-1">Adınız Soyadınız</label>
+                                <label className="block text-sm font-semibold text-gray-700 pl-1">{t.nameLabel}</label>
                                 <input
                                     type="text"
                                     value={patientName}
                                     onChange={(e) => setPatientName(e.target.value)}
                                     className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all text-gray-800 placeholder-gray-400 bg-gray-50 focus:bg-white font-medium shadow-sm hover:border-gray-300"
-                                    placeholder="Örn: Ahmet Yılmaz"
+                                    placeholder={t.placeholderName}
                                     autoFocus
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label className="block text-sm font-semibold text-gray-700 pl-1">Randevu Saati</label>
+                                <label className="block text-sm font-semibold text-gray-700 pl-1">{t.timeLabel}</label>
                                 <div className="grid grid-cols-4 gap-2 max-h-[140px] overflow-y-auto p-1 custom-scrollbar">
                                     {generateTimeSlots(selectedSlot.start, selectedSlot.end).map((time) => (
                                         <button
@@ -411,18 +541,32 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
 
                             <div className="grid grid-cols-2 gap-3 pt-2">
                                 <button
-                                    onClick={() => handleBooking('Muayene')}
+                                    onClick={() => handleBooking('Exam')}
                                     className="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-transparent bg-violet-50 text-violet-700 hover:bg-violet-100 hover:border-violet-200 transition-all group font-semibold"
                                 >
                                     <span className="text-xl mb-1 group-hover:scale-110 transition-transform">🩺</span>
-                                    Muayene
+                                    {t.examBtn}
                                 </button>
                                 <button
-                                    onClick={() => handleBooking('Kontrol')}
+                                    onClick={() => handleBooking('Surgery')}
+                                    className="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-transparent bg-rose-50 text-rose-700 hover:bg-rose-100 hover:border-rose-200 transition-all group font-semibold"
+                                >
+                                    <span className="text-xl mb-1 group-hover:scale-110 transition-transform">🔪</span>
+                                    {t.surgeryBtn}
+                                </button>
+                                <button
+                                    onClick={() => handleBooking('Control')}
                                     className="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-transparent bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:border-emerald-200 transition-all group font-semibold"
                                 >
                                     <span className="text-xl mb-1 group-hover:scale-110 transition-transform">✅</span>
-                                    Kontrol
+                                    {t.controlBtn}
+                                </button>
+                                <button
+                                    onClick={() => handleBooking('Online')}
+                                    className="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-transparent bg-indigo-50 text-indigo-700 hover:bg-indigo-100 hover:border-indigo-200 transition-all group font-semibold text-center leading-tight"
+                                >
+                                    <span className="text-xl mb-1 group-hover:scale-110 transition-transform">💻</span>
+                                    <span className="text-xs">{t.onlineBtn}</span>
                                 </button>
                             </div>
                         </div>
@@ -433,7 +577,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
     );
 }
 
-function EventCard({ event }: { event: Event }) {
+function EventCard({ event, t }: { event: Event, t: any }) {
     const startTime = format(new Date(event.start), 'HH:mm');
     const endTime = format(new Date(event.end), 'HH:mm');
 
@@ -448,6 +592,16 @@ function EventCard({ event }: { event: Event }) {
         Exam: 'bg-teal-100 border-l-4 border-teal-600 text-teal-950'
     };
 
+    // Translate Generic Titles
+    let displayTitle = event.title;
+    if (t.eventTypes && t.eventTypes[event.type]) {
+        // logic: if title equals any of the known generic Turkish terms, replace it.
+        const genericTerms = ['Ameliyat', 'Kontrol', 'Muayene', 'Online', 'Meşgul', 'Müsait', 'İptal', 'Anestezi'];
+        if (genericTerms.some(term => event.title.includes(term)) || event.title === event.type) {
+            displayTitle = t.eventTypes[event.type] || event.title;
+        }
+    }
+
     return (
         <div className={clsx(
             "p-3 rounded-md shadow-sm transition-all hover:shadow-md text-sm",
@@ -460,7 +614,7 @@ function EventCard({ event }: { event: Event }) {
                     <span className="font-bold opacity-90">
                         {startTime} - {endTime}
                     </span>
-                    <span className="text-xs uppercase font-bold tracking-wider text-green-600 bg-green-100 px-2 py-0.5 rounded-full">Müsait</span>
+                    <span className="text-xs uppercase font-bold tracking-wider text-green-600 bg-green-100 px-2 py-0.5 rounded-full">{t.available}</span>
                 </div>
             ) : (
                 <div className="flex flex-row xl:flex-col items-center xl:items-start gap-4 xl:gap-1">
@@ -469,7 +623,7 @@ function EventCard({ event }: { event: Event }) {
                     </span>
 
                     <span className="font-medium leading-tight text-left">
-                        {event.title}
+                        {displayTitle}
                     </span>
                 </div>
             )}
