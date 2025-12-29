@@ -363,11 +363,24 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                         {format(day, 'd MMM', { locale })}
                                     </span>
                                 </div>
-                                {dayEvents.filter(e => e.type === 'Surgery').length > 0 && (
-                                    <span className="text-xs font-normal italic text-gray-600 mt-1">
-                                        ({t.surgeriesToday} {dayEvents.filter(e => e.type === 'Surgery').length})
-                                    </span>
-                                )}
+                                {(() => {
+                                    const surgeryCount = dayEvents.filter(e => e.type === 'Surgery').reduce((sum, e) => sum + (e.count || 1), 0);
+                                    const examCount = dayEvents.filter(e => e.type === 'Exam').reduce((sum, e) => sum + (e.count || 1), 0);
+                                    const controlCount = dayEvents.filter(e => e.type === 'Control').reduce((sum, e) => sum + (e.count || 1), 0);
+
+                                    const summaries = [];
+                                    if (surgeryCount > 0) summaries.push(`${surgeryCount} ${t.eventTypes.Surgery}`);
+                                    if (examCount > 0) summaries.push(`${examCount} ${t.eventTypes.Exam}`);
+                                    if (controlCount > 0) summaries.push(`${controlCount} ${t.eventTypes.Control}`);
+
+                                    if (summaries.length > 0) {
+                                        return (
+                                            <span className="text-xs font-normal italic text-gray-600 mt-1">
+                                                ({summaries.join(', ')})
+                                            </span>
+                                        );
+                                    }
+                                })()}
                             </h2>
 
                             {/* Content Area */}
@@ -379,31 +392,71 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                     </div>
                                 ) : (
                                     <div className="space-y-3">
-                                        {dayEvents.map(event => {
-                                            const isAvailable = event.type === 'Available';
+                                        {(() => {
+                                            // Group consecutive events of same type
+                                            const groupedEvents: Event[][] = [];
+                                            if (dayEvents.length > 0) {
+                                                let currentGroup = [dayEvents[0]];
 
-                                            // Modified Logic: 
-                                            // If Available, expire 5 minutes before END (not at start).
-                                            // Else, standard "past" check (at start).
-                                            const isPast = isAvailable
-                                                ? isBefore(subMinutes(new Date(event.end), 5), new Date())
-                                                : isBefore(new Date(event.start), new Date());
-                                            const isDisabled = isAvailable && isPast;
+                                                for (let i = 1; i < dayEvents.length; i++) {
+                                                    const prev = currentGroup[currentGroup.length - 1];
+                                                    const curr = dayEvents[i];
 
-                                            return (
-                                                <div
-                                                    key={event.id}
-                                                    onClick={() => !isDisabled && handleSlotClick(event)}
-                                                    className={clsx(
-                                                        "transition-transform",
-                                                        isAvailable && !isDisabled && "cursor-pointer active:scale-95",
-                                                        isDisabled && "opacity-40 cursor-not-allowed grayscale"
-                                                    )}
-                                                >
-                                                    <EventCard event={event} t={t} />
-                                                </div>
-                                            );
-                                        })}
+                                                    // Group if generic types match (Surgery, Exam, Control)
+                                                    // AND they are consecutive (optional, but grouping usually implies continuity or at least adjacency in list)
+                                                    if (prev.type === curr.type && ['Surgery', 'Exam', 'Control'].includes(curr.type)) {
+                                                        currentGroup.push(curr);
+                                                    } else {
+                                                        groupedEvents.push(currentGroup);
+                                                        currentGroup = [curr];
+                                                    }
+                                                }
+                                                groupedEvents.push(currentGroup);
+                                            }
+
+                                            return groupedEvents.map((group, groupIndex) => {
+                                                const firstEvent = group[0];
+                                                const lastEvent = group[group.length - 1];
+                                                const isGroup = group.length > 1;
+
+                                                // Create a display event that represents the group
+                                                const displayEvent: Event = isGroup ? {
+                                                    ...firstEvent,
+                                                    end: lastEvent.end,
+                                                    // For grouped items, we'll use the generic type name as title
+                                                    title: t.eventTypes[firstEvent.type] || firstEvent.type,
+                                                    count: group.length
+                                                } : firstEvent;
+
+                                                const isAvailable = displayEvent.type === 'Available';
+                                                const isPast = isAvailable
+                                                    ? isBefore(subMinutes(new Date(displayEvent.end), 5), new Date())
+                                                    : isBefore(new Date(displayEvent.start), new Date());
+                                                const isDisabled = isAvailable && isPast;
+
+                                                return (
+                                                    <div
+                                                        key={firstEvent.id + (isGroup ? '-group' : '')}
+                                                        onClick={() => {
+                                                            if (!isDisabled) {
+                                                                // If it's a group, maybe just open the first one? 
+                                                                // Or if it's booked (surgery/exam), handleSlotClick usually does nothing or minimal.
+                                                                // handleSlotClick currently strictly handles 'Available' type only for booking.
+                                                                // For already booked slots, it doesn't do much.
+                                                                handleSlotClick(firstEvent);
+                                                            }
+                                                        }}
+                                                        className={clsx(
+                                                            "transition-transform",
+                                                            isAvailable && !isDisabled && "cursor-pointer active:scale-95",
+                                                            isDisabled && "opacity-40 cursor-not-allowed grayscale"
+                                                        )}
+                                                    >
+                                                        <EventCard event={displayEvent} t={t} />
+                                                    </div>
+                                                );
+                                            });
+                                        })()}
                                     </div>
                                 )}
                             </div>
@@ -600,6 +653,11 @@ function EventCard({ event, t }: { event: Event, t: any }) {
         if (genericTerms.some(term => event.title.includes(term)) || event.title === event.type) {
             displayTitle = t.eventTypes[event.type] || event.title;
         }
+    }
+
+    // Prepend count if grouped
+    if (event.count && event.count > 1) {
+        displayTitle = `${event.count} ${displayTitle}`;
     }
 
     return (

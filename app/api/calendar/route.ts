@@ -109,8 +109,9 @@ export async function GET(request: NextRequest) {
                 const lastInBuffer = buffer[buffer.length - 1];
                 const gap = new Date(current.start).getTime() - new Date(lastInBuffer.end).getTime();
 
-                // Merge if gap < 15 mins
-                if (gap < 15 * 60 * 1000) {
+                // Merge if gap < 15 mins AND types are identical
+                // This prevents "Exam" getting merged into "Control" and disappearing
+                if (gap < 15 * 60 * 1000 && current.type === lastInBuffer.type) {
                     buffer.push(current);
                 } else {
                     mergedEvents.push(createSummaryBlock(buffer));
