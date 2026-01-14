@@ -250,10 +250,17 @@ export async function GET(request: NextRequest) {
             // and 'Cancelled' (already filtered).
             // Actually, we should check if any 'Available' snuck in, but `mergedEvents` are mostly our processed ones.
 
-            let busyIntervals: { start: number, end: number }[] = dayEvents.map(e => ({
-                start: new Date(e.start).getTime(),
-                end: new Date(e.end).getTime()
-            }));
+            let busyIntervals: { start: number, end: number }[] = dayEvents.map(e => {
+                let s = new Date(e.start).getTime();
+                const end = new Date(e.end).getTime();
+
+                // BUFFER: If Surgery, block 10 mins before
+                if (e.type === 'Surgery') {
+                    s -= 10 * 60 * 1000;
+                }
+
+                return { start: s, end };
+            });
 
             // Sort by start time
             busyIntervals.sort((a, b) => a.start - b.start);

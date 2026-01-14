@@ -26,10 +26,17 @@ export function categorizeEvent(
         return 'Cancelled';
     }
 
-    // Check if starts with blocked prefixes
-    const blockedPrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi', 'ℹ️', 'ℹ'];
-    if (blockedPrefixes.some(prefix => turkishLowerTitle.startsWith(prefix))) {
+    // Check if starts with blocked prefixes (Cancelled/Free)
+    const cancelledPrefixes = ['ipt', 'ert', 'iptal', 'ertelendi'];
+    if (cancelledPrefixes.some(prefix => turkishLowerTitle.startsWith(prefix))) {
         return 'Cancelled';
+    }
+
+    // Check if starts with Info prefixes (Busy/Blocked)
+    // User requested these to validly block the calendar
+    const infoPrefixes = ['bilgi', 'ℹ️', 'ℹ'];
+    if (infoPrefixes.some(prefix => turkishLowerTitle.startsWith(prefix))) {
+        return 'Busy';
     }
 
     // Check if contains blocked keywords
