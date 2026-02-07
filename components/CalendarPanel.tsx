@@ -348,7 +348,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                         {/* Bottom Row: Whatsapp Contacts */}
                         <div className="flex gap-2 w-full">
                             <a
-                                href="https://wa.me/905555511578"
+                                href="https://wa.me/905511999963"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex-1 px-3 py-1.5 bg-green-500 text-white text-xs font-semibold rounded-lg hover:bg-green-600 transition-colors shadow-sm flex items-center justify-center gap-1.5 leading-tight"

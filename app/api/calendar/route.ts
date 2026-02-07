@@ -1,11 +1,9 @@
 
-import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
-import { CALENDAR_CONFIG } from '@/lib/calendarConfig';
 import { format, isSameDay, addDays, startOfWeek, endOfWeek, eachDayOfInterval, startOfDay, addMinutes, isBefore, set } from 'date-fns';
 import { toZonedTime, fromZonedTime } from 'date-fns-tz';
 import { tr } from 'date-fns/locale';
-import { categorizeEvent } from '@/lib/eventCategories';
+import { fetchCalendarEvents } from '@/lib/googleCalendar';
 
 // Force dynamic usage
 export const dynamic = 'force-dynamic';
@@ -25,63 +23,48 @@ export async function GET(request: NextRequest) {
         const { searchParams } = new URL(request.url);
         const timeMin = searchParams.get('timeMin') || new Date().toISOString();
 
-        // 1. Initial Auth & Setup
-        // Handle key formatting: replace literal \n with real newlines if present
-        const privateKey = CALENDAR_CONFIG.key.replace(/\\n/g, '\n');
+        // 1. Fetch from local logic (with caching)
+        const apiEvents = await fetchCalendarEvents();
 
-        const auth = new google.auth.GoogleAuth({
-            credentials: {
-                client_email: CALENDAR_CONFIG.email,
-                private_key: privateKey,
-            },
-            scopes: ['https://www.googleapis.com/auth/calendar.readonly'],
-        });
+        // 2. Map to Takvim's internal types
+        // calendar-api categories: surgery, checkup, appointment, blocked
+        // takvim types: Surgery, Control, Exam, Online, Busy, Anesthesia
+        let processedEvents: ProcessedEvent[] = apiEvents.map((event: any) => {
+            let type: ProcessedEvent['type'] = 'Exam';
+            const cat = event.category;
+            const lowerTitle = event.title.toLowerCase();
 
-        const calendar = google.calendar({ version: 'v3', auth });
+            if (cat === 'surgery') type = 'Surgery';
+            else if (cat === 'checkup') type = 'Control';
+            else if (cat === 'blocked') type = 'Busy';
+            else if (cat === 'appointment') {
+                if (lowerTitle.includes('anestezi') || lowerTitle.includes('anesthesia')) {
+                    type = 'Anesthesia';
+                } else if (lowerTitle.includes('online')) {
+                    type = 'Online';
+                } else {
+                    type = 'Exam';
+                }
+            }
 
-        // 2. Fetch Events
-        // Fetch a bit more future to ensure we have enough data for gap calculation
-        const response = await calendar.events.list({
-            calendarId: CALENDAR_CONFIG.calendarId, // Fixed property name
-            timeMin: timeMin,
-            maxResults: 500,
-            singleEvents: true,
-            orderBy: 'startTime',
-        });
-
-        const items = response.data.items || [];
-
-        // 3. Process & Categorize
-        let processedEvents: ProcessedEvent[] = items.map(event => {
-            const start = event.start?.dateTime || event.start?.date || '';
-            const end = event.end?.dateTime || event.end?.date || '';
-            const title = event.summary || 'Meşgul';
-            const color = event.colorId || undefined;
-
-            // Check validity
-            if (!start || !end) return null;
-
-            const category = categorizeEvent(title, color, start, end);
-
+            // Display Title Logic (Strict Privacy)
             let displayTitle = 'Meşgul';
-
-            // STRICT PRIVACY: Map category to generic title
-            if (category === 'Surgery') displayTitle = 'Ameliyat';
-            else if (category === 'Anesthesia') displayTitle = 'Anestezi';
-            else if (category === 'Online') displayTitle = 'Online Görüşme';
-            else if (category === 'Exam') displayTitle = 'Muayene';
-            else if (category === 'Control') displayTitle = 'Kontrol';
-            else if (category === 'Busy') displayTitle = 'Dolu';
+            if (type === 'Surgery') displayTitle = 'Ameliyat';
+            else if (type === 'Anesthesia') displayTitle = 'Anestezi';
+            else if (type === 'Online') displayTitle = 'Online Görüşme';
+            else if (type === 'Exam') displayTitle = 'Muayene';
+            else if (type === 'Control') displayTitle = 'Kontrol';
+            else if (type === 'Busy') displayTitle = 'Dolu';
 
             return {
-                id: event.id || Math.random().toString(),
+                id: event.id,
                 title: displayTitle,
-                patientName: title, // Pass original summary as patientName
-                start,
-                end,
-                type: category
+                patientName: event.title, // Keep original for internal use if needed (checking buffer logic)
+                start: event.start,
+                end: event.end,
+                type: type
             } as ProcessedEvent;
-        }).filter((e): e is ProcessedEvent => e !== null && e.type !== 'Cancelled') as ProcessedEvent[];
+        });
 
         // 4. Merge Logic (Controls & Exams)
 

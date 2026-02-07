@@ -16,33 +16,29 @@ export function categorizeEvent(
         return 'Busy';
     }
 
+
     // ANESTHESIA Check: starts with "anest"
     if (turkishLowerTitle.startsWith('anest')) {
         return 'Anesthesia';
     }
 
-    // BLOCKED: Red events, cancelled/postponed, info, holidays, meetings, etc.
-    if (color === '#dc2127' || color === '#DC2127' || color === '11') { // 11 is 'Tomato' in GCal (often red)
+    // IGNORE/CANCELLED: Red events, or explicit ignore keywords
+    // New Criteria: red color, or starts with: ipt, ert, bilgi, ℹ️, ℹ
+    if (color === '#dc2127' || color === '#DC2127' || color === '11') {
         return 'Cancelled';
     }
 
-    // Check if starts with blocked prefixes (Cancelled/Free)
-    const cancelledPrefixes = ['ipt', 'ert', 'iptal', 'ertelendi'];
+    // Check if starts with ignore/cancelled prefixes
+    const cancelledPrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi', 'ℹ️', 'ℹ'];
     if (cancelledPrefixes.some(prefix => turkishLowerTitle.startsWith(prefix))) {
         return 'Cancelled';
     }
 
-    // Check if starts with Info prefixes (Busy/Blocked)
-    // User requested these to validly block the calendar
-    const infoPrefixes = ['bilgi', 'ℹ️', 'ℹ'];
-    if (infoPrefixes.some(prefix => turkishLowerTitle.startsWith(prefix))) {
+    // BUSY (Dolu): Occupies calendar but not a patient
+    // New Criteria: starts with xxx, izin, kongre, toplantı, off, yokum, cumartesi, pazar, yok, gitmem
+    const busyKeywords = ['xxx', 'izin', 'kongre', 'toplantı', 'off', 'yokum', 'cumartesi', 'pazar', 'hasta görebiliriz', 'hasta görme', 'hasta görelim', 'çıkış', 'yok', 'gitmem', 'vizite'];
+    if (busyKeywords.some(keyword => turkishLowerTitle.includes(keyword))) { // Keeping 'includes' for broader matching as discussed
         return 'Busy';
-    }
-
-    // Check if contains blocked keywords
-    const blockedKeywords = ['izin', 'kongre', 'toplantı', 'off', 'yokum', 'cumartesi', 'pazar', 'hasta görebiliriz', 'hasta görme', 'hasta görelim', 'çıkış', 'yok', 'gitmem', 'vizite'];
-    if (blockedKeywords.some(keyword => turkishLowerTitle.includes(keyword))) {
-        return 'Cancelled';
     }
 
     // ONLINE Check (Specific to Takvim needs)
