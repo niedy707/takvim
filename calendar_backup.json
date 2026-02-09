@@ -21895,6 +21895,7 @@
     "end": "2025-02-01T07:15:00+03:00",
     "category": "checkup",
     "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 18 Ocak 2025\n👉🏻 Kontrol süresi: 14 gün\n👉🏻 bir önceki kontrol zamanı: 25 Ocak 2025 (7 gün)\n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -21923,6 +21924,7 @@
     "end": "2025-02-01T11:15:00+03:00",
     "category": "checkup",
     "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 25 Ocak 2025\n👉🏻 Kontrol süresi: 7 gün\n👉🏻 bir önceki kontrol zamanı: Yok \n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -21932,6 +21934,7 @@
     "end": "2025-02-01T11:30:00+03:00",
     "category": "checkup",
     "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 25 Ocak 2025\n👉🏻 Kontrol süresi: 7 gün\n👉🏻 bir önceki kontrol zamanı: Yok \n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -21941,6 +21944,7 @@
     "end": "2025-02-01T11:45:00+03:00",
     "category": "checkup",
     "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 29 Ekim 2024\n👉🏻 Kontrol süresi: 3 ay\n👉🏻 bir önceki kontrol zamanı: 14 Aralık 2024 (1 ay)\n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -21959,6 +21963,7 @@
     "end": "2025-02-01T12:15:00+03:00",
     "category": "checkup",
     "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 19 Ocak 2025\n👉🏻 Kontrol süresi: 13 gün\n👉🏻 bir önceki kontrol zamanı: 25 Ocak 2025 (6 gün)\n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -21968,6 +21973,7 @@
     "end": "2025-02-01T12:45:00+03:00",
     "category": "checkup",
     "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 18 Ocak 2025\n👉🏻 Kontrol süresi: 14 gün\n👉🏻 bir önceki kontrol zamanı: 25 Ocak 2025 (7 gün)\n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -21977,6 +21983,7 @@
     "end": "2025-02-01T13:00:00+03:00",
     "category": "checkup",
     "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 20 Temmuz 2024\n👉🏻 Kontrol süresi: 6 ay\n👉🏻 bir önceki kontrol zamanı: 31 Ağustos 2024 (1 ay)\n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -21997,6 +22004,7 @@
     "end": "2025-02-01T16:30:00+03:00",
     "category": "checkup",
     "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 26 Ocak 2025\n👉🏻 Kontrol süresi: 6 gün\n👉🏻 bir önceki kontrol zamanı: Yok \n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -48505,6 +48513,8 @@
     "start": "2026-02-09T09:00:00+03:00",
     "end": "2026-02-09T09:15:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 08 Kasım 2025\n👉🏻 Kontrol süresi: 3 ay\n👉🏻 bir önceki kontrol zamanı: 21 Kasım 2025 (13 gün)\n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
@@ -48513,56 +48523,56 @@
     "start": "2026-02-09T09:30:00+03:00",
     "end": "2026-02-09T10:00:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "di26v9vr6fn46t0osv9vps3jo4",
+    "title": "4m Eren kulan",
+    "start": "2026-02-09T10:00:00+03:00",
+    "end": "2026-02-09T10:15:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 27 Ekim 2025\n👉🏻 Kontrol süresi: 3 ay\n👉🏻 bir önceki kontrol zamanı: 22 Aralık 2025 (1 ay)\n\nBu bilgiler gemini tarafından oluşturulmuştur",
     "type": "google"
   },
   {
     "id": "c951hhugb1b7fpfq4707gc4ero",
     "title": "3m Nazmiye ortaoğlan",
-    "start": "2026-02-09T10:45:00+03:00",
-    "end": "2026-02-09T11:00:00+03:00",
+    "start": "2026-02-09T10:15:00+03:00",
+    "end": "2026-02-09T10:30:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "👉🏻 Hastanın ameliyat tarihi: 05 Kasım 2025\n👉🏻 Kontrol süresi: 3 ay\n👉🏻 bir önceki kontrol zamanı: 19 Kasım 2025 (14 gün)\n\nBu bilgiler gemini tarafından oluşturulmuştur",
+    "type": "google"
+  },
+  {
+    "id": "igk6lsc9uiccobr0ahh3f9eed0",
+    "title": "m iy kenan baran",
+    "start": "2026-02-09T10:30:00+03:00",
+    "end": "2026-02-09T10:45:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "kcgc6pg88e27flp3g62p2a1r0c",
     "title": "11.30🔪merve aydın iy yaş 20",
-    "start": "2026-02-09T11:30:00+03:00",
-    "end": "2026-02-09T14:00:00+03:00",
+    "start": "2026-02-09T11:00:00+03:00",
+    "end": "2026-02-09T13:20:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
+    "color": "#ff887c",
+    "location": "1002",
     "description": "85k-ödeme alındı nakit\nSadece kan verdi\ntetkikler tamamlandı onamlar tam",
     "type": "google"
   },
   {
     "id": "70ee7j79u0hgq5m3v9c2s93i04",
     "title": "Anestezi sıla arslanca",
-    "start": "2026-02-09T13:15:00+03:00",
-    "end": "2026-02-09T13:30:00+03:00",
-    "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "lr7c844bvl96gatvo22h9urvig",
-    "title": "m (büşra) irem altıparmak",
     "start": "2026-02-09T13:45:00+03:00",
     "end": "2026-02-09T14:00:00+03:00",
     "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "igk6lsc9uiccobr0ahh3f9eed0",
-    "title": "m iy kenan baran",
-    "start": "2026-02-09T14:00:00+03:00",
-    "end": "2026-02-09T14:15:00+03:00",
-    "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "nqclf1kvuj5u9pttti6h1ccuto",
-    "title": "m iy zeynep engin parmaksız",
-    "start": "2026-02-09T14:15:00+03:00",
-    "end": "2026-02-09T14:30:00+03:00",
-    "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
@@ -48571,26 +48581,25 @@
     "start": "2026-02-09T14:30:00+03:00",
     "end": "2026-02-09T17:00:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
+    "color": "#ff887c",
+    "location": "1005",
     "description": "arapça\nsabiha havalimanı \ngeliş: 8 şubat iniş 19.10\ndönüş: 14 şubat saat 11.35",
+    "type": "google"
+  },
+  {
+    "id": "79usu6njlja6lt9m8qk5m7eboc",
+    "title": "6m Melek duran",
+    "start": "2026-02-10T09:00:00+03:00",
+    "end": "2026-02-10T09:15:00+03:00",
+    "category": "checkup",
     "type": "google"
   },
   {
     "id": "14f6j552tad4obqi9hdh4c4ov8",
     "title": "Op hanife al",
-    "start": "2026-02-10T07:00:00+03:00",
-    "end": "2026-02-10T07:15:00+03:00",
+    "start": "2026-02-10T09:30:00+03:00",
+    "end": "2026-02-10T09:45:00+03:00",
     "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "7dkhigjlqbem4h47ctp0b89u6k",
-    "title": "🔪sıla arslanca iy yaş 19",
-    "start": "2026-02-10T08:00:00+03:00",
-    "end": "2026-02-10T10:30:00+03:00",
-    "category": "surgery",
-    "color": "#46a67a",
-    "description": "85k",
     "type": "google"
   },
   {
@@ -48599,6 +48608,22 @@
     "start": "2026-02-10T10:00:00+03:00",
     "end": "2026-02-10T10:15:00+03:00",
     "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "6hpckuulkqf8h9fbd29irku4a8",
+    "title": "K2 neval demir",
+    "start": "2026-02-10T10:15:00+03:00",
+    "end": "2026-02-10T10:30:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "dsnbai2k93clnfacdka0llvg8g",
+    "title": "Anestezi bahar kuşçi",
+    "start": "2026-02-10T10:30:00+03:00",
+    "end": "2026-02-10T10:45:00+03:00",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -48618,21 +48643,47 @@
     "type": "google"
   },
   {
-    "id": "t916n5nf49cvsh1h1o1epqhot8",
-    "title": "🔪hanife al (büşra) yaş 21",
+    "id": "o76h9124kclp6o98dkt3082q3c",
+    "title": "1,5m elif taş",
     "start": "2026-02-10T11:15:00+03:00",
-    "end": "2026-02-10T13:45:00+03:00",
-    "category": "surgery",
-    "color": "#46a67a",
-    "description": "Tel 5444252140",
+    "end": "2026-02-10T11:30:00+03:00",
+    "category": "appointment",
     "type": "google"
   },
   {
-    "id": "v5obaqone5f2v1jhd7eul4r74o",
-    "title": "Anestezi sudenur talay",
+    "id": "7dkhigjlqbem4h47ctp0b89u6k",
+    "title": "12.00🔪sıla arslanca iy yaş 19",
+    "start": "2026-02-10T12:00:00+03:00",
+    "end": "2026-02-10T14:30:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
+    "description": "85k",
+    "type": "google"
+  },
+  {
+    "id": "gol3oncqn7urc0s2u91ona30pc",
+    "title": "K Sümeyye akşahin",
     "start": "2026-02-10T14:00:00+03:00",
     "end": "2026-02-10T14:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "36kndu1n1nofdc4t5ijufs6ts0",
+    "title": "4m gizem kulan",
+    "start": "2026-02-10T14:15:00+03:00",
+    "end": "2026-02-10T14:30:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "t916n5nf49cvsh1h1o1epqhot8",
+    "title": "14.30🔪hanife al (büşra) yaş 21",
+    "start": "2026-02-10T15:00:00+03:00",
+    "end": "2026-02-10T17:30:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
+    "description": "Tel 5444252140",
     "type": "google"
   },
   {
@@ -48649,6 +48700,30 @@
     "start": "2026-02-11T08:15:00+03:00",
     "end": "2026-02-11T08:30:00+03:00",
     "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "6e2ignafednf9q1gr3qdeuo8ug",
+    "title": "K rojin ipek",
+    "start": "2026-02-11T08:30:00+03:00",
+    "end": "2026-02-11T08:45:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "hvb7ronf1qoukra7qosnffpoek",
+    "title": "K2 esra kayacan",
+    "start": "2026-02-11T08:45:00+03:00",
+    "end": "2026-02-11T09:00:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "cu0vf01ebribpbqseul6k7niqk",
+    "title": "1m Kader şen",
+    "start": "2026-02-11T09:00:00+03:00",
+    "end": "2026-02-11T09:15:00+03:00",
+    "category": "checkup",
     "type": "google"
   },
   {
@@ -48678,6 +48753,14 @@
     "type": "google"
   },
   {
+    "id": "a7u671q8cm6pqbithul90jrv44",
+    "title": "K1 beydanur kösem",
+    "start": "2026-02-12T10:45:00+03:00",
+    "end": "2026-02-12T11:00:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
     "id": "eq1edb33a2rs3o3vcnjih6ibuc",
     "title": "4m Aycan bayraktar",
     "start": "2026-02-12T11:00:00+03:00",
@@ -48702,6 +48785,32 @@
     "type": "google"
   },
   {
+    "id": "j21em2e84jd8mobvr7rtr47vd0",
+    "title": "🔪bahar kuşçi iy REVİZYON yaş 19",
+    "start": "2026-02-12T12:00:00+03:00",
+    "end": "2026-02-12T15:30:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
+    "description": "100k",
+    "type": "google"
+  },
+  {
+    "id": "fv0uvn9j3kub32kqel6s98to10",
+    "title": "Anestezi aleyna nur aksal",
+    "start": "2026-02-13T07:00:00+03:00",
+    "end": "2026-02-13T07:15:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "v5obaqone5f2v1jhd7eul4r74o",
+    "title": "Anestezi sudenur talay",
+    "start": "2026-02-13T07:15:00+03:00",
+    "end": "2026-02-13T07:30:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
     "id": "t086fvudk85gls6adqb8o4j1pk",
     "title": "🔪aleyna nur aksal iy yaş 24",
     "start": "2026-02-13T08:00:00+03:00",
@@ -48709,6 +48818,14 @@
     "category": "surgery",
     "color": "#46a67a",
     "description": "85k",
+    "type": "google"
+  },
+  {
+    "id": "ibkulefod7vp24q0ip2ijic5lk",
+    "title": "4m Bahar akalan",
+    "start": "2026-02-13T10:00:00+03:00",
+    "end": "2026-02-13T10:15:00+03:00",
+    "category": "checkup",
     "type": "google"
   },
   {
@@ -48736,14 +48853,6 @@
     "type": "google"
   },
   {
-    "id": "a7u671q8cm6pqbithul90jrv44",
-    "title": "K1 beydanur kösem",
-    "start": "2026-02-13T11:15:00+03:00",
-    "end": "2026-02-13T11:30:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
     "id": "l5v4n32dbaj98gc8mdvc0ilc3g",
     "title": "🔪sudenur talay iy yaş 20",
     "start": "2026-02-13T12:00:00+03:00",
@@ -48751,6 +48860,30 @@
     "category": "surgery",
     "color": "#46a67a",
     "description": "85k",
+    "type": "google"
+  },
+  {
+    "id": "egpqpkrrqjn66akid9bmu4dcvs",
+    "title": "m (büşra) engin çinibulak",
+    "start": "2026-02-13T13:45:00+03:00",
+    "end": "2026-02-13T14:00:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "nqclf1kvuj5u9pttti6h1ccuto",
+    "title": "m iy zeynep engin parmaksız saat ?",
+    "start": "2026-02-13T14:00:00+03:00",
+    "end": "2026-02-13T14:15:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "n49o1e2sklcm2jk1hqfm05d9nk",
+    "title": "K buse savaş",
+    "start": "2026-02-13T14:30:00+03:00",
+    "end": "2026-02-13T14:45:00+03:00",
+    "category": "checkup",
     "type": "google"
   },
   {
@@ -48778,6 +48911,14 @@
     "type": "google"
   },
   {
+    "id": "j3bhreldkqcvjfevjsi0r1lrq8",
+    "title": "K1 abderrahim afli",
+    "start": "2026-02-14T07:30:00+03:00",
+    "end": "2026-02-14T07:45:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
     "id": "k6qcpm2cob1dcsklrer6as2h50",
     "title": "🔪monica hernandez rodriguez (medproper)",
     "start": "2026-02-14T08:00:00+03:00",
@@ -48785,6 +48926,14 @@
     "category": "surgery",
     "color": "#46a67a",
     "description": "ispanyolca",
+    "type": "google"
+  },
+  {
+    "id": "bl7aafajsd3j7vhkhb8kmjhuro",
+    "title": "1,5m İlayda nur abaramak",
+    "start": "2026-02-14T09:00:00+03:00",
+    "end": "2026-02-14T09:15:00+03:00",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -48803,6 +48952,14 @@
     "start": "2026-02-16T10:00:00+03:00",
     "end": "2026-02-16T10:15:00+03:00",
     "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "56meesegvsant2mpt7b3mk7iqg",
+    "title": "K1 merve aydın",
+    "start": "2026-02-16T10:30:00+03:00",
+    "end": "2026-02-16T10:45:00+03:00",
+    "category": "checkup",
     "type": "google"
   },
   {
@@ -48847,6 +49004,22 @@
     "start": "2026-02-17T11:00:00+03:00",
     "end": "2026-02-17T11:15:00+03:00",
     "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "0ee99aknet04lofbsim3s7tugg",
+    "title": "6m 2x muhammet bağrıyanık",
+    "start": "2026-02-17T11:15:00+03:00",
+    "end": "2026-02-17T11:45:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "6bppmj07i3cist0vbthu77v02s",
+    "title": "6m yasin gülger",
+    "start": "2026-02-17T11:45:00+03:00",
+    "end": "2026-02-17T12:00:00+03:00",
+    "category": "checkup",
     "type": "google"
   },
   {
@@ -48954,6 +49127,14 @@
     "title": "anestezi fikriye yudum bilgin",
     "start": "2026-03-06T11:15:00+03:00",
     "end": "2026-03-06T11:30:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "8oqr0ontg403f570pup6htqsos",
+    "title": "1,5m Rahime nur savklı saat?",
+    "start": "2026-03-06T13:00:00+03:00",
+    "end": "2026-03-06T13:15:00+03:00",
     "category": "appointment",
     "type": "google"
   },
