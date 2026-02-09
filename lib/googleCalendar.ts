@@ -1,6 +1,8 @@
 import { google } from 'googleapis';
 import { CALENDAR_CONFIG } from './calendarConfig';
 import { categorizeEvent } from './classification';
+import fs from 'fs';
+import path from 'path';
 
 // Cache Interface
 interface CacheEntry {
@@ -11,6 +13,21 @@ interface CacheEntry {
 // Global Cache Variables
 let eventsCache: CacheEntry | null = null;
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+// Backup File Path
+// Use a generic name or project-specific name?
+// process.cwd() will be different for each project.
+// We'll use a generic name 'calendar_events_backup.json' or stick to 'panel_response_final.json' if that's critical?
+// 'panel' uses 'panel_response_final.json'. 'takvim' might use something else.
+// Let's make it generic 'calendar_backup.json' but for now to be safe and compatible with existing panel logic if it relies on specific filenames (which it sort of implies), 
+// actually panel's code used 'panel_response_final.json'.
+// Let's use 'calendar_data_backup.json' as a standard moving forward, but I should check if Panel relies on that specific filename elsewhere.
+// Use 'panel_response_final.json' for now as it was used in Panel.
+// Wait, 'takvim' project might not want 'panel_...' filename.
+// Ideally, the filename should be configurable or just generic.
+// Let's use 'calendar_backup.json'.
+
+const BACKUP_FILE_PATH = path.join(process.cwd(), 'calendar_backup.json');
 
 // Helper to classify/process raw events
 function processEvents(rawEvents: any[]) {
@@ -41,12 +58,14 @@ function processEvents(rawEvents: any[]) {
             color: color,
             location: event.location,
             description: event.description,
+            // Add type for frontend compatibility
+            type: 'google'
         };
     }).filter(Boolean);
 }
 
 export async function fetchCalendarEvents() {
-    // 1. Check Cache
+    // 1. Check Memory Cache
     const now = Date.now();
     if (eventsCache && (now - eventsCache.timestamp < CACHE_TTL)) {
         console.log('Serving events from IN-MEMORY CACHE');
@@ -92,22 +111,41 @@ export async function fetchCalendarEvents() {
         // 4. Process Data
         const processedEvents = processEvents(allEvents);
 
-        // 5. Update Cache
+        // 5. Update Cache & Backup
         eventsCache = {
             data: processedEvents,
             timestamp: now
         };
-        console.log(`Fetched and cached ${processedEvents.length} events.`);
 
+        // Save to Backup File
+        try {
+            fs.writeFileSync(BACKUP_FILE_PATH, JSON.stringify(processedEvents, null, 2));
+            console.log(`Backup saved to ${BACKUP_FILE_PATH}`);
+        } catch (backupError) {
+            console.error('Failed to save backup:', backupError);
+        }
+
+        console.log(`Fetched and cached ${processedEvents.length} events.`);
         return processedEvents;
 
     } catch (error) {
         console.error('Error fetching calendar events:', error);
 
-        // Return stale cache if available on error
+        // Return stale memory cache if available
         if (eventsCache) {
-            console.warn('Returning stale cache due to error.');
+            console.warn('Returning stale memory cache due to error.');
             return eventsCache.data;
+        }
+
+        // Return file backup if available
+        if (fs.existsSync(BACKUP_FILE_PATH)) {
+            console.warn('Returning FILE BACKUP due to API error.');
+            try {
+                const backupData = fs.readFileSync(BACKUP_FILE_PATH, 'utf-8');
+                return JSON.parse(backupData);
+            } catch (readError) {
+                console.error('Failed to read backup file:', readError);
+            }
         }
 
         throw error;
