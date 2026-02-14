@@ -1,5 +1,9 @@
 /**
  * Categorizes calendar events into surgery, checkup, appointment, or blocked
+ * 
+ * Not: Tüm kurallar büyük/küçük harf duyarsızdır ve Türkçe karakter eşleşmesi otomatik yapılır (ı=i, ş=s, ç=c, ö=o, ü=u). 
+ * Varsayılan olarak yukarıdaki kategorilere girmeyen her şey RANDEVU (Appointment) olarak kabul edilir.
+ * 
  * @param title - Event title
  * @param color - Event color (hex)
  * @param start - Event start time (optional)
