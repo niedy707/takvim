@@ -127,17 +127,18 @@ export function calculateControlLabel(surgeryDateStr: string | Date, eventDateSt
 export function normalizeName(name: string): string {
     let n = name.normalize('NFC').toLocaleLowerCase('tr-TR');
 
-    // 1. Remove "tel" and digits
+    // 1. Remove "tel" and digits (and common separators)
     n = n.replace(/tel\s*[:.]?\s*[\d\s]+/gi, ' ');
 
-    // 2. Remove "yas" and digits
+    // 2. Remove "yas"/"yaş" and digits
     n = n.replace(/(yas|yaş)\s*[:.]?\s*\d+/gi, ' ');
 
     // 3. Cut off from specific keywords to the end
     // "yabancı", "ortak", "rino", "kosta", "revizyon"
+    // Also "iy" / "İy"
     // We replace the keyword and everything after it with empty string
     // Added 'sekonder', 'septorin' as likely noise too based on context
-    n = n.replace(/(yabancı|ortak|rino|kosta|revizyon|sekonder|septorin|tiplasti|kbb|implant).*$/gi, '');
+    n = n.replace(/(yabancı|ortak|rino|kosta|revizyon|sekonder|septorin|tiplasti|kbb|implant|iy\s|İy\s).*$/gi, '');
 
     // 4. Standard cleanups
     n = n.replace(/iptal/gi, ' ')
@@ -156,7 +157,7 @@ export function normalizeName(name: string): string {
     // 6. Remove remaining non-word chars
     n = n.replace(/[^\w\s]/g, ' ');
 
-    const ignoredWords = new Set(['anestezi', 'pcr', 'yenidogan', 'yatis', 'yatış', 'plasti', 'plasty', 'op', 'bilgi', 'formu', 'hazırlık', 'dosya', 'dr', 'protokol', 've']);
+    const ignoredWords = new Set(['anestezi', 'pcr', 'yenidogan', 'yatis', 'yatış', 'plasti', 'plasty', 'op', 'bilgi', 'formu', 'hazırlık', 'dosya', 'dr', 'protokol', 've', 'iy']);
 
     return n.trim().split(/\s+/)
         .filter(w => w.length > 1 && !ignoredWords.has(w))
