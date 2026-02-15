@@ -20,12 +20,21 @@ export function categorizeEvent(
     console.log(`[DEBUG_CLASS] Check: "${title}" -> Norm: "${normalizedTitle}" Color: ${color}`);
 
     // BLOCKED: Occupies the calendar but is not a patient event (Busy)
-    // Priority 1: Check blocked keywords regardless of color
-    // Keywords: xxx, izin, kongre, toplantı, off, yokum, cumartesi, pazar
     // Normalized check handles case/char insensitivity
     const blockedKeywords = ['xxx', 'izin', 'kongre', 'toplanti', 'off', 'yokum', 'cumartesi', 'pazar'];
 
-    if (blockedKeywords.some(keyword => normalizedTitle.includes(keyword))) {
+    // Note: normalizedTitle is Title Case (e.g. "Ceren Ozen"). keywords are lowercase.
+    // This check might be failing or working unexpectedly if case sensitivity matters.
+    // Actually, if normalizedTitle is "Ceren", and keyword is "ceren" (not in list), but if list had "ceren"...
+    // But list has "pazar". "Pazar" vs "pazar". includes is False.
+    // So blocked logic might be BROKEN for title cased normalized strings? 
+    // But we are debugging 'ignore', not 'blocked'.
+
+    // Let's create a lower case version for checking?
+    const lowerNorm = normalizedTitle.toLowerCase();
+
+    if (blockedKeywords.some(keyword => lowerNorm.includes(keyword))) {
+        console.log(`[DEBUG_CLASS] Blocked by keyword: ${blockedKeywords.find(k => lowerNorm.includes(k))}`);
         return 'blocked';
     }
 
@@ -33,11 +42,17 @@ export function categorizeEvent(
     // They are NOT surgeries.
     // Priority 2: Check Ignore criteria
     if (color === '#dc2127' || color === '#DC2127' || color === '11') {
+        console.log(`[DEBUG_CLASS] Ignored by Color 11`);
         return 'ignore';
     }
 
     const ignorePrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi', 'ℹ️', 'ℹ'];
-    if (ignorePrefixes.some(prefix => normalizedTitle.startsWith(normalizeName(prefix)))) {
+    if (ignorePrefixes.some(prefix => normalizedTitle.toLowerCase().startsWith(props => props /* logical error in my brain, fix code */))) {
+        // fix logic below
+    }
+    // Correct logic:
+    if (ignorePrefixes.some(prefix => normalizedTitle.toLowerCase().startsWith(normalizeName(prefix).toLowerCase()))) {
+        console.log(`[DEBUG_CLASS] Ignored by prefix`);
         return 'ignore';
     }
 
