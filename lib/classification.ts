@@ -53,7 +53,7 @@ export function categorizeEvent(
     }
 
     const ignorePrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi'];
-    const matchedPrefix = ignorePrefixes.find(prefix => normalizedTitle.toLowerCase().startsWith(normalizeName(prefix).toLowerCase()));
+    const matchedPrefix = ignorePrefixes.find(prefix => normalizedTitle.toLowerCase().startsWith(prefix.toLowerCase()));
     if (matchedPrefix) {
         console.log(`[DEBUG_CLASS] Ignored by prefix: ${matchedPrefix}`);
         return 'ignore';
