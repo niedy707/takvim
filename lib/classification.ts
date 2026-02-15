@@ -197,7 +197,13 @@ export function cleanDisplayName(name: string): string {
     // 6. Remove standalone "iy"
     n = n.replace(/\biy\b/gi, ' ');
 
-    // 7. Final cleanup
-    // Remove repeated spaces and trim
-    return n.replace(/\s+/g, ' ').trim();
+    // 7. Title Case Formatting
+    // Split by spaces, capitalize first letter, lowercase rest (Turkish aware)
+    return n.replace(/\s+/g, ' ').trim()
+        .split(' ')
+        .map(word => {
+            if (!word) return '';
+            return word.charAt(0).toLocaleUpperCase('tr-TR') + word.slice(1).toLocaleLowerCase('tr-TR');
+        })
+        .join(' ');
 }
