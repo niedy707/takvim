@@ -47,10 +47,7 @@ export function categorizeEvent(
     }
 
     const ignorePrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi', 'ℹ️', 'ℹ'];
-    if (ignorePrefixes.some(prefix => normalizedTitle.toLowerCase().startsWith(props => props /* logical error in my brain, fix code */))) {
-        // fix logic below
-    }
-    // Correct logic:
+
     if (ignorePrefixes.some(prefix => normalizedTitle.toLowerCase().startsWith(normalizeName(prefix).toLowerCase()))) {
         console.log(`[DEBUG_CLASS] Ignored by prefix`);
         return 'ignore';
