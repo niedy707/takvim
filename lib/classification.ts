@@ -181,8 +181,8 @@ export function cleanDisplayName(name: string): string {
     // 2. Remove parentheses and content
     n = n.replace(/\([^)]*\)/g, ' ');
 
-    // 3. Remove "tel/telefon" + numbers
-    n = n.replace(/(tel|telefon)\s*[:.]?\s*[\d\s]+/gi, ' ');
+    // 3. Remove "tel/telefon" + numbers (using word boundaries to avoid matching inside names like "Chantelle")
+    n = n.replace(/\b(tel|telefon)\b\s*[:.]?\s*[\d\s]+/gi, ' ');
 
     // 4. Remove standalone "yas/yaş" + 2-digit numbers
     n = n.replace(/\b(yas|yaş)\b\s*[:.]?\s*\d{2}/gi, ' ');
@@ -190,6 +190,8 @@ export function cleanDisplayName(name: string): string {
     // 5. Remove specific keywords (standalone or case-insensitive)
     const keywords = ['Kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka'];
     keywords.forEach(kw => {
+        // Use a more robust check for Turkish characters in boundaries if needed,
+        // but \b usually works for space/punctuation.
         const regex = new RegExp(`\\b${kw}\\b`, 'gi');
         n = n.replace(regex, ' ');
     });
