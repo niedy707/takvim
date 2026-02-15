@@ -154,8 +154,8 @@ export function normalizeName(name: string): string {
         .replace(/ü/g, 'u')
         .replace(/ğ/g, 'g');
 
-    // 6. Remove remaining non-word chars
-    n = n.replace(/[^\w\s]/g, ' ');
+    // 6. Remove remaining non-word chars (but KEEP unicode letters)
+    n = n.replace(/[^\p{L}\s\d]/gu, ' ');
 
     const ignoredWords = new Set(['anestezi', 'pcr', 'yenidogan', 'yatis', 'yatış', 'plasti', 'plasty', 'op', 'bilgi', 'formu', 'hazırlık', 'dosya', 'dr', 'protokol', 've', 'iy']);
 
