@@ -185,19 +185,19 @@ export function cleanDisplayName(name: string): string {
     n = n.replace(/\b(tel|telefon)\b\s*[:.]?\s*[\d\s]+/gi, ' ');
 
     // 4. Remove standalone "yas/yaş" + 2-digit numbers
-    n = n.replace(/\b(yas|yaş)\b\s*[:.]?\s*\d{2}/gi, ' ');
+    // Using Unicode property escapes for Turkish character support in word boundaries
+    n = n.replace(/(?<!\p{L})(yas|yaş)(?!\p{L})\s*[:.]?\s*\d{2}/gui, ' ');
 
     // 5. Remove specific keywords (standalone or case-insensitive)
     const keywords = ['Kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka'];
     keywords.forEach(kw => {
-        // Use a more robust check for Turkish characters in boundaries if needed,
-        // but \b usually works for space/punctuation.
-        const regex = new RegExp(`\\b${kw}\\b`, 'gi');
+        // Use Unicode property escapes for boundaries
+        const regex = new RegExp(`(?<!\\p{L})${kw}(?!\\p{L})`, 'gui');
         n = n.replace(regex, ' ');
     });
 
     // 6. Remove standalone "iy"
-    n = n.replace(/\biy\b/gi, ' ');
+    n = n.replace(/(?<!\p{L})iy(?!\p{L})/gui, ' ');
 
     // 7. Title Case Formatting
     // Split by spaces, capitalize first letter, lowercase rest (Turkish aware)
