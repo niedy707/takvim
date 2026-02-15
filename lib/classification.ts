@@ -184,8 +184,8 @@ export function cleanDisplayName(name: string): string {
     // 3. Remove "tel/telefon" + numbers
     n = n.replace(/(tel|telefon)\s*[:.]?\s*[\d\s]+/gi, ' ');
 
-    // 4. Remove "yas/yaş" + 2-digit numbers
-    n = n.replace(/(yas|yaş)\s*[:.]?\s*\d{2}/gi, ' ');
+    // 4. Remove standalone "yas/yaş" + 2-digit numbers
+    n = n.replace(/\b(yas|yaş)\b\s*[:.]?\s*\d{2}/gi, ' ');
 
     // 5. Remove specific keywords (standalone or case-insensitive)
     const keywords = ['Kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka'];
