@@ -53,6 +53,18 @@ export function categorizeEvent(
     }
 
     const ignorePrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi'];
+
+    // VERBOSE DEBUG LOOP
+    ignorePrefixes.forEach(p => {
+        const lowerNorm = normalizedTitle.toLowerCase();
+        const lowerPrefix = p.toLowerCase();
+        const match = lowerNorm.startsWith(lowerPrefix);
+        if (match) {
+            console.log(`[DEBUG_EXTREME] MATCH FOUND! "${normalizedTitle}" (${lowerNorm}) STARTS WITH "${p}" (${lowerPrefix})`);
+        }
+        // console.log(`[DEBUG_TRACE] "${lowerNorm}" vs "${lowerPrefix}" -> ${match}`);
+    });
+
     const matchedPrefix = ignorePrefixes.find(prefix => normalizedTitle.toLowerCase().startsWith(prefix.toLowerCase()));
     if (matchedPrefix) {
         console.log(`[DEBUG_CLASS] Ignored by prefix: ${matchedPrefix}`);
