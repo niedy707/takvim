@@ -188,14 +188,14 @@ export function cleanDisplayName(name: string): string {
     // Using Unicode property escapes for Turkish character support in word boundaries
     n = n.replace(/(?<!\p{L})(yas|yaş)(?!\p{L})\s*[:.]?\s*\d{2}/gui, ' ');
 
-    // 5. Remove specific keywords and "iy" (using robust normalized comparison)
-    const noiseKeywords = new Set(['kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka', 'iy']);
+    // 5. Remove specific keywords and "iy" 
+    const noise = ['kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka', 'iy'];
 
     // Split into words, filter out noise, then join back
     n = n.split(/\s+/)
         .filter(word => {
-            const normalizedWord = normalizeName(word).toLowerCase();
-            return !noiseKeywords.has(normalizedWord);
+            const low = word.toLocaleLowerCase('tr-TR');
+            return !noise.includes(low);
         })
         .join(' ');
 
