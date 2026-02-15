@@ -41,7 +41,6 @@ export function categorizeEvent(
     // They are NOT surgeries.
     // Priority 2: Check Ignore criteria
     if (color === '#dc2127' || color === '#DC2127' || color === '11') {
-        console.log(`[DEBUG_CLASS] Ignored by Color 11`);
         return 'ignore';
     }
 
