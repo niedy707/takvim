@@ -24,12 +24,6 @@ export function categorizeEvent(
 
     // Note: normalizedTitle is Title Case (e.g. "Ceren Ozen"). keywords are lowercase.
     // This check might be failing or working unexpectedly if case sensitivity matters.
-    // Actually, if normalizedTitle is "Ceren", and keyword is "ceren" (not in list), but if list had "ceren"...
-    // But list has "pazar". "Pazar" vs "pazar". includes is False.
-    // So blocked logic might be BROKEN for title cased normalized strings? 
-    // But we are debugging 'ignore', not 'blocked'.
-
-    // Let's create a lower case version for checking?
     const lowerNorm = normalizedTitle.toLowerCase();
 
     if (blockedKeywords.some(keyword => lowerNorm.includes(keyword))) {
@@ -50,25 +44,11 @@ export function categorizeEvent(
     }
 
     const ignorePrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi'];
-
-    // VERBOSE DEBUG LOOP
-    ignorePrefixes.forEach(p => {
-        const lowerNorm = normalizedTitle.toLowerCase();
-        const lowerPrefix = p.toLowerCase();
-        const match = lowerNorm.startsWith(lowerPrefix);
-        if (match) {
-            console.log(`[DEBUG_EXTREME] MATCH FOUND! "${normalizedTitle}" (${lowerNorm}) STARTS WITH "${p}" (${lowerPrefix})`);
-        }
-        // console.log(`[DEBUG_TRACE] "${lowerNorm}" vs "${lowerPrefix}" -> ${match}`);
-    });
-
     const matchedPrefix = ignorePrefixes.find(prefix => normalizedTitle.toLowerCase().startsWith(prefix.toLowerCase()));
     if (matchedPrefix) {
         console.log(`[DEBUG_CLASS] Ignored by prefix: ${matchedPrefix}`);
         return 'ignore';
     }
-
-    // REMOVED: ignoreKeywords check ("hasta görebiliriz", etc.) as requested.
 
     // Calculate duration in minutes if start/end exist
     let durationMinutes = 0;
@@ -95,8 +75,6 @@ export function categorizeEvent(
         }
     }
 
-    // REMOVED: Implicit Surgery by Duration (>= 60 mins) as requested.
-
     // CHECKUP: k, k1, k2, or patterns like "1m ", "3m ", "1.5m " (with space after)
     if (/^[kK]\d?/.test(title) || /^\d+\.?\d*m\s/.test(normalizedTitle) || normalizedTitle.includes('kontrol')) {
         return 'checkup';
@@ -113,13 +91,6 @@ export function categorizeEvent(
 
 /**
  * Calculates the control label based on time difference between surgery and event.
- * Rules:
- * - < 7 days: returns days (e.g. "3d")
- * - 7-25 days: returns weeks, rounded to nearest integer (e.g. "2w")
- * - > 25 days: returns months, rounded to nearest 0.5 (e.g. "1m", "1.5m", "2m")
- * 
- * @param surgeryDateStr - Surgery Date (YYYY-MM-DD or comparable)
- * @param eventDateStr - Event Date (YYYY-MM-DD or comparable)
  */
 export function calculateControlLabel(surgeryDateStr: string | Date, eventDateStr: string | Date): string {
     const surgeryDate = new Date(surgeryDateStr);
@@ -162,10 +133,6 @@ export function normalizeName(name: string): string {
     n = n.replace(/(yas|yaş)\s*[:.]?\s*\d+/gi, ' ');
 
     // 3. Cut off from specific keywords to the end
-    // "yabancı", "ortak", "rino", "kosta", "revizyon"
-    // Also "iy" / "İy"
-    // We replace the keyword and everything after it with empty string
-    // Added 'sekonder', 'septorin' as likely noise too based on context
     n = n.replace(/(yabancı|ortak|rino|kosta|revizyon|sekonder|septorin|tiplasti|kbb|implant|iy\s|İy\s).*$/gi, '');
 
     // 4. Standard cleanups
@@ -187,36 +154,50 @@ export function normalizeName(name: string): string {
 
     const ignoredWords = new Set(['anestezi', 'pcr', 'yenidogan', 'yatis', 'yatış', 'plasti', 'plasty', 'op', 'bilgi', 'formu', 'hazırlık', 'dosya', 'dr', 'protokol', 've', 'iy']);
 
-     * - Remove "yas" or "yaş" followed by a 2 - digit age
-        * - Remove specific keywords: Kosta, kostalı, rino, revizyon, ortak, vaka
-            */
-    export function cleanDisplayName(name: string): string {
-        let n = name.normalize('NFC');
+    return n.trim().split(/\s+/)
+        .filter(w => w.length > 1 && !ignoredWords.has(w))
+        .map(w => w.charAt(0).toLocaleUpperCase('tr-TR') + w.slice(1))
+        .join(' ');
+}
 
-        // 1. Remove emoji and time
-        n = n.replace(/🔪/g, ' ')
-            .replace(/\d{1,2}[:.]\d{2}/g, ' ');
+/**
+ * Cleans the display name for storage and UI while preserving original characters and case.
+ * Rules:
+ * - Remove emoji 🔪
+ * - Remove time patterns (e.g. 09:00, 14.30)
+ * - Remove parentheses and their content: (abc)
+ * - Remove standalone word "iy" (case-insensitive)
+ * - Remove "tel" or "telefon" followed by digits
+ * - Remove "yas" or "yaş" followed by a 2-digit age
+ * - Remove specific keywords: Kosta, kostalı, rino, revizyon, ortak, vaka
+ */
+export function cleanDisplayName(name: string): string {
+    let n = name.normalize('NFC');
 
-        // 2. Remove parentheses and content
-        n = n.replace(/\([^)]*\)/g, ' ');
+    // 1. Remove emoji and time
+    n = n.replace(/🔪/g, ' ')
+        .replace(/\d{1,2}[:.]\d{2}/g, ' ');
 
-        // 3. Remove "tel/telefon" + numbers
-        n = n.replace(/(tel|telefon)\s*[:.]?\s*[\d\s]+/gi, ' ');
+    // 2. Remove parentheses and content
+    n = n.replace(/\([^)]*\)/g, ' ');
 
-        // 4. Remove "yas/yaş" + 2-digit numbers
-        n = n.replace(/(yas|yaş)\s*[:.]?\s*\d{2}/gi, ' ');
+    // 3. Remove "tel/telefon" + numbers
+    n = n.replace(/(tel|telefon)\s*[:.]?\s*[\d\s]+/gi, ' ');
 
-        // 5. Remove specific keywords (standalone or case-insensitive)
-        const keywords = ['Kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka'];
-        keywords.forEach(kw => {
-            const regex = new RegExp(`\\b${kw}\\b`, 'gi');
-            n = n.replace(regex, ' ');
-        });
+    // 4. Remove "yas/yaş" + 2-digit numbers
+    n = n.replace(/(yas|yaş)\s*[:.]?\s*\d{2}/gi, ' ');
 
-        // 6. Remove standalone "iy"
-        n = n.replace(/\biy\b/gi, ' ');
+    // 5. Remove specific keywords (standalone or case-insensitive)
+    const keywords = ['Kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka'];
+    keywords.forEach(kw => {
+        const regex = new RegExp(`\\b${kw}\\b`, 'gi');
+        n = n.replace(regex, ' ');
+    });
 
-        // 7. Final cleanup
-        // Remove repeated spaces and trim
-        return n.replace(/\s+/g, ' ').trim();
-    }
+    // 6. Remove standalone "iy"
+    n = n.replace(/\biy\b/gi, ' ');
+
+    // 7. Final cleanup
+    // Remove repeated spaces and trim
+    return n.replace(/\s+/g, ' ').trim();
+}
