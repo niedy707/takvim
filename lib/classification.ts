@@ -46,10 +46,15 @@ export function categorizeEvent(
         return 'ignore';
     }
 
-    const ignorePrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi', 'ℹ️', 'ℹ'];
+    // Check symbols on raw title first (before normalization strips them)
+    if (title.includes('ℹ️') || title.includes('ℹ')) {
+        console.log(`[DEBUG_CLASS] Ignored by Symbol ℹ️`);
+        return 'ignore';
+    }
 
+    const ignorePrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi'];
     if (ignorePrefixes.some(prefix => normalizedTitle.toLowerCase().startsWith(normalizeName(prefix).toLowerCase()))) {
-        console.log(`[DEBUG_CLASS] Ignored by prefix`);
+        console.log(`[DEBUG_CLASS] Ignored by prefix: ${prefix}`);
         return 'ignore';
     }
 
