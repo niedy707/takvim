@@ -48,7 +48,6 @@ export function categorizeEvent(
 
     // Check symbols on raw title first (before normalization strips them)
     if (title.includes('ℹ️') || title.includes('ℹ')) {
-        console.log(`[DEBUG_CLASS] Ignored by Symbol ℹ️`);
         return 'ignore';
     }
 
