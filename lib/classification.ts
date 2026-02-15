@@ -17,6 +17,7 @@ export function categorizeEvent(
     end?: Date | string
 ): 'surgery' | 'checkup' | 'appointment' | 'blocked' | 'ignore' {
     const normalizedTitle = normalizeName(title);
+    // console.log(`[DEBUG_CLASS] Check: "${title}" -> Norm: "${normalizedTitle}" Color: ${color}`);
 
     // BLOCKED: Occupies the calendar but is not a patient event (Busy)
     // Priority 1: Check blocked keywords regardless of color
