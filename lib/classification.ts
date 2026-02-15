@@ -187,8 +187,45 @@ export function normalizeName(name: string): string {
 
     const ignoredWords = new Set(['anestezi', 'pcr', 'yenidogan', 'yatis', 'yatış', 'plasti', 'plasty', 'op', 'bilgi', 'formu', 'hazırlık', 'dosya', 'dr', 'protokol', 've', 'iy']);
 
-    return n.trim().split(/\s+/)
-        .filter(w => w.length > 1 && !ignoredWords.has(w))
-        .map(w => w.charAt(0).toLocaleUpperCase('tr-TR') + w.slice(1))
-        .join(' ');
-}
+
+    /**
+     * Cleans the display name for storage and UI while preserving original characters and case.
+     * Rules:
+     * - Remove emoji 🔪
+     * - Remove time patterns (e.g. 09:00, 14.30)
+     * - Remove parentheses and their content: (abc)
+     * - Remove standalone word "iy" (case-insensitive)
+     * - Remove "tel" or "telefon" followed by digits
+     * - Remove "yas" or "yaş" followed by a 2-digit age
+     * - Remove specific keywords: Kosta, kostalı, rino, revizyon, ortak, vaka
+     */
+    export function cleanDisplayName(name: string): string {
+        let n = name.normalize('NFC');
+
+        // 1. Remove emoji and time
+        n = n.replace(/🔪/g, ' ')
+            .replace(/\d{1,2}[:.]\d{2}/g, ' ');
+
+        // 2. Remove parentheses and content
+        n = n.replace(/\([^)]*\)/g, ' ');
+
+        // 3. Remove "tel/telefon" + numbers
+        n = n.replace(/(tel|telefon)\s*[:.]?\s*[\d\s]+/gi, ' ');
+
+        // 4. Remove "yas/yaş" + 2-digit numbers
+        n = n.replace(/(yas|yaş)\s*[:.]?\s*\d{2}/gi, ' ');
+
+        // 5. Remove specific keywords (standalone or case-insensitive)
+        const keywords = ['Kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka'];
+        keywords.forEach(kw => {
+            const regex = new RegExp(`\\b${kw}\\b`, 'gi');
+            n = n.replace(regex, ' ');
+        });
+
+        // 6. Remove standalone "iy"
+        n = n.replace(/\biy\b/gi, ' ');
+
+        // 7. Final cleanup
+        // Remove repeated spaces and trim
+        return n.replace(/\s+/g, ' ').trim();
+    }
