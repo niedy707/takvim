@@ -188,18 +188,16 @@ export function cleanDisplayName(name: string): string {
     // Using Unicode property escapes for Turkish character support in word boundaries
     n = n.replace(/(?<!\p{L})(yas|yaş)(?!\p{L})\s*[:.]?\s*\d{2}/gui, ' ');
 
-    // 5. Remove specific keywords (standalone or case-insensitive)
-    // We use a more aggressive approach: look for the keyword surrounded by non-letters or string boundaries
-    const keywords = ['Kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka'];
-    keywords.forEach(kw => {
-        // Using word boundary alternative that works with Turkish characters
-        // We match any instance of the word that is not surrounded by letters
-        const regex = new RegExp(`(^|[^\\p{L}])${kw}(?![\\p{L}])`, 'gui');
-        n = n.replace(regex, '$1 ');
-    });
+    // 5. Remove specific keywords and "iy" (using robust normalized comparison)
+    const noiseKeywords = new Set(['kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka', 'iy']);
 
-    // 6. Remove standalone "iy"
-    n = n.replace(/(^|[^\p{L}])iy(?![\p{L}])/gui, '$1 ');
+    // Split into words, filter out noise, then join back
+    n = n.split(/\s+/)
+        .filter(word => {
+            const normalizedWord = normalizeName(word).toLowerCase();
+            return !noiseKeywords.has(normalizedWord);
+        })
+        .join(' ');
 
     // 7. Title Case Formatting
     // Split by spaces, capitalize first letter, lowercase rest (Turkish aware)
