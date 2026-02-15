@@ -16,18 +16,7 @@ export function categorizeEvent(
     start?: Date | string,
     end?: Date | string
 ): 'surgery' | 'checkup' | 'appointment' | 'blocked' | 'ignore' {
-    const normalize = (text: string) => {
-        return text.toLocaleLowerCase('tr-TR')
-            .replace(/ğ/g, 'g')
-            .replace(/ü/g, 'u')
-            .replace(/ş/g, 's')
-            .replace(/ı/g, 'i')
-            .replace(/İ/g, 'i')
-            .replace(/ö/g, 'o')
-            .replace(/ç/g, 'c');
-    };
-
-    const normalizedTitle = normalize(title);
+    const normalizedTitle = normalizeName(title);
 
     // BLOCKED: Occupies the calendar but is not a patient event (Busy)
     // Priority 1: Check blocked keywords regardless of color
@@ -47,7 +36,7 @@ export function categorizeEvent(
     }
 
     const ignorePrefixes = ['ipt', 'ert', 'iptal', 'ertelendi', 'bilgi', 'ℹ️', 'ℹ'];
-    if (ignorePrefixes.some(prefix => normalizedTitle.startsWith(normalize(prefix)))) {
+    if (ignorePrefixes.some(prefix => normalizedTitle.startsWith(normalizeName(prefix)))) {
         return 'ignore';
     }
 
@@ -125,4 +114,52 @@ export function calculateControlLabel(surgeryDateStr: string | Date, eventDateSt
         const roundedMonths = Math.round(months * 2) / 2;
         return `${roundedMonths}m`;
     }
+}
+
+/**
+ * Normalizes patient names by removing noise (titles, dates, phone numbers, specific keywords).
+ * Implements user-specified rules:
+ * - Case/Char insensitive (Turkish support)
+ * - Remove 'tel' + numbers
+ * - Remove 'yas'/'yaş' + numbers
+ * - Remove specific keywords and everything after ('yabancı', 'ortak', 'rino', 'kosta', 'revizyon'...)
+ */
+export function normalizeName(name: string): string {
+    let n = name.normalize('NFC').toLocaleLowerCase('tr-TR');
+
+    // 1. Remove "tel" and digits
+    n = n.replace(/tel\s*[:.]?\s*[\d\s]+/gi, ' ');
+
+    // 2. Remove "yas" and digits
+    n = n.replace(/(yas|yaş)\s*[:.]?\s*\d+/gi, ' ');
+
+    // 3. Cut off from specific keywords to the end
+    // "yabancı", "ortak", "rino", "kosta", "revizyon"
+    // We replace the keyword and everything after it with empty string
+    // Added 'sekonder', 'septorin' as likely noise too based on context
+    n = n.replace(/(yabancı|ortak|rino|kosta|revizyon|sekonder|septorin|tiplasti|kbb|implant).*$/gi, '');
+
+    // 4. Standard cleanups
+    n = n.replace(/iptal/gi, ' ')
+        .replace(/🔪/g, ' ')
+        .replace(/\([^)]*\)/g, ' ')
+        .replace(/\d{1,2}[:.]\d{2}/g, ' '); // clocks
+
+    // 5. Turkish char normalization aliases
+    n = n.replace(/ı/g, 'i')
+        .replace(/ş/g, 's')
+        .replace(/ç/g, 'c')
+        .replace(/ö/g, 'o')
+        .replace(/ü/g, 'u')
+        .replace(/ğ/g, 'g');
+
+    // 6. Remove remaining non-word chars
+    n = n.replace(/[^\w\s]/g, ' ');
+
+    const ignoredWords = new Set(['anestezi', 'pcr', 'yenidogan', 'yatis', 'yatış', 'plasti', 'plasty', 'op', 'bilgi', 'formu', 'hazırlık', 'dosya', 'dr', 'protokol', 've']);
+
+    return n.trim().split(/\s+/)
+        .filter(w => w.length > 1 && !ignoredWords.has(w))
+        .map(w => w.charAt(0).toLocaleUpperCase('tr-TR') + w.slice(1))
+        .join(' ');
 }
