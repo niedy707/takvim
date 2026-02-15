@@ -187,18 +187,9 @@ export function normalizeName(name: string): string {
 
     const ignoredWords = new Set(['anestezi', 'pcr', 'yenidogan', 'yatis', 'yatış', 'plasti', 'plasty', 'op', 'bilgi', 'formu', 'hazırlık', 'dosya', 'dr', 'protokol', 've', 'iy']);
 
-
-    /**
-     * Cleans the display name for storage and UI while preserving original characters and case.
-     * Rules:
-     * - Remove emoji 🔪
-     * - Remove time patterns (e.g. 09:00, 14.30)
-     * - Remove parentheses and their content: (abc)
-     * - Remove standalone word "iy" (case-insensitive)
-     * - Remove "tel" or "telefon" followed by digits
-     * - Remove "yas" or "yaş" followed by a 2-digit age
-     * - Remove specific keywords: Kosta, kostalı, rino, revizyon, ortak, vaka
-     */
+     * - Remove "yas" or "yaş" followed by a 2 - digit age
+        * - Remove specific keywords: Kosta, kostalı, rino, revizyon, ortak, vaka
+            */
     export function cleanDisplayName(name: string): string {
         let n = name.normalize('NFC');
 
