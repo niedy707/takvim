@@ -20,10 +20,10 @@
 }
 
 body {
-  background: #f0f2f5;
+  background: #020617;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
 }

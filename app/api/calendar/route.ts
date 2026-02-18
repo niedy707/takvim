@@ -120,8 +120,8 @@ export async function GET(request: NextRequest) {
             // User requested: Pazartesi-Cumartesi 08:00 - 22:00
             if (day >= 1 && day <= 6) {
                 return {
-                    start: fromZonedTime(set(zoned, { hours: 8, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone),
-                    end: fromZonedTime(set(zoned, { hours: 22, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone)
+                    start: fromZonedTime(set(zoned, { hours: 8, minutes: 30, seconds: 0, milliseconds: 0 }), timeZone),
+                    end: fromZonedTime(set(zoned, { hours: 21, minutes: 0, seconds: 0, milliseconds: 0 }), timeZone)
                 };
             }
             // Sunday (0)

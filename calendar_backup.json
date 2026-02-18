@@ -69,7 +69,7 @@
     "title": "Leyla Yavuz 08:00-11:00 Rinoplasti",
     "start": "2024-06-28T09:00:00+03:00",
     "end": "2024-06-28T12:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "55 nakit\nşafak\n\n+90 541 947 90 98",
     "type": "google"
@@ -79,7 +79,7 @@
     "title": "Savaş Çevik E29yıl16.02.1995",
     "start": "2024-06-28T12:00:00+03:00",
     "end": "2024-06-28T14:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "ATS+  UPP\n\n21089    601620    SMR                                300    16.22150\n21228    603140    Uvulopalatofarengoplasti                    500    16.77130\n--\nAmeliyat için fiyat bilgisi iletildi. Cevap bekleniyor. Cuma op isteyebilir.\n38bin₺",
     "type": "google"
@@ -133,7 +133,7 @@
   },
   {
     "id": "8hssp4vmc2al8mrn0m8sk5ujrc",
-    "title": "aml Elif Yanar, 08:00",
+    "title": "🔪  Elif Yanar, 08:00",
     "start": "2024-06-29T08:00:00+03:00",
     "end": "2024-06-29T11:00:00+03:00",
     "category": "surgery",
@@ -194,7 +194,7 @@
   },
   {
     "id": "4d63f26ju9rd9ge8jmdcci10e9",
-    "title": "Aml irem naz kabinli",
+    "title": "🔪 iremnaz kabinli",
     "start": "2024-07-01T08:40:00+03:00",
     "end": "2024-07-01T11:30:00+03:00",
     "category": "surgery",
@@ -203,7 +203,7 @@
   },
   {
     "id": "4qnmahh4vdmukjpntfcekbv04h",
-    "title": "Aml Ahmet Köseoğlu",
+    "title": "🔪 Ahmet Köseoğlu",
     "start": "2024-07-01T12:00:00+03:00",
     "end": "2024-07-01T14:30:00+03:00",
     "category": "surgery",
@@ -239,7 +239,7 @@
   },
   {
     "id": "69nv3t5goluq7e5ohogri9p2js",
-    "title": "Aml Doğan Gül SMR",
+    "title": "🔪  Doğan Gül SMR",
     "start": "2024-07-01T15:00:00+03:00",
     "end": "2024-07-01T16:30:00+03:00",
     "category": "surgery",
@@ -249,7 +249,7 @@
   },
   {
     "id": "u52kgiom43ohcn8v6b4q3auu4s",
-    "title": "Aml Merve Demirkol",
+    "title": "🔪  Merve Demirkol",
     "start": "2024-07-02T08:30:00+03:00",
     "end": "2024-07-02T11:30:00+03:00",
     "category": "surgery",
@@ -964,7 +964,7 @@
     "title": "Müsait Değil",
     "start": "2024-07-11T23:17:39+03:00",
     "end": "2024-07-12T00:17:39+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -1140,7 +1140,7 @@
     "title": "ahmet bey kontrol 10uncu gün",
     "start": "2024-07-13T08:00:00+03:00",
     "end": "2024-07-13T08:20:00+03:00",
-    "category": "checkup",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -1250,7 +1250,7 @@
   },
   {
     "id": "2dqpqkih5vqlee26ks61cmqeng",
-    "title": "🔪İlhan coşkun tel no 05416338440",
+    "title": "🔪İlhan coşkun (tel 05416338440)",
     "start": "2024-07-16T11:30:00+03:00",
     "end": "2024-07-16T14:00:00+03:00",
     "category": "surgery",
@@ -1830,7 +1830,7 @@
   },
   {
     "id": "sgdtohv6kcas9tsm9v8oekb7ig",
-    "title": "m | Elifnur tuncer tel 05400022212",
+    "title": "m | Elifnur cebeci tuncer (tel 05400022212)",
     "start": "2024-07-20T14:30:00+03:00",
     "end": "2024-07-20T14:45:00+03:00",
     "category": "appointment",
@@ -1928,7 +1928,7 @@
   },
   {
     "id": "3cqn3r54037fbajim80kmkpgpc",
-    "title": "🔪Beyza nur aydın 05518456048",
+    "title": "🔪Beyzanur aydın 05518456048",
     "start": "2024-07-22T08:45:00+03:00",
     "end": "2024-07-22T11:00:00+03:00",
     "category": "surgery",
@@ -2708,7 +2708,7 @@
     "title": "Sinan Demirsoy Tel. 05532614314",
     "start": "2024-07-29T09:00:00+03:00",
     "end": "2024-07-29T11:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Babasını numarası 05376071725",
     "type": "google"
@@ -3646,7 +3646,7 @@
     "title": "Mehtap Tabağ [iy]",
     "start": "2024-08-06T10:00:00+03:00",
     "end": "2024-08-06T12:30:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Dr yusuf referansı\n--\n40bin ₺ ödeme.\nHekim ödemeli olarak ilerlenecek.\n\nMehtap Tabağ\n542 746 65 96‬",
     "type": "google"
@@ -3736,7 +3736,7 @@
     "title": "Şehraze LAÇİN [iy]",
     "start": "2024-08-06T16:00:00+03:00",
     "end": "2024-08-06T18:30:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Kan verdi\n tel no 05462782678,\n--\nödeme nakit, 35 bin",
     "type": "google"
@@ -3832,7 +3832,7 @@
     "title": "~Eda nur Sertkaya [iy]",
     "start": "2024-08-08T12:45:00+03:00",
     "end": "2024-08-08T15:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Sakaryadan eski hasta referansı ile yazan hasta.\nAynı gün sabahtan gelecek öğleden sonra ameliyat.\n--\n+90 543 637 05 42‬\nEda Nur Sertkaya\n\nÖdeme: 35bin\nHekim ödemeli şekilde ilerlenilecek.",
     "type": "google"
@@ -4077,7 +4077,7 @@
     "title": "[iy] Ecem Dilan Dolaş 533-969-5824",
     "start": "2024-08-11T18:00:00+03:00",
     "end": "2024-08-11T20:15:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "type": "google"
   },
@@ -4151,7 +4151,7 @@
     "title": "Cihan ÖCAL [iy]",
     "start": "2024-08-12T12:15:00+03:00",
     "end": "2024-08-12T14:30:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Ankaradan arkadaşım üniversiteden.\nannes ve abisi 2 hafta önce ameliyat oldu bizde.\n\nFiyat 35 bin.\nnakit ödeme bilgisi verelim.",
     "type": "google"
@@ -4359,7 +4359,7 @@
     "title": "[iy] Lokal Otoplasti | ‪Özge KAPLAN",
     "start": "2024-08-13T18:30:00+03:00",
     "end": "2024-08-13T19:45:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "‪+90 536 816 55 29‬<br>Hasta aç gelmeyecek. <br>17:00 gibi hastaneye gelecek.<br><br><b>Hemogram, INR seroloji </b>görelim işlem öncesi.<br><br>Sağ parsiyel otoplasti<br><br>Hasta vezneye ödeme yapmayacak.<br>Hekim ödemeli",
     "type": "google"
@@ -4396,7 +4396,7 @@
     "title": "Bahar Avcı [iy]",
     "start": "2024-08-14T08:45:00+03:00",
     "end": "2024-08-14T11:15:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "öğretmen \nuçuk nedenli ertelenmişti.\nÖdemeyi BAĞCILAR ŞAFAKTA yapmıştı. kk ile.\n\n tel no 05469745675",
     "type": "google"
@@ -4424,7 +4424,7 @@
     "title": "Ceyda Eyüpreisoğlu [iy]",
     "start": "2024-08-14T12:00:00+03:00",
     "end": "2024-08-14T14:30:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "552 371 18 21\nLivden Osman hemşirenin teyzesi, Kadriye hanımın kızı \n1 gün öncesi 14:00 muayeneye gelecek.\n\nHasta 20 yaşında\n\n--\nAnnesi Kadriye hanım: ‪+90 505 832 64 90‬",
     "type": "google"
@@ -4820,7 +4820,7 @@
     "title": "Linda Azik  [iy]",
     "start": "2024-08-17T12:30:00+03:00",
     "end": "2024-08-17T15:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "541-434-6829\nAynı gün kan verecek",
     "type": "google"
@@ -5077,7 +5077,7 @@
     "title": "Kübra Ünlü [iy]",
     "start": "2024-08-20T08:45:00+03:00",
     "end": "2024-08-20T11:15:00+03:00",
-    "category": "surgery",
+    "category": "checkup",
     "color": "#ff887c",
     "description": "+90 544 586 60 86 \neğri burun\n--\nElif in arkadaşı elif soysal. özkan\n50 binden 40 bine düşüldü. (indirim ama sadece nakit ödeme ile olur.)\n\nsabah 6 da gelecek 8 de ilk sırada ameliyat edilecek.",
     "type": "google"
@@ -5225,7 +5225,7 @@
     "title": "Esmanur çölçınar",
     "start": "2024-08-21T12:00:00+03:00",
     "end": "2024-08-21T14:45:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "KBB hekimi Ümit Kamer in kuzeni. Hastanın abisi çam sakurada PRC doktoru.\n\n\nHastanın abisinin numarası: +90 545 449 80 60 (Dr Abdullah bey)\nHasta no: 05312449223\n\nFoto gönderdiler.",
     "type": "google"
@@ -5307,7 +5307,7 @@
     "title": "Müşerref kırkağaç hocanın livden hastası kontrole geliyor",
     "start": "2024-08-22T07:45:00+03:00",
     "end": "2024-08-22T08:00:00+03:00",
-    "category": "checkup",
+    "category": "appointment",
     "color": "#46a67a",
     "type": "google"
   },
@@ -5371,7 +5371,7 @@
   },
   {
     "id": "sgfg3tqk396mcvrk9vn4vttu54",
-    "title": "revizyon | İlayda yiğit [iy]",
+    "title": "🔪 İlayda yiğit [iy]",
     "start": "2024-08-22T12:30:00+03:00",
     "end": "2024-08-22T15:15:00+03:00",
     "category": "surgery",
@@ -5670,7 +5670,7 @@
   },
   {
     "id": "2tr770etgk9ghioh2noova34ts",
-    "title": "Şevval kaya aml öncesi görüşme",
+    "title": "m Şevval kaya ",
     "start": "2024-08-24T11:00:00+03:00",
     "end": "2024-08-24T11:15:00+03:00",
     "category": "appointment",
@@ -5754,15 +5754,6 @@
     "type": "google"
   },
   {
-    "id": "4t35oh9irrknms1p9pllseh3ug",
-    "title": "İZİN [iy]",
-    "start": "2024-08-25",
-    "end": "2024-08-28",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
     "id": "p3r0j55obv5e0ii3tcs83jhae0",
     "title": "k1 gülten kazancı şen",
     "start": "2024-08-25T08:00:00+03:00",
@@ -5794,26 +5785,8 @@
     "title": "izinliyim",
     "start": "2024-08-25T08:45:00+03:00",
     "end": "2024-08-26T00:00:00+03:00",
-    "category": "blocked",
+    "category": "appointment",
     "color": "#ffb878",
-    "type": "google"
-  },
-  {
-    "id": "2f7rhsmf6gl3nvr1dmt25vnh0i",
-    "title": "izinliyim",
-    "start": "2024-08-26T08:00:00+03:00",
-    "end": "2024-08-26T21:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "5lcom5kr3ses7uf5bhj1q9l1tn",
-    "title": "izinliyim",
-    "start": "2024-08-27T08:00:00+03:00",
-    "end": "2024-08-27T15:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
     "type": "google"
   },
   {
@@ -5894,7 +5867,7 @@
     "title": "İzin",
     "start": "2024-08-27T19:15:00+03:00",
     "end": "2024-08-28T00:30:00+03:00",
-    "category": "blocked",
+    "category": "appointment",
     "color": "#ffb878",
     "type": "google"
   },
@@ -6289,7 +6262,7 @@
   },
   {
     "id": "vv443dnlfght6vrq7ge43ie760",
-    "title": "🔪  Beyza Dilliburun iy",
+    "title": "🔪  Beyza Dilliburun (iy)",
     "start": "2024-08-30T08:45:00+03:00",
     "end": "2024-08-30T11:30:00+03:00",
     "category": "surgery",
@@ -6596,7 +6569,7 @@
     "title": "Rev | leyla yavuz [iy]",
     "start": "2024-09-02T15:15:00+03:00",
     "end": "2024-09-02T17:15:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Hasta ödeme yapmayacak.\nHekim ödemeli şekilde ilerlenecek.\nHasta ameliyat günü sabah gelecek, muayene olacak tetkikler yapılacak. son sırada opere olacak.",
     "type": "google"
@@ -6689,7 +6662,7 @@
     "title": "[iy] Esin Gül Kılınç",
     "start": "2024-09-03T12:00:00+03:00",
     "end": "2024-09-03T14:15:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Ayvalıktan gelecekler.\nFoto gönderdiler.\n\nAnnesi Hülya Kılınç:\n‪+905392691401‬\n\nEylül in 7sine kadar Ağustos fiyatı 35 bin yapılabileceği iletişmiş. (iy)\nBir gün önceden kan verecek",
     "type": "google"
@@ -6717,7 +6690,7 @@
     "title": "Selma İlhan",
     "start": "2024-09-03T14:45:00+03:00",
     "end": "2024-09-03T17:15:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Tel no 0 541 871 55 38\n11 de gelecek\nRino olacak",
     "type": "google"
@@ -6745,7 +6718,7 @@
     "title": "Melek erdoğdu kan vermeye gelecek yarın ameliyatı varr",
     "start": "2024-09-03T19:00:00+03:00",
     "end": "2024-09-03T20:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -6813,7 +6786,7 @@
   },
   {
     "id": "7q09sv8gc1mqh5dmndkss5hard",
-    "title": "[iy] rev rino | Melek Erdoğdu ",
+    "title": "🔪 Melek Erdoğdu (iy) REV",
     "start": "2024-09-04T11:30:00+03:00",
     "end": "2024-09-04T14:30:00+03:00",
     "category": "surgery",
@@ -6891,7 +6864,7 @@
     "title": "Güneş elagöz kan vermeye gelecek",
     "start": "2024-09-04T19:00:00+03:00",
     "end": "2024-09-04T20:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -7002,7 +6975,7 @@
     "title": "Muhammed Toprak (ea)",
     "start": "2024-09-05T15:30:00+03:00",
     "end": "2024-09-05T17:45:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "wa.me/905354836644",
     "type": "google"
@@ -7208,7 +7181,7 @@
     "title": "[iy] nazar toprak",
     "start": "2024-09-07T15:30:00+03:00",
     "end": "2024-09-07T18:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Hastadan ödemenin tamamı alındı. (iy)\nTel no 5442024837\nBir gün önceden kan verecek",
     "type": "google"
@@ -7290,7 +7263,7 @@
     "title": "07:30-08:30 arası kontrol ya da muayene görebilirim.",
     "start": "2024-09-08T06:00:00+03:00",
     "end": "2024-09-08T07:30:00+03:00",
-    "category": "checkup",
+    "category": "surgery",
     "color": "#46d6db",
     "type": "google"
   },
@@ -7524,7 +7497,7 @@
   },
   {
     "id": "9e7aejqp7gfg6phh3h94kqk5po",
-    "title": "[İA] Defne serbest",
+    "title": "🔪 Defne Serbest (iaslan)",
     "start": "2024-09-10T11:45:00+03:00",
     "end": "2024-09-10T14:30:00+03:00",
     "category": "surgery",
@@ -7630,7 +7603,7 @@
     "title": "Jasmine-Chantelle dicks - Rinoplasti",
     "start": "2024-09-11T08:45:00+03:00",
     "end": "2024-09-11T11:15:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "\nBu hastanın tamponu Pazar günü alınmalı. Pazartesi yokum.\nHastanın uçuşu salı sabah 05:00 imiş.",
     "type": "google"
@@ -7855,7 +7828,7 @@
     "title": "yılmaz yılmaz otoplasti (iy)",
     "start": "2024-09-12T15:45:00+03:00",
     "end": "2024-09-12T17:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Liv IT müdürü Mustafa beyin akrabası",
     "type": "google"
@@ -7964,7 +7937,7 @@
     "title": "[iy] Kendal Aydın",
     "start": "2024-09-13T12:00:00+03:00",
     "end": "2024-09-13T14:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "Sabahtan kan vermeye gelecek\nwa.me/905461288355\n\nEski hastamın kayunçosu (iy)",
     "type": "google"
@@ -8047,7 +8020,7 @@
     "title": "[iy] Beyza Yiğit ",
     "start": "2024-09-14T11:15:00+03:00",
     "end": "2024-09-14T13:30:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#3d8b3d",
     "description": "bağcılar şafak anest teknikeri\nBir gün önceden kan vermeye gelecek.\n\nBağcılar anest teknikeri.\n\nwa.me/905312899587",
     "type": "google"
@@ -8316,51 +8289,6 @@
     "type": "google"
   },
   {
-    "id": "5qcpttpus4j1ct9spr7jb89qp7",
-    "title": "İZİNDE",
-    "start": "2024-09-16T00:00:00+03:00",
-    "end": "2024-09-16T16:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "mne10h27i12hmi4g4nci1pkf7g",
-    "title": "İzin {yurtdışı}",
-    "start": "2024-09-16T08:00:00+03:00",
-    "end": "2024-09-19T18:15:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "5jar8291o635bap68ek8v3oom3",
-    "title": "İZİNDE",
-    "start": "2024-09-17T00:00:00+03:00",
-    "end": "2024-09-17T16:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "504s8p2tq1u0nbfd992hb7j9ut",
-    "title": "İZİNDE",
-    "start": "2024-09-18T00:00:00+03:00",
-    "end": "2024-09-18T16:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "34bbm3257senns9ugqacjpogrg",
-    "title": "İZİNDE",
-    "start": "2024-09-19T00:00:00+03:00",
-    "end": "2024-09-19T16:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
     "id": "pb2h7iqv8seopl000mjc91eck4",
     "title": "k1 mahsum bakır",
     "start": "2024-09-20T06:45:00+03:00",
@@ -8511,7 +8439,7 @@
     "title": "rev | Rezan orhan iy",
     "start": "2024-09-20T16:00:00+03:00",
     "end": "2024-09-20T17:15:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "description": "+90 506 333 03 83\n\nİY hastası.\nVandan eski hastam. tipplasti yapılacak.\nHasta sadece ameliyathane kullanım ücreti için veznede ödeme yapacak. 15 bin ₺",
     "type": "google"
@@ -8675,7 +8603,7 @@
     "title": "9ay Süleyman Savaş kontrol",
     "start": "2024-09-21T17:00:00+03:00",
     "end": "2024-09-21T17:15:00+03:00",
-    "category": "checkup",
+    "category": "appointment",
     "color": "#46a67a",
     "description": "ocak 2024 te sinüs ameliyatı.",
     "type": "google"
@@ -8700,7 +8628,7 @@
   },
   {
     "id": "ukkmkj5r8d246u16palfhke2d0",
-    "title": "K2 defne serbest",
+    "title": "K2 Defne Serbest (iaslan)",
     "start": "2024-09-21T17:45:00+03:00",
     "end": "2024-09-21T18:00:00+03:00",
     "category": "checkup",
@@ -8896,7 +8824,7 @@
   },
   {
     "id": "tig2s86tngmi6citdnfh2qcsfo",
-    "title": "m | lina muhammet 05364983673 (j)",
+    "title": "m | lina muhammed 05364983673 (j)",
     "start": "2024-09-23T16:00:00+03:00",
     "end": "2024-09-23T16:15:00+03:00",
     "category": "appointment",
@@ -8991,7 +8919,7 @@
     "title": "FESS Esma Sevindik",
     "start": "2024-09-24T15:15:00+03:00",
     "end": "2024-09-24T17:30:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "type": "google"
   },
@@ -9612,7 +9540,7 @@
     "title": "2,5m arzu haydaroğlu",
     "start": "2024-10-01T08:30:00+03:00",
     "end": "2024-10-01T08:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#fbd75b",
     "type": "google"
   },
@@ -9621,7 +9549,7 @@
     "title": "2,5m adem bingöl",
     "start": "2024-10-01T08:45:00+03:00",
     "end": "2024-10-01T09:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -9893,7 +9821,7 @@
   },
   {
     "id": "eg417qrtaqpnk5qmpjfae3d7io",
-    "title": "k2 defne serbest",
+    "title": "k2 Defne Serbest (iaslan)",
     "start": "2024-10-05T08:00:00+03:00",
     "end": "2024-10-05T08:15:00+03:00",
     "category": "checkup",
@@ -10662,7 +10590,7 @@
   },
   {
     "id": "7tsd002g3lrrt92mrkih4snmio",
-    "title": "1m feyza tekiner",
+    "title": "1m feyzanur tekiner",
     "start": "2024-10-12T17:15:00+03:00",
     "end": "2024-10-12T17:30:00+03:00",
     "category": "checkup",
@@ -10895,7 +10823,7 @@
     "title": "MEsai sonrasına 19:30 a kadar hasta yazlabilir.",
     "start": "2024-10-15T19:15:00+03:00",
     "end": "2024-10-15T21:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#46d6db",
     "type": "google"
   },
@@ -11327,7 +11255,7 @@
     "title": "| Bu hafta 3 vaka yazmayalım (1 ya da 2 uygundur.)",
     "start": "2024-10-21T07:00:00+03:00",
     "end": "2024-10-27T08:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -11727,7 +11655,7 @@
     "title": "-2 büyük oda",
     "start": "2024-10-23T20:15:00+03:00",
     "end": "2024-10-23T23:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#46d6db",
     "type": "google"
   },
@@ -11763,7 +11691,7 @@
     "title": "1,5m . yılmaz yılmaz",
     "start": "2024-10-24T12:15:00+03:00",
     "end": "2024-10-24T12:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -12133,7 +12061,7 @@
   },
   {
     "id": "0d43h3l2b43e5knq69s9f9bkrg",
-    "title": "🔪 Lina Muhammet (ea)",
+    "title": "🔪 Lina Muhammed (ea)",
     "start": "2024-10-28T11:00:00+03:00",
     "end": "2024-10-28T13:30:00+03:00",
     "category": "surgery",
@@ -13504,7 +13432,7 @@
     "title": "1,5m rukiye karahasan",
     "start": "2024-11-11T13:45:00+03:00",
     "end": "2024-11-11T14:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -13991,7 +13919,7 @@
   },
   {
     "id": "sv1c77avi9oba4k763pp21fp48",
-    "title": "🔪Emirhan güler(ea)",
+    "title": "🔪Emirhan güler (ea)",
     "start": "2024-11-15T13:15:00+03:00",
     "end": "2024-11-15T16:30:00+03:00",
     "category": "surgery",
@@ -14542,7 +14470,7 @@
     "title": "1,5m sevilay karslıoğlu",
     "start": "2024-11-20T08:30:00+03:00",
     "end": "2024-11-20T08:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -14626,7 +14554,7 @@
     "title": "1,5m Bahar tulumcu",
     "start": "2024-11-21T12:45:00+03:00",
     "end": "2024-11-21T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -14708,7 +14636,7 @@
     "title": "1,5m nazar karanfil",
     "start": "2024-11-22T09:30:00+03:00",
     "end": "2024-11-22T09:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -14837,7 +14765,7 @@
     "title": "1,5m şevval tutku toplutepe",
     "start": "2024-11-23T10:45:00+03:00",
     "end": "2024-11-23T11:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -14936,7 +14864,7 @@
     "title": "1,5m Tülay Öztürk",
     "start": "2024-11-24T10:45:00+03:00",
     "end": "2024-11-24T11:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -15010,51 +14938,6 @@
     "end": "2024-11-24T13:30:00+03:00",
     "category": "appointment",
     "color": "#46a67a",
-    "type": "google"
-  },
-  {
-    "id": "2p0b7uq645q98rqe5d1iaqn35n",
-    "title": "İZİN",
-    "start": "2024-11-25T00:00:00+03:00",
-    "end": "2024-11-25T23:30:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "6osd0k43gsmotoeolpdvrcimod",
-    "title": "İZİN",
-    "start": "2024-11-26T00:00:00+03:00",
-    "end": "2024-11-26T23:30:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "7pn7bmr72k606b1s419pr5si10",
-    "title": "İZİN",
-    "start": "2024-11-27T00:00:00+03:00",
-    "end": "2024-11-27T23:30:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "2qr23lre5tov7urlm7bf2eketv",
-    "title": "İZİN",
-    "start": "2024-11-28T00:00:00+03:00",
-    "end": "2024-11-28T23:30:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "6n3veakp9446kpgcrq0ef29c1r",
-    "title": "İZİN",
-    "start": "2024-11-29T00:00:00+03:00",
-    "end": "2024-11-29T23:30:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
     "type": "google"
   },
   {
@@ -15400,7 +15283,7 @@
     "title": "1,5m sıla ünlü",
     "start": "2024-12-01T16:45:00+03:00",
     "end": "2024-12-01T17:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -15896,7 +15779,7 @@
   },
   {
     "id": "0a7ath74dha4qqp5ektj98bi68",
-    "title": "m | nur yalmaç (ea)",
+    "title": "m | nuriya yalmaç (ea)",
     "start": "2024-12-06T12:15:00+03:00",
     "end": "2024-12-06T12:30:00+03:00",
     "category": "appointment",
@@ -16231,7 +16114,7 @@
     "title": "1,5m Suğdenaz Akalın",
     "start": "2024-12-09T13:45:00+03:00",
     "end": "2024-12-09T14:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -16444,7 +16327,7 @@
     "title": "1,5m melinay sekizkardeş",
     "start": "2024-12-11T11:15:00+03:00",
     "end": "2024-12-11T11:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -16480,7 +16363,7 @@
     "title": "1,5m lina muhammed",
     "start": "2024-12-11T13:30:00+03:00",
     "end": "2024-12-11T13:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -16576,7 +16459,7 @@
     "title": "1,5m Elif yalman",
     "start": "2024-12-12T14:45:00+03:00",
     "end": "2024-12-12T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -16686,7 +16569,7 @@
     "title": "1,5m Aleyna Yürektürk",
     "start": "2024-12-13T15:15:00+03:00",
     "end": "2024-12-13T15:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -16953,7 +16836,7 @@
     "title": "1,5m Kübra Beyazkaya",
     "start": "2024-12-15T08:30:00+03:00",
     "end": "2024-12-15T08:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -17035,7 +16918,7 @@
     "title": "1,5m yusuf hışt",
     "start": "2024-12-15T11:45:00+03:00",
     "end": "2024-12-15T12:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -17402,7 +17285,7 @@
   },
   {
     "id": "0qn97ra9re4lm8tr766ehscj2g",
-    "title": "🔪 Ahmet Bakır ea",
+    "title": "🔪 Ahmet kerem Bakır (ea)",
     "start": "2024-12-18T15:15:00+03:00",
     "end": "2024-12-18T17:45:00+03:00",
     "category": "surgery",
@@ -17478,7 +17361,7 @@
     "title": "1,5m mert can ekici",
     "start": "2024-12-19T13:15:00+03:00",
     "end": "2024-12-19T13:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -17710,7 +17593,7 @@
     "title": "1,5m fatma erkun",
     "start": "2024-12-21T15:00:00+03:00",
     "end": "2024-12-21T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -18347,7 +18230,7 @@
     "title": "1,5m Burcu bulut armağan",
     "start": "2024-12-27T07:45:00+03:00",
     "end": "2024-12-27T08:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -18523,7 +18406,7 @@
     "title": "1,5m baran bulut",
     "start": "2024-12-28T11:30:00+03:00",
     "end": "2024-12-28T11:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -18561,7 +18444,7 @@
     "title": "1,5m ayşegül Kurtay",
     "start": "2024-12-28T15:00:00+03:00",
     "end": "2024-12-28T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -18708,7 +18591,7 @@
     "title": "1,5m ibrahim sezgin",
     "start": "2024-12-30T15:00:00+03:00",
     "end": "2024-12-30T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -19019,7 +18902,7 @@
     "title": "Meryem elma (dr ece nin hastası) rino",
     "start": "2025-01-02T17:45:00+03:00",
     "end": "2025-01-02T19:15:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "type": "google"
   },
@@ -19626,7 +19509,7 @@
     "title": "1,5m goncagül kan",
     "start": "2025-01-07T15:00:00+03:00",
     "end": "2025-01-07T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -19635,7 +19518,7 @@
     "title": "1,5m medine demir",
     "start": "2025-01-07T15:15:00+03:00",
     "end": "2025-01-07T15:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -19845,7 +19728,7 @@
     "title": "1,5m Zeki dikgitmez",
     "start": "2025-01-10T08:00:00+03:00",
     "end": "2025-01-10T08:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -19889,7 +19772,7 @@
   },
   {
     "id": "imef9am7enqrhpgddtbou61btc",
-    "title": "m | sevdenur tuncer ŞD 5355724308",
+    "title": "m | sevdenur tuncay (ŞD) 5355724308",
     "start": "2025-01-10T11:45:00+03:00",
     "end": "2025-01-10T12:00:00+03:00",
     "category": "appointment",
@@ -20051,7 +19934,7 @@
     "title": "1,5m aslıhan tursun",
     "start": "2025-01-11T14:30:00+03:00",
     "end": "2025-01-11T14:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -20488,7 +20371,7 @@
     "title": "1,5m sabriye özdemir",
     "start": "2025-01-16T12:15:00+03:00",
     "end": "2025-01-16T12:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -20497,7 +20380,7 @@
     "title": "3,5m eda kaymaz [ben ERTELEDİM -iy ]",
     "start": "2025-01-16T13:00:00+03:00",
     "end": "2025-01-16T13:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#ffb878",
     "type": "google"
   },
@@ -20506,7 +20389,7 @@
     "title": "1,5m ismail hasan dündar  [ben ERTELEDİM -iy ]",
     "start": "2025-01-16T13:15:00+03:00",
     "end": "2025-01-16T13:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#ffb878",
     "type": "google"
   },
@@ -20880,7 +20763,7 @@
     "title": "1,5m kader Öztürk",
     "start": "2025-01-21T14:15:00+03:00",
     "end": "2025-01-21T14:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -20962,7 +20845,7 @@
     "title": "1,5m Aleyna bayar",
     "start": "2025-01-22T16:30:00+03:00",
     "end": "2025-01-22T16:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -20971,7 +20854,7 @@
     "title": "2,5m İrem sarısoy",
     "start": "2025-01-22T16:45:00+03:00",
     "end": "2025-01-22T17:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -21063,7 +20946,7 @@
     "title": "1,5m dicle durmuş",
     "start": "2025-01-23T13:15:00+03:00",
     "end": "2025-01-23T13:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "description": "1 ay sonra kontrol.",
     "type": "google"
@@ -21209,7 +21092,7 @@
     "title": "3,5m bahar tulumcu",
     "start": "2025-01-24T17:00:00+03:00",
     "end": "2025-01-24T17:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -21247,7 +21130,7 @@
     "title": "1,5m nuray demirci",
     "start": "2025-01-25T11:15:00+03:00",
     "end": "2025-01-25T11:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -21323,7 +21206,7 @@
     "title": "1,5m berfin kırlangıç",
     "start": "2025-01-25T18:00:00+03:00",
     "end": "2025-01-25T18:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -21332,7 +21215,7 @@
     "title": "1,5m ismail hasan dündar",
     "start": "2025-01-25T18:30:00+03:00",
     "end": "2025-01-25T18:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -21438,7 +21321,7 @@
     "title": "1,5m aysun bozkurt",
     "start": "2025-01-26T18:45:00+03:00",
     "end": "2025-01-26T19:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -21489,7 +21372,7 @@
   },
   {
     "id": "kodek31sv1envbn42clemeaccc",
-    "title": "3m lina muhammet",
+    "title": "3m lina muhammed",
     "start": "2025-01-27T14:00:00+03:00",
     "end": "2025-01-27T14:15:00+03:00",
     "category": "checkup",
@@ -21628,7 +21511,7 @@
     "title": "3,5m ali faruk altaş",
     "start": "2025-01-29T12:45:00+03:00",
     "end": "2025-01-29T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22023,7 +21906,7 @@
     "title": "1,5m Bünyamin Yılmaz",
     "start": "2025-02-01T17:30:00+03:00",
     "end": "2025-02-01T17:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22068,7 +21951,7 @@
     "title": "1,5m Zeynep Melike yanıkdağ",
     "start": "2025-02-02T10:15:00+03:00",
     "end": "2025-02-02T10:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22153,7 +22036,7 @@
     "title": "1,5m Ahmet bakır",
     "start": "2025-02-03T13:45:00+03:00",
     "end": "2025-02-03T14:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22330,7 +22213,7 @@
     "title": "1,5m onur ceylan",
     "start": "2025-02-05T11:30:00+03:00",
     "end": "2025-02-05T11:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22408,7 +22291,7 @@
     "title": "1,5m yusuf yamaç",
     "start": "2025-02-06T14:45:00+03:00",
     "end": "2025-02-06T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22522,7 +22405,7 @@
     "title": "1,5m Burak Ege dilekçi",
     "start": "2025-02-07T17:45:00+03:00",
     "end": "2025-02-07T18:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22560,7 +22443,7 @@
     "title": "1,5m Edanur sayar",
     "start": "2025-02-08T09:15:00+03:00",
     "end": "2025-02-08T09:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22671,7 +22554,7 @@
     "title": "1,5m Sıla doğruer",
     "start": "2025-02-10T11:15:00+03:00",
     "end": "2025-02-10T11:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22680,7 +22563,7 @@
     "title": "1,5m İbrahim Turus",
     "start": "2025-02-10T11:30:00+03:00",
     "end": "2025-02-10T11:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22770,7 +22653,7 @@
     "title": "1,5m Ezel Güner",
     "start": "2025-02-11T08:30:00+03:00",
     "end": "2025-02-11T08:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22880,7 +22763,7 @@
     "title": "1,5m Gülseren Süme",
     "start": "2025-02-12T14:45:00+03:00",
     "end": "2025-02-12T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -22990,7 +22873,7 @@
   },
   {
     "id": "k0h88t8niera9lhrlsvmhbqosg",
-    "title": "08.00🔪iy Eylül Dalkıran",
+    "title": "08.00🔪 Eylül Dalkıran (iy)",
     "start": "2025-02-14T08:00:00+03:00",
     "end": "2025-02-14T11:00:00+03:00",
     "category": "surgery",
@@ -23057,10 +22940,10 @@
   },
   {
     "id": "37bu1tiivfmop8oj2b3tvr0pac",
-    "title": "1,5m Nur Yalmaç",
+    "title": "1,5m Nuriya Yalmaç",
     "start": "2025-02-14T13:15:00+03:00",
     "end": "2025-02-14T13:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23118,7 +23001,7 @@
     "title": "1,5m merve yalanız",
     "start": "2025-02-15T13:45:00+03:00",
     "end": "2025-02-15T14:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23127,7 +23010,7 @@
     "title": "1,5m İlknur erken",
     "start": "2025-02-15T14:00:00+03:00",
     "end": "2025-02-15T14:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23462,7 +23345,7 @@
     "title": "1,5m Rukiye Eroğlu",
     "start": "2025-02-23T10:30:00+03:00",
     "end": "2025-02-23T10:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23564,7 +23447,7 @@
     "title": "1,5m Hattab Aksoy",
     "start": "2025-02-24T11:15:00+03:00",
     "end": "2025-02-24T11:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23610,7 +23493,7 @@
     "title": "1,5m Leyla Oktay",
     "start": "2025-02-24T12:30:00+03:00",
     "end": "2025-02-24T12:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23649,7 +23532,7 @@
     "title": "1,5m hakan çeçen",
     "start": "2025-02-26T10:30:00+03:00",
     "end": "2025-02-26T10:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23676,7 +23559,7 @@
     "title": "1,5m mehmet emin arslan",
     "start": "2025-02-26T11:45:00+03:00",
     "end": "2025-02-26T12:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23712,7 +23595,7 @@
     "title": "1,5m Sümeyye Akşahin",
     "start": "2025-02-26T12:45:00+03:00",
     "end": "2025-02-26T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -23808,7 +23691,7 @@
   },
   {
     "id": "15gb4ttljntmkffceohd3ei65g",
-    "title": "08.00🔪Ecem Hacer ab",
+    "title": "08.00🔪Ecem Hacer (ab)",
     "start": "2025-02-27T08:00:00+03:00",
     "end": "2025-02-27T10:30:00+03:00",
     "category": "surgery",
@@ -24041,7 +23924,7 @@
     "title": "1,5m tuğçe ibin",
     "start": "2025-03-02T09:00:00+03:00",
     "end": "2025-03-02T09:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24059,7 +23942,7 @@
     "title": "1,5m duygu Akbulut",
     "start": "2025-03-02T10:00:00+03:00",
     "end": "2025-03-02T10:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24116,7 +23999,7 @@
     "title": "1,5m Arzu süngü",
     "start": "2025-03-03T12:15:00+03:00",
     "end": "2025-03-03T12:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24372,7 +24255,7 @@
     "title": "1,5m Gülümser Gündoğdu",
     "start": "2025-03-08T12:45:00+03:00",
     "end": "2025-03-08T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24426,7 +24309,7 @@
     "title": "1,5m Elif Avşar",
     "start": "2025-03-08T14:15:00+03:00",
     "end": "2025-03-08T14:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24480,7 +24363,7 @@
     "title": "1,5m sevdenur tuncay",
     "start": "2025-03-10T11:45:00+03:00",
     "end": "2025-03-10T12:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24517,7 +24400,7 @@
     "title": "1,5m Mustafa yıldız",
     "start": "2025-03-10T12:45:00+03:00",
     "end": "2025-03-10T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24627,7 +24510,7 @@
     "title": "1,5m Berfin cengiz",
     "start": "2025-03-13T12:30:00+03:00",
     "end": "2025-03-13T12:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24645,7 +24528,7 @@
     "title": "1,5m Abdurrahman kaya",
     "start": "2025-03-13T15:00:00+03:00",
     "end": "2025-03-13T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "type": "google"
   },
   {
@@ -24739,7 +24622,7 @@
     "title": "1,5m Havin Altun",
     "start": "2025-03-14T16:45:00+03:00",
     "end": "2025-03-14T17:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24831,7 +24714,7 @@
     "title": "1,5m Yonca Akdağ",
     "start": "2025-03-15T14:30:00+03:00",
     "end": "2025-03-15T14:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -24995,7 +24878,7 @@
     "title": "1,5m Hatice nur ışık",
     "start": "2025-03-19T10:45:00+03:00",
     "end": "2025-03-19T11:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -25152,7 +25035,7 @@
     "title": "1,5m İlknur Erken",
     "start": "2025-03-20T13:45:00+03:00",
     "end": "2025-03-20T14:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -25198,7 +25081,7 @@
     "title": "1,5m arzu gencer",
     "start": "2025-03-21T16:45:00+03:00",
     "end": "2025-03-21T17:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -25299,7 +25182,7 @@
     "title": "1,5m Rüveyda nur Özdemir",
     "start": "2025-03-22T13:15:00+03:00",
     "end": "2025-03-22T13:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -25361,7 +25244,7 @@
     "title": "1,5m Buse savaş",
     "start": "2025-03-23T08:15:00+03:00",
     "end": "2025-03-23T08:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -25454,7 +25337,7 @@
     "title": "1,5m Dicle demir",
     "start": "2025-03-26T13:00:00+03:00",
     "end": "2025-03-26T13:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -25551,7 +25434,7 @@
     "title": "1,5m Hira Şen",
     "start": "2025-03-28T12:00:00+03:00",
     "end": "2025-03-28T12:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -25620,7 +25503,7 @@
   },
   {
     "id": "3nt25cpg67kjadjdpmsidjof7s",
-    "title": "15.00🔪Jama Safia Suleyman ep",
+    "title": "15.00🔪Safia Suleiman Jama (ep)",
     "start": "2025-03-28T15:15:00+03:00",
     "end": "2025-03-28T17:00:00+03:00",
     "category": "surgery",
@@ -25688,7 +25571,7 @@
     "title": "1,5m Aycan çelikel",
     "start": "2025-03-29T10:00:00+03:00",
     "end": "2025-03-29T10:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -25851,7 +25734,7 @@
   },
   {
     "id": "p3emirvru1pcnmjddbrln7cs94",
-    "title": "3m Nur Yalmaç",
+    "title": "3m Nuriya Yalmaç",
     "start": "2025-04-02T12:30:00+03:00",
     "end": "2025-04-02T12:45:00+03:00",
     "category": "checkup",
@@ -25993,7 +25876,7 @@
   },
   {
     "id": "4fh1i4n9ct6g0ofme2fq7c5j7c",
-    "title": "k1 Jama Safia Suleyman",
+    "title": "k1 Safia Suleiman Jama",
     "start": "2025-04-04T11:30:00+03:00",
     "end": "2025-04-04T11:45:00+03:00",
     "category": "checkup",
@@ -26162,7 +26045,7 @@
     "title": "1,5m Ruken başkan",
     "start": "2025-04-05T14:45:00+03:00",
     "end": "2025-04-05T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -26501,7 +26384,7 @@
     "title": "1,5m Zeynep Şengün",
     "start": "2025-04-11T12:15:00+03:00",
     "end": "2025-04-11T12:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -26557,7 +26440,7 @@
     "title": "1,5m Semra kahraman",
     "start": "2025-04-12T11:00:00+03:00",
     "end": "2025-04-12T11:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -26611,7 +26494,7 @@
     "title": "1,5m Melisa sinem çam",
     "start": "2025-04-12T12:45:00+03:00",
     "end": "2025-04-12T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -26645,7 +26528,7 @@
   },
   {
     "id": "ii17hqp24bv5cmg8v52a01i7ss",
-    "title": "🔪okcaha ZRAZHEVSKAYA iy",
+    "title": "🔪Oxana ZRAZHEVS KAYA iy",
     "start": "2025-04-12T15:00:00+03:00",
     "end": "2025-04-12T17:15:00+03:00",
     "category": "surgery",
@@ -26880,7 +26763,7 @@
     "title": "1,5m Ecem Hacer",
     "start": "2025-04-16T11:15:00+03:00",
     "end": "2025-04-16T11:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -27026,7 +26909,7 @@
     "title": "1,5m Leyla Yılmaz",
     "start": "2025-04-17T12:45:00+03:00",
     "end": "2025-04-17T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -27059,7 +26942,7 @@
   },
   {
     "id": "1logvd6lipc6kc1l7r5j33me74",
-    "title": "K1 tampon",
+    "title": "K1 Oxana ZRAZHEVS KAYA",
     "start": "2025-04-17T13:30:00+03:00",
     "end": "2025-04-17T13:45:00+03:00",
     "category": "checkup",
@@ -27269,7 +27152,7 @@
     "title": "1,5m Hande akkaya",
     "start": "2025-04-21T14:30:00+03:00",
     "end": "2025-04-21T14:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -27439,7 +27322,7 @@
     "title": "1,5m Zübeyde erden",
     "start": "2025-04-23T11:00:00+03:00",
     "end": "2025-04-23T11:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -27599,7 +27482,7 @@
     "title": "1,5m Sinem gezer",
     "start": "2025-04-25T12:45:00+03:00",
     "end": "2025-04-25T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -27617,7 +27500,7 @@
     "title": "1,5m Fatma Tanrıkulu",
     "start": "2025-04-25T13:30:00+03:00",
     "end": "2025-04-25T13:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -27868,7 +27751,7 @@
     "title": "1,5m Handan Ulusoy",
     "start": "2025-04-27T14:45:00+03:00",
     "end": "2025-04-27T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -28389,7 +28272,7 @@
     "title": "1,5m Emine varlı",
     "start": "2025-05-02T15:15:00+03:00",
     "end": "2025-05-02T15:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -28746,37 +28629,6 @@
     "type": "google"
   },
   {
-    "id": "3ja39rj5ldbpf8fa4k65qbheks",
-    "title": "ℹ️7-11 Mayıs | 19ncu Rinoloji Kongresi",
-    "start": "2025-05-07T14:00:00+03:00",
-    "end": "2025-05-07T18:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "location": "Le Meridien Otel",
-    "type": "google"
-  },
-  {
-    "id": "29uqpc2cbjuakh8dn98m7bf3vf",
-    "title": "ℹ️7-11 Mayıs | 19ncu Rinoloji Kongresi",
-    "start": "2025-05-08T08:00:00+03:00",
-    "end": "2025-05-08T19:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "location": "Le Meridien Otel",
-    "description": "18:30 a kadar toplantıdayım.",
-    "type": "google"
-  },
-  {
-    "id": "51bmicshjf60ktvr2iq9spv1us",
-    "title": "ℹ️7-11 Mayıs | 19ncu Rinoloji Kongresi",
-    "start": "2025-05-09T08:00:00+03:00",
-    "end": "2025-05-09T18:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "location": "Le Meridien Otel",
-    "type": "google"
-  },
-  {
     "id": "pt371qnhodpr36jh4h94p29s40",
     "title": "k1 hazal tanır",
     "start": "2025-05-09T18:00:00+03:00",
@@ -28848,16 +28700,6 @@
     "color": "#ff887c",
     "location": "606",
     "description": "65k\n\nHekim ödemeli şekilde.",
-    "type": "google"
-  },
-  {
-    "id": "0sa02kciuii6cbufruldgg6vf7",
-    "title": "ℹ️7-11 Mayıs | 19ncu Rinoloji Kongresi",
-    "start": "2025-05-10T08:00:00+03:00",
-    "end": "2025-05-10T19:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "location": "Le Meridien Otel",
     "type": "google"
   },
   {
@@ -29050,7 +28892,7 @@
     "title": "kağan bey ile görüşme",
     "start": "2025-05-13T08:15:00+03:00",
     "end": "2025-05-13T09:15:00+03:00",
-    "category": "surgery",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29074,7 +28916,7 @@
   },
   {
     "id": "tgq81k9ph3663tprm9t99baij8",
-    "title": "m online elifnur çetintaş (iy)",
+    "title": "m online elif çetintaş (iy)",
     "start": "2025-05-14T11:15:00+03:00",
     "end": "2025-05-14T11:30:00+03:00",
     "category": "appointment",
@@ -29123,7 +28965,7 @@
     "title": "1,5m suzan kadıoğlu",
     "start": "2025-05-14T13:00:00+03:00",
     "end": "2025-05-14T13:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29350,7 +29192,7 @@
     "title": "1,5m Rana Şimşek",
     "start": "2025-05-21T15:30:00+03:00",
     "end": "2025-05-21T15:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29435,7 +29277,7 @@
     "title": "1,5m filiz Türk",
     "start": "2025-05-22T14:15:00+03:00",
     "end": "2025-05-22T14:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29528,7 +29370,7 @@
     "title": "1,5m Suzan kadıoğlu",
     "start": "2025-05-23T15:00:00+03:00",
     "end": "2025-05-23T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29640,7 +29482,7 @@
     "title": "1,5m helin sürme",
     "start": "2025-05-28T11:00:00+03:00",
     "end": "2025-05-28T11:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29694,7 +29536,7 @@
     "title": "1,5m aleyna nur çifçi",
     "start": "2025-05-28T12:00:00+03:00",
     "end": "2025-05-28T12:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29712,7 +29554,7 @@
     "title": "1,5m Mustafa Nurullah Arvas",
     "start": "2025-05-28T12:30:00+03:00",
     "end": "2025-05-28T12:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29777,7 +29619,7 @@
     "title": "1,5m Nurcan köysü",
     "start": "2025-05-30T11:00:00+03:00",
     "end": "2025-05-30T11:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29795,7 +29637,7 @@
     "title": "1,5m Zübeyde erden",
     "start": "2025-05-30T11:45:00+03:00",
     "end": "2025-05-30T12:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29947,7 +29789,7 @@
     "title": "1,5m onur koç",
     "start": "2025-05-31T15:30:00+03:00",
     "end": "2025-05-31T15:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29974,7 +29816,7 @@
     "title": "1,5m Selma Delibaş",
     "start": "2025-06-01T09:15:00+03:00",
     "end": "2025-06-01T09:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29983,7 +29825,7 @@
     "title": "1,5m Özgür kılıç",
     "start": "2025-06-01T09:30:00+03:00",
     "end": "2025-06-01T09:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -29992,7 +29834,7 @@
     "title": "1,5m Gülşah açar",
     "start": "2025-06-01T09:45:00+03:00",
     "end": "2025-06-01T10:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -30047,7 +29889,7 @@
     "title": "1,5m beyza önkol",
     "start": "2025-06-02T10:15:00+03:00",
     "end": "2025-06-02T10:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -30168,7 +30010,7 @@
     "title": "1,5m Neşe eroğlu",
     "start": "2025-06-04T09:15:00+03:00",
     "end": "2025-06-04T09:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -30398,7 +30240,7 @@
     "title": "1,5m Dilan başak",
     "start": "2025-06-11T12:00:00+03:00",
     "end": "2025-06-11T12:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -30510,7 +30352,7 @@
     "title": "1,5m Melis nur gümüşkaya",
     "start": "2025-06-12T14:15:00+03:00",
     "end": "2025-06-12T14:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -30838,7 +30680,7 @@
     "title": "1,5m Melda Özkan",
     "start": "2025-06-18T12:00:00+03:00",
     "end": "2025-06-18T12:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -31126,7 +30968,7 @@
     "title": "2,5m filiz Türk",
     "start": "2025-06-23T08:15:00+03:00",
     "end": "2025-06-23T08:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -31436,7 +31278,7 @@
     "title": "1,5m Başak karakılıç",
     "start": "2025-06-25T12:45:00+03:00",
     "end": "2025-06-25T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -31611,7 +31453,7 @@
     "title": "Murat yıldırım | kulak abse",
     "start": "2025-06-27T14:00:00+03:00",
     "end": "2025-06-27T15:00:00+03:00",
-    "category": "surgery",
+    "category": "appointment",
     "color": "#ff887c",
     "location": "8103",
     "type": "google"
@@ -31846,7 +31688,7 @@
     "title": "1,5m Berfin kurt",
     "start": "2025-06-30T16:30:00+03:00",
     "end": "2025-06-30T16:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -32095,7 +31937,7 @@
     "title": "1,5m İrem Bircanoğlu",
     "start": "2025-07-03T14:45:00+03:00",
     "end": "2025-07-03T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -32225,7 +32067,7 @@
     "title": "1,5m Filiz Arslanoğlu",
     "start": "2025-07-05T13:45:00+03:00",
     "end": "2025-07-05T14:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -32480,7 +32322,7 @@
     "title": "1,5m seher aslan",
     "start": "2025-07-09T19:30:00+03:00",
     "end": "2025-07-09T19:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -32786,7 +32628,7 @@
     "title": "1,5m Neslihan Akpınar",
     "start": "2025-07-14T12:00:00+03:00",
     "end": "2025-07-14T12:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -33658,7 +33500,7 @@
     "title": "1,5m kader gül",
     "start": "2025-07-28T13:45:00+03:00",
     "end": "2025-07-28T14:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -33751,7 +33593,7 @@
     "title": "1,5m ilayda sinem karakaş",
     "start": "2025-07-29T17:00:00+03:00",
     "end": "2025-07-29T17:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -33779,7 +33621,7 @@
     "title": "1,5m deniz çakır",
     "start": "2025-07-30T08:00:00+03:00",
     "end": "2025-07-30T08:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -34450,7 +34292,7 @@
     "title": "1,5m Elanur yıldırım",
     "start": "2025-08-12T15:30:00+03:00",
     "end": "2025-08-12T15:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "description": "NR 12/24 e geçildi.\n--\n3m kontrol.",
     "type": "google"
@@ -34579,7 +34421,7 @@
     "title": "1,5m İkra Azra Pişirici",
     "start": "2025-08-14T14:45:00+03:00",
     "end": "2025-08-14T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -34619,7 +34461,7 @@
     "title": "1,5m esma dila okumuş",
     "start": "2025-08-15T11:45:00+03:00",
     "end": "2025-08-15T12:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -34828,7 +34670,7 @@
     "title": "1,5m Emre Aslan",
     "start": "2025-08-18T15:30:00+03:00",
     "end": "2025-08-18T15:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -35259,7 +35101,7 @@
   },
   {
     "id": "jii76npct20ug8u7f38g2fklhc",
-    "title": "08.00🔪muhammet bağrıyanık (emre yıldır)",
+    "title": "08.00🔪muhammet bağrıyanık 2003 (emre yıldır)",
     "start": "2025-08-28T09:15:00+03:00",
     "end": "2025-08-28T11:45:00+03:00",
     "category": "surgery",
@@ -35394,7 +35236,7 @@
     "title": "1,5m Azat Şahin",
     "start": "2025-08-29T14:45:00+03:00",
     "end": "2025-08-29T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -35578,7 +35420,7 @@
     "title": "1,5m kübra kuru",
     "start": "2025-08-30T15:30:00+03:00",
     "end": "2025-08-30T15:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -35681,7 +35523,7 @@
     "title": "1,5m Meryem ünlü",
     "start": "2025-09-01T14:15:00+03:00",
     "end": "2025-09-01T14:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -35781,7 +35623,7 @@
   },
   {
     "id": "3j4v0k2mrt6gskov70sfcj8mj8",
-    "title": "10.30🔪muhammet bağrıyanık (emre yıldır)-17",
+    "title": "10.30🔪muhammet bağrıyanık 2007 (emre yıldır)- yaş 17",
     "start": "2025-09-02T12:45:00+03:00",
     "end": "2025-09-02T15:15:00+03:00",
     "category": "surgery",
@@ -36359,7 +36201,7 @@
     "title": "1,5m fatma samra",
     "start": "2025-09-11T13:30:00+03:00",
     "end": "2025-09-11T13:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -36586,7 +36428,7 @@
     "title": "1,5m Ekin Şimşek",
     "start": "2025-09-15T17:00:00+03:00",
     "end": "2025-09-15T17:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -36731,36 +36573,6 @@
     "type": "google"
   },
   {
-    "id": "7u6ksa76kesaf418lo11gbmspg",
-    "title": "ℹ️İZİN | il dışındayım.",
-    "start": "2025-09-19T07:30:00+03:00",
-    "end": "2025-09-19T23:45:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "description": "Aydan düğün izmir urla",
-    "type": "google"
-  },
-  {
-    "id": "0q8i3mp5g0fdfe8j7gsj3nn1ej",
-    "title": "ℹ️İZİN | il dışındayım.",
-    "start": "2025-09-20T00:15:00+03:00",
-    "end": "2025-09-20T23:45:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "description": "Aydan düğün izmir urla",
-    "type": "google"
-  },
-  {
-    "id": "503e6davhd3892rli36535arpk",
-    "title": "ℹ️İZİN | il dışındayım.",
-    "start": "2025-09-21T00:15:00+03:00",
-    "end": "2025-09-21T21:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "description": "Aydan düğün izmir urla",
-    "type": "google"
-  },
-  {
     "id": "1vs8dddoa1ojejikn2airv7qpk",
     "title": "op nesrin",
     "start": "2025-09-22T10:00:00+03:00",
@@ -36810,7 +36622,7 @@
     "title": "1,5m yunus emre pişkin",
     "start": "2025-09-22T11:30:00+03:00",
     "end": "2025-09-22T11:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -36892,7 +36704,7 @@
     "title": "2,5m Alp erdem",
     "start": "2025-09-22T18:15:00+03:00",
     "end": "2025-09-22T18:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -37081,7 +36893,7 @@
     "title": "1,5m Merve Minaz",
     "start": "2025-09-26T15:00:00+03:00",
     "end": "2025-09-26T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -37189,7 +37001,7 @@
     "title": "1,5m Songül tekin",
     "start": "2025-09-29T11:30:00+03:00",
     "end": "2025-09-29T11:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -37435,7 +37247,7 @@
     "title": "1,5m güneş acar",
     "start": "2025-10-02T10:45:00+03:00",
     "end": "2025-10-02T11:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -37613,7 +37425,7 @@
     "title": "1,5m özge bozkurtlu",
     "start": "2025-10-04T13:00:00+03:00",
     "end": "2025-10-04T13:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -37804,7 +37616,7 @@
     "title": "1,5m ilayda han",
     "start": "2025-10-08T10:45:00+03:00",
     "end": "2025-10-08T11:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -37877,7 +37689,7 @@
     "title": "1,5m Sudenaz Karagöz",
     "start": "2025-10-08T13:00:00+03:00",
     "end": "2025-10-08T13:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -37951,7 +37763,7 @@
     "title": "1,5m sıla Saritaş",
     "start": "2025-10-10T12:45:00+03:00",
     "end": "2025-10-10T13:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -38125,7 +37937,7 @@
     "title": "1,5m Şirin arıtürk",
     "start": "2025-10-11T13:15:00+03:00",
     "end": "2025-10-11T13:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -38134,7 +37946,7 @@
     "title": "1,5m Nafiye Türkoğlu",
     "start": "2025-10-11T13:30:00+03:00",
     "end": "2025-10-11T13:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -38402,7 +38214,7 @@
     "title": "1,5m Aycan bayraktar",
     "start": "2025-10-15T17:30:00+03:00",
     "end": "2025-10-15T17:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -38708,7 +38520,7 @@
     "title": "1,5m yasemin çetinkaya",
     "start": "2025-10-20T11:45:00+03:00",
     "end": "2025-10-20T12:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -38771,7 +38583,7 @@
     "title": "1,5m saada kamaleddin",
     "start": "2025-10-20T13:30:00+03:00",
     "end": "2025-10-20T13:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -39650,7 +39462,7 @@
     "title": "1,5m Ayten uzun",
     "start": "2025-10-31T13:30:00+03:00",
     "end": "2025-10-31T13:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -40403,7 +40215,7 @@
     "title": "1,5m barış Aydın",
     "start": "2025-11-11T12:00:00+03:00",
     "end": "2025-11-11T12:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -40457,7 +40269,7 @@
     "title": "1,5m Ozan Muhtaroğlu",
     "start": "2025-11-11T13:45:00+03:00",
     "end": "2025-11-11T14:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -40632,7 +40444,7 @@
     "title": "1,5m Tuğçe karasu",
     "start": "2025-11-13T07:30:00+03:00",
     "end": "2025-11-13T07:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -41157,7 +40969,7 @@
     "title": "2,5m özge bozkurtlu",
     "start": "2025-11-20T10:45:00+03:00",
     "end": "2025-11-20T11:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -41441,7 +41253,7 @@
   },
   {
     "id": "m79ki8gda8dk2tp43pn6km02dk",
-    "title": "op elifnur çetintaş",
+    "title": "op elif çetintaş",
     "start": "2025-11-24T10:45:00+03:00",
     "end": "2025-11-24T11:00:00+03:00",
     "category": "appointment",
@@ -41557,7 +41369,7 @@
     "title": "1,5m ilknur güler",
     "start": "2025-11-25T13:15:00+03:00",
     "end": "2025-11-25T13:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -41783,7 +41595,7 @@
     "title": "1,5m Ceren Mengüş",
     "start": "2025-11-27T09:45:00+03:00",
     "end": "2025-11-27T10:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -41886,7 +41698,7 @@
     "title": "1,5m Yağmur Yanaz",
     "start": "2025-11-28T08:30:00+03:00",
     "end": "2025-11-28T08:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -42595,7 +42407,7 @@
     "title": "1,5m Elida kızıldağ",
     "start": "2025-12-04T14:30:00+03:00",
     "end": "2025-12-04T14:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -42702,7 +42514,7 @@
   },
   {
     "id": "shlkr37s17jo5cjr2o6ururrvc",
-    "title": "op agata mosiriska",
+    "title": "op Agata Mosińska",
     "start": "2025-12-07T20:00:00+03:00",
     "end": "2025-12-07T20:30:00+03:00",
     "category": "appointment",
@@ -42803,7 +42615,7 @@
   },
   {
     "id": "jg4o4hafoe2cgktd2972tp15cs",
-    "title": "op banfi szilard",
+    "title": "op Szilard BANFI",
     "start": "2025-12-08T11:30:00+03:00",
     "end": "2025-12-08T12:00:00+03:00",
     "category": "appointment",
@@ -42886,7 +42698,7 @@
   },
   {
     "id": "3c7pbjuck3a3km922ia4dll7a4",
-    "title": "17.30🔪banfi szilard (Medproper) REVİZYON",
+    "title": "17.30🔪Szilard BANFI (Medproper) REVİZYON",
     "start": "2025-12-08T18:00:00+03:00",
     "end": "2025-12-08T21:30:00+03:00",
     "category": "surgery",
@@ -43313,7 +43125,7 @@
     "title": "1,5m Ömer Çimen",
     "start": "2025-12-12T09:15:00+03:00",
     "end": "2025-12-12T09:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -43357,7 +43169,7 @@
   },
   {
     "id": "3hroqerqnl4combf1nbv3oc07c",
-    "title": "k1 agata mosiriska",
+    "title": "k1 Agata Mosińska",
     "start": "2025-12-12T14:00:00+03:00",
     "end": "2025-12-12T14:15:00+03:00",
     "category": "checkup",
@@ -43417,7 +43229,7 @@
     "title": "1,5m Şule aybek",
     "start": "2025-12-13T09:00:00+03:00",
     "end": "2025-12-13T09:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -43455,7 +43267,7 @@
     "title": "1,5m Dönay balkır",
     "start": "2025-12-13T12:30:00+03:00",
     "end": "2025-12-13T12:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -43605,7 +43417,7 @@
   },
   {
     "id": "0t1va797hkdkhhteq04vd1itas",
-    "title": "k1 banfi szilard",
+    "title": "k1 Szilard BANFI",
     "start": "2025-12-15T10:30:00+03:00",
     "end": "2025-12-15T10:45:00+03:00",
     "category": "checkup",
@@ -43626,7 +43438,7 @@
     "title": "1,5m Yusuf tekin",
     "start": "2025-12-15T11:00:00+03:00",
     "end": "2025-12-15T11:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -43849,7 +43661,7 @@
     "title": "1,5m nazmiye ortaoğlan",
     "start": "2025-12-16T16:45:00+03:00",
     "end": "2025-12-16T17:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -44025,7 +43837,7 @@
     "title": "1,5m Esma nur Külçür",
     "start": "2025-12-18T08:45:00+03:00",
     "end": "2025-12-18T09:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -44325,7 +44137,7 @@
     "title": "1,5m Esra Çelik",
     "start": "2025-12-20T16:45:00+03:00",
     "end": "2025-12-20T17:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -44433,6 +44245,15 @@
     "category": "surgery",
     "color": "#ff887c",
     "location": "1311",
+    "type": "google"
+  },
+  {
+    "id": "5jiung1gkf5pvkdbvtg4ghuk1s",
+    "title": "M iy berfin Aydın 17 yaş (banne baba onamı yok.)",
+    "start": "2025-12-22T12:15:00+03:00",
+    "end": "2025-12-22T12:30:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
@@ -44636,7 +44457,7 @@
     "title": "1,5m Kader utanç",
     "start": "2025-12-24T14:15:00+03:00",
     "end": "2025-12-24T14:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -44645,7 +44466,7 @@
     "title": "1,5m Berçem durmuş",
     "start": "2025-12-24T14:30:00+03:00",
     "end": "2025-12-24T14:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -45269,7 +45090,7 @@
     "title": "1,5m Emine Özdemir",
     "start": "2025-12-30T17:45:00+03:00",
     "end": "2025-12-30T18:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -45527,7 +45348,7 @@
     "title": "1,5m Cansel Karagöz",
     "start": "2026-01-03T12:00:00+03:00",
     "end": "2026-01-03T12:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -45695,7 +45516,7 @@
   },
   {
     "id": "sc55jo7lt7kngm05m2t611tvl8",
-    "title": "m (büşra) sarah dimashki",
+    "title": "m (büşra) sara Şebib (dimanski)",
     "start": "2026-01-06T10:30:00+03:00",
     "end": "2026-01-06T10:45:00+03:00",
     "category": "appointment",
@@ -45882,7 +45703,7 @@
     "title": "1,5m elif Çetintaş",
     "start": "2026-01-07T17:15:00+03:00",
     "end": "2026-01-07T17:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -46050,7 +45871,7 @@
     "title": "2,5m Şule aybek",
     "start": "2026-01-10T11:00:00+03:00",
     "end": "2026-01-10T11:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -46106,7 +45927,7 @@
     "title": "1,5m Seda Karakurt",
     "start": "2026-01-10T15:00:00+03:00",
     "end": "2026-01-10T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -46115,7 +45936,7 @@
     "title": "1,5m yağmur ipek",
     "start": "2026-01-10T15:15:00+03:00",
     "end": "2026-01-10T15:30:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -46348,7 +46169,7 @@
     "title": "1,5m Gül tuncil",
     "start": "2026-01-13T14:45:00+03:00",
     "end": "2026-01-13T15:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -46583,7 +46404,7 @@
     "title": "1,5m sibel çetin",
     "start": "2026-01-16T19:00:00+03:00",
     "end": "2026-01-16T19:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47068,7 +46889,7 @@
     "title": "1,5m Nazar polat",
     "start": "2026-01-22T17:00:00+03:00",
     "end": "2026-01-22T17:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47169,7 +46990,7 @@
     "title": "2,5m ilknur güler",
     "start": "2026-01-23T15:00:00+03:00",
     "end": "2026-01-23T15:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47288,7 +47109,7 @@
     "title": "1,5m selman çürük",
     "start": "2026-01-24T12:30:00+03:00",
     "end": "2026-01-24T12:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47306,7 +47127,7 @@
     "title": "1,5m Nimet Hasçelik",
     "start": "2026-01-24T13:00:00+03:00",
     "end": "2026-01-24T13:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47425,7 +47246,7 @@
     "title": "1,5m yaren yurtseven",
     "start": "2026-01-26T11:45:00+03:00",
     "end": "2026-01-26T12:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47434,7 +47255,7 @@
     "title": "1,5m Faruk türkmen",
     "start": "2026-01-26T12:00:00+03:00",
     "end": "2026-01-26T12:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47596,7 +47417,7 @@
     "title": "1,5m Tuğçe açabuğa",
     "start": "2026-01-28T11:30:00+03:00",
     "end": "2026-01-28T11:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47614,7 +47435,7 @@
     "title": "3x erdem çağlar kontrol",
     "start": "2026-01-28T12:15:00+03:00",
     "end": "2026-01-28T13:00:00+03:00",
-    "category": "checkup",
+    "category": "appointment",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47641,7 +47462,7 @@
     "title": "1,5m Rüya uysal",
     "start": "2026-01-28T13:30:00+03:00",
     "end": "2026-01-28T13:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47659,7 +47480,7 @@
     "title": "1,5m ayşe sümeyye kaya",
     "start": "2026-01-29T08:30:00+03:00",
     "end": "2026-01-29T08:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -47701,7 +47522,7 @@
   },
   {
     "id": "b4s6qc01418d7c36s540sfptrs",
-    "title": "K2 Sümeyra koç",
+    "title": "K2 Sümeyra barışan",
     "start": "2026-01-29T09:45:00+03:00",
     "end": "2026-01-29T10:00:00+03:00",
     "category": "checkup",
@@ -47888,7 +47709,7 @@
     "title": "1,5m sudenur öztürk",
     "start": "2026-01-31T11:00:00+03:00",
     "end": "2026-01-31T11:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -48151,7 +47972,7 @@
     "title": "1,5m ela nur ezer",
     "start": "2026-02-03T14:30:00+03:00",
     "end": "2026-02-03T14:45:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -48365,7 +48186,7 @@
     "title": "1,5m Kübra akca",
     "start": "2026-02-05T15:45:00+03:00",
     "end": "2026-02-05T16:00:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -48402,7 +48223,7 @@
     "title": "1,5m Zeynep bilgiç",
     "start": "2026-02-06T11:00:00+03:00",
     "end": "2026-02-06T11:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "color": "#46a67a",
     "type": "google"
   },
@@ -48587,11 +48408,12 @@
     "type": "google"
   },
   {
-    "id": "79usu6njlja6lt9m8qk5m7eboc",
-    "title": "6m Melek duran",
-    "start": "2026-02-10T09:00:00+03:00",
-    "end": "2026-02-10T09:15:00+03:00",
+    "id": "4731lvqsh8qjb8bt57fhotv1m4",
+    "title": "K2 Elanur uluel",
+    "start": "2026-02-10T09:15:00+03:00",
+    "end": "2026-02-10T09:30:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
     "type": "google"
   },
   {
@@ -48600,6 +48422,17 @@
     "start": "2026-02-10T09:30:00+03:00",
     "end": "2026-02-10T09:45:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "o76h9124kclp6o98dkt3082q3c",
+    "title": "1,5m elif taş",
+    "start": "2026-02-10T09:45:00+03:00",
+    "end": "2026-02-10T10:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 25 Aralık 2025\n👉🏻 Kontrol süresi: 1 ay\n👉🏻 bir önceki kontrol zamanı: 11 Ocak 2026 (17 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
@@ -48608,6 +48441,8 @@
     "start": "2026-02-10T10:00:00+03:00",
     "end": "2026-02-10T10:15:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 27 Ocak 2026\n👉🏻 Kontrol süresi: 14 gün\n👉🏻 bir önceki kontrol zamanı: 03 Şubat 2026 (7 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
@@ -48616,90 +48451,78 @@
     "start": "2026-02-10T10:15:00+03:00",
     "end": "2026-02-10T10:30:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 24 Ocak 2026\n👉🏻 Kontrol süresi: 17 gün\n👉🏻 bir önceki kontrol zamanı: 02 Şubat 2026 (9 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "dsnbai2k93clnfacdka0llvg8g",
-    "title": "Anestezi bahar kuşçi",
+    "title": "anestezi bahar kuşçi",
     "start": "2026-02-10T10:30:00+03:00",
     "end": "2026-02-10T10:45:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "tv7qcd25eskt072egc7llc66ac",
+    "title": "Anestezi ceren özen şeker",
+    "start": "2026-02-10T11:15:00+03:00",
+    "end": "2026-02-10T11:30:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "8iqglq1885tfd1tes659fi5uq8",
     "title": "K Azra öykü deniz",
-    "start": "2026-02-10T10:45:00+03:00",
-    "end": "2026-02-10T11:00:00+03:00",
+    "start": "2026-02-10T11:30:00+03:00",
+    "end": "2026-02-10T11:45:00+03:00",
     "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "a63atkj7nfj4e155l87bl8ibb8",
-    "title": "K hatice nur ışık",
-    "start": "2026-02-10T11:00:00+03:00",
-    "end": "2026-02-10T11:15:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "o76h9124kclp6o98dkt3082q3c",
-    "title": "1,5m elif taş",
-    "start": "2026-02-10T11:15:00+03:00",
-    "end": "2026-02-10T11:30:00+03:00",
-    "category": "appointment",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 23 Aralık 2024\n👉🏻 Kontrol süresi: 13 ay\n👉🏻 bir önceki kontrol zamanı: 28 Nisan 2025 (4 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "7dkhigjlqbem4h47ctp0b89u6k",
     "title": "12.00🔪sıla arslanca iy yaş 19",
-    "start": "2026-02-10T12:00:00+03:00",
-    "end": "2026-02-10T14:30:00+03:00",
+    "start": "2026-02-10T12:45:00+03:00",
+    "end": "2026-02-10T15:15:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
+    "color": "#ff887c",
+    "location": "1301",
     "description": "85k",
     "type": "google"
   },
   {
     "id": "gol3oncqn7urc0s2u91ona30pc",
     "title": "K Sümeyye akşahin",
-    "start": "2026-02-10T14:00:00+03:00",
-    "end": "2026-02-10T14:15:00+03:00",
+    "start": "2026-02-10T14:30:00+03:00",
+    "end": "2026-02-10T14:45:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\n⚠️ Bu kontrol randevusu aşağıdaki kişilerden biri olabilir:\n• 10.12.2024 tarihinde ameliyat edilen Sümeyye Akşahin\n• 27.01.2026 tarihinde ameliyat edilen Sümeyye Akşahin\n\nHangisi olduğunu kesin olarak bilmediğimden detay veremiyorum.\n\nimza: gemini\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "36kndu1n1nofdc4t5ijufs6ts0",
     "title": "4m gizem kulan",
-    "start": "2026-02-10T14:15:00+03:00",
-    "end": "2026-02-10T14:30:00+03:00",
+    "start": "2026-02-10T14:45:00+03:00",
+    "end": "2026-02-10T15:00:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 21 Ekim 2025\n👉🏻 Kontrol süresi: 3 ay\n👉🏻 bir önceki kontrol zamanı: 20 Aralık 2025 (1 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "t916n5nf49cvsh1h1o1epqhot8",
     "title": "14.30🔪hanife al (büşra) yaş 21",
-    "start": "2026-02-10T15:00:00+03:00",
-    "end": "2026-02-10T17:30:00+03:00",
+    "start": "2026-02-10T15:30:00+03:00",
+    "end": "2026-02-10T18:15:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
+    "color": "#ff887c",
+    "location": "1307",
     "description": "Tel 5444252140",
-    "type": "google"
-  },
-  {
-    "id": "5o34keki5iloe50b19tte41acs",
-    "title": "k1 orhan şahinkuşu",
-    "start": "2026-02-11T08:00:00+03:00",
-    "end": "2026-02-11T08:15:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "ut3apobue48t4u75vo4dkbnrn0",
-    "title": "M iy züleyha gökmen",
-    "start": "2026-02-11T08:15:00+03:00",
-    "end": "2026-02-11T08:30:00+03:00",
-    "category": "appointment",
     "type": "google"
   },
   {
@@ -48708,6 +48531,8 @@
     "start": "2026-02-11T08:30:00+03:00",
     "end": "2026-02-11T08:45:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\n⚠️ Bu kontrol randevusu aşağıdaki kişilerden biri olabilir:\n• 19.11.2024 tarihinde ameliyat edilen Rojin Çiçek\n• 11.06.2025 tarihinde ameliyat edilen Rojin İpek\n\nHangisi olduğunu kesin olarak bilmediğimden detay veremiyorum.\n\nimza: gemini\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
@@ -48716,310 +48541,685 @@
     "start": "2026-02-11T08:45:00+03:00",
     "end": "2026-02-11T09:00:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 30 Ocak 2026\n👉🏻 Kontrol süresi: 12 gün\n👉🏻 bir önceki kontrol zamanı: 05 Şubat 2026 (6 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
-    "id": "cu0vf01ebribpbqseul6k7niqk",
-    "title": "1m Kader şen",
-    "start": "2026-02-11T09:00:00+03:00",
-    "end": "2026-02-11T09:15:00+03:00",
+    "id": "g3pqhn9b5onkphcqkrgvg9bgas",
+    "title": "6m melek duran",
+    "start": "2026-02-11T09:15:00+03:00",
+    "end": "2026-02-11T09:30:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 29 Ağustos 2025\n👉🏻 Kontrol süresi: 5 ay\n👉🏻 bir önceki kontrol zamanı: 14 Aralık 2025 (3 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
-    "id": "90gdigf9uc5tgt2r4ad4ciim24",
-    "title": "Op asena buket taşdemir",
-    "start": "2026-02-12T07:00:00+03:00",
-    "end": "2026-02-12T07:15:00+03:00",
-    "category": "appointment",
+    "id": "5o34keki5iloe50b19tte41acs",
+    "title": "k1 orhan şahinkuşu",
+    "start": "2026-02-11T09:30:00+03:00",
+    "end": "2026-02-11T09:45:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 04 Şubat 2026\n👉🏻 Kontrol süresi: 7 gün\n👉🏻 bir önceki kontrol zamanı: Yok \n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "nmv96alb4ogl8ehktvedt26ntg",
+    "title": "1m kader şen",
+    "start": "2026-02-12T08:45:00+03:00",
+    "end": "2026-02-12T09:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 20 Ocak 2026\n👉🏻 Kontrol süresi: 23 gün\n👉🏻 bir önceki kontrol zamanı: 30 Ocak 2026 (10 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "331m748r5so93804s0eadmfm1k",
     "title": "1m öznur bilgin",
-    "start": "2026-02-12T08:00:00+03:00",
-    "end": "2026-02-12T08:15:00+03:00",
+    "start": "2026-02-12T09:00:00+03:00",
+    "end": "2026-02-12T09:15:00+03:00",
     "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "u4o2oeglggvud5pg1qtr719h2o",
-    "title": "🔪asena buket taşdemir (büşra) yaş 28",
-    "start": "2026-02-12T08:00:00+03:00",
-    "end": "2026-02-12T10:30:00+03:00",
-    "category": "surgery",
     "color": "#46a67a",
-    "description": "10 da hastanede olabilir\n05019337300",
-    "type": "google"
-  },
-  {
-    "id": "a7u671q8cm6pqbithul90jrv44",
-    "title": "K1 beydanur kösem",
-    "start": "2026-02-12T10:45:00+03:00",
-    "end": "2026-02-12T11:00:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "eq1edb33a2rs3o3vcnjih6ibuc",
-    "title": "4m Aycan bayraktar",
-    "start": "2026-02-12T11:00:00+03:00",
-    "end": "2026-02-12T11:15:00+03:00",
-    "category": "checkup",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 20 Ocak 2026\n👉🏻 Kontrol süresi: 23 gün\n👉🏻 bir önceki kontrol zamanı: 03 Şubat 2026 (14 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "img3eafovohpks4v9q42geluq0",
     "title": "k1 tuğba mutlu döğer",
-    "start": "2026-02-12T11:15:00+03:00",
-    "end": "2026-02-12T11:30:00+03:00",
+    "start": "2026-02-12T09:15:00+03:00",
+    "end": "2026-02-12T09:30:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 05 Şubat 2026\n👉🏻 Kontrol süresi: 7 gün\n👉🏻 bir önceki kontrol zamanı: Yok \n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "dci7nduovo6cbe4edqcfpnp2uo",
     "title": "k1 ayşegül uslu",
-    "start": "2026-02-12T11:30:00+03:00",
-    "end": "2026-02-12T11:45:00+03:00",
+    "start": "2026-02-12T09:30:00+03:00",
+    "end": "2026-02-12T09:45:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 05 Şubat 2026\n👉🏻 Kontrol süresi: 7 gün\n👉🏻 bir önceki kontrol zamanı: Yok \n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "a7u671q8cm6pqbithul90jrv44",
+    "title": "K1 beydanur kösem",
+    "start": "2026-02-12T09:45:00+03:00",
+    "end": "2026-02-12T10:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 06 Şubat 2026\n👉🏻 Kontrol süresi: 6 gün\n👉🏻 bir önceki kontrol zamanı: Yok \n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "p6b2g60nm35l2ro416muhqm62s",
+    "title": "6m hatice nur ışık",
+    "start": "2026-02-12T10:00:00+03:00",
+    "end": "2026-02-12T10:15:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 04 Şubat 2025\n👉🏻 Kontrol süresi: 12 ay\n👉🏻 bir önceki kontrol zamanı: 07 Ağustos 2025 (6 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "ovaq8vcmnvh1gtpelnaq4l0gt4",
+    "title": "M iy esra şimşek",
+    "start": "2026-02-12T10:15:00+03:00",
+    "end": "2026-02-12T10:30:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "sm51p57p1hrtpkpv06tgokvjd8",
+    "title": "op anestezi asena buket taşdemir",
+    "start": "2026-02-12T11:00:00+03:00",
+    "end": "2026-02-12T11:15:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "nqclf1kvuj5u9pttti6h1ccuto",
+    "title": "m iy zeynep engin parmaksız",
+    "start": "2026-02-12T11:15:00+03:00",
+    "end": "2026-02-12T11:30:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "j21em2e84jd8mobvr7rtr47vd0",
-    "title": "🔪bahar kuşçi iy REVİZYON yaş 19",
+    "title": "12.00🔪bahar kuşçi iy REVİZYON yaş 19",
     "start": "2026-02-12T12:00:00+03:00",
-    "end": "2026-02-12T15:30:00+03:00",
+    "end": "2026-02-12T15:40:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
-    "description": "100k",
+    "color": "#ff887c",
+    "location": "1215",
+    "description": "100k-ödeme alındı\nbt sonucu atıcak\ntetkikler yapılmadı\nonamlar alındı",
     "type": "google"
   },
   {
-    "id": "fv0uvn9j3kub32kqel6s98to10",
-    "title": "Anestezi aleyna nur aksal",
-    "start": "2026-02-13T07:00:00+03:00",
-    "end": "2026-02-13T07:15:00+03:00",
-    "category": "appointment",
+    "id": "9k7o4o10nc4a7vmonajfs2h4rg",
+    "title": "6m Yunus emre pişkin",
+    "start": "2026-02-12T15:30:00+03:00",
+    "end": "2026-02-12T15:45:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 14 Ağustos 2025\n👉🏻 Kontrol süresi: 5 ay\n👉🏻 bir önceki kontrol zamanı: 11 Kasım 2025 (2 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "ev78fvpc6l3c9s75chgmg476sc",
+    "title": "6m İlknur sonkaya",
+    "start": "2026-02-12T15:45:00+03:00",
+    "end": "2026-02-12T16:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 08 Ağustos 2025\n👉🏻 Kontrol süresi: 6 ay\n👉🏻 bir önceki kontrol zamanı: 11 Kasım 2025 (3 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "6iqvbr56tm333qie7tr3raijk0",
+    "title": "2m Medine yakın",
+    "start": "2026-02-12T16:00:00+03:00",
+    "end": "2026-02-12T16:15:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "u4o2oeglggvud5pg1qtr719h2o",
+    "title": "15.30🔪asena buket Daşdemir (büşra) yaş 28",
+    "start": "2026-02-12T17:00:00+03:00",
+    "end": "2026-02-12T19:15:00+03:00",
+    "category": "surgery",
+    "color": "#ff887c",
+    "location": "1203",
+    "description": "10 da hastanede olabilir\n05019337300",
     "type": "google"
   },
   {
     "id": "v5obaqone5f2v1jhd7eul4r74o",
     "title": "Anestezi sudenur talay",
-    "start": "2026-02-13T07:15:00+03:00",
-    "end": "2026-02-13T07:30:00+03:00",
+    "start": "2026-02-13T09:00:00+03:00",
+    "end": "2026-02-13T09:15:00+03:00",
     "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "t086fvudk85gls6adqb8o4j1pk",
-    "title": "🔪aleyna nur aksal iy yaş 24",
-    "start": "2026-02-13T08:00:00+03:00",
-    "end": "2026-02-13T10:30:00+03:00",
-    "category": "surgery",
     "color": "#46a67a",
-    "description": "85k",
     "type": "google"
   },
   {
-    "id": "ibkulefod7vp24q0ip2ijic5lk",
-    "title": "4m Bahar akalan",
-    "start": "2026-02-13T10:00:00+03:00",
-    "end": "2026-02-13T10:15:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "4qrefmsisie9n4o6rstpu2p7jo",
-    "title": "m beyza acar (büşra) (+anestezi)",
-    "start": "2026-02-13T10:30:00+03:00",
-    "end": "2026-02-13T10:45:00+03:00",
+    "id": "fv0uvn9j3kub32kqel6s98to10",
+    "title": "Anestezi aleyna nur aksal",
+    "start": "2026-02-13T09:15:00+03:00",
+    "end": "2026-02-13T09:30:00+03:00",
     "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "n46qrjvf7tgolm98rurudut8fc",
-    "title": "M (büşra) meryem kıroğlu",
-    "start": "2026-02-13T10:45:00+03:00",
-    "end": "2026-02-13T11:00:00+03:00",
-    "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "q1ir1jr7af7olqr0rd4sfe3rbo",
-    "title": "K1 özge yılmaz",
-    "start": "2026-02-13T11:00:00+03:00",
-    "end": "2026-02-13T11:15:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "l5v4n32dbaj98gc8mdvc0ilc3g",
-    "title": "🔪sudenur talay iy yaş 20",
-    "start": "2026-02-13T12:00:00+03:00",
-    "end": "2026-02-13T14:30:00+03:00",
-    "category": "surgery",
     "color": "#46a67a",
-    "description": "85k",
     "type": "google"
   },
   {
-    "id": "egpqpkrrqjn66akid9bmu4dcvs",
-    "title": "m (büşra) engin çinibulak",
-    "start": "2026-02-13T13:45:00+03:00",
-    "end": "2026-02-13T14:00:00+03:00",
-    "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "nqclf1kvuj5u9pttti6h1ccuto",
-    "title": "m iy zeynep engin parmaksız saat ?",
-    "start": "2026-02-13T14:00:00+03:00",
-    "end": "2026-02-13T14:15:00+03:00",
-    "category": "appointment",
-    "type": "google"
-  },
-  {
-    "id": "n49o1e2sklcm2jk1hqfm05d9nk",
-    "title": "K buse savaş",
-    "start": "2026-02-13T14:30:00+03:00",
-    "end": "2026-02-13T14:45:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "p7s5jkaakm6ra1305riu2rt1r8",
-    "title": "8m Deniz çakır",
-    "start": "2026-02-13T14:45:00+03:00",
-    "end": "2026-02-13T15:00:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "blslu6tade88tcioa3137ejiac",
-    "title": "7m gamze yılmaz",
-    "start": "2026-02-13T15:00:00+03:00",
-    "end": "2026-02-13T15:15:00+03:00",
-    "category": "checkup",
-    "type": "google"
-  },
-  {
-    "id": "bue32huc2d3eepbkh4lbsoe8h8",
-    "title": "op monica hernandez rodriguez",
-    "start": "2026-02-14T07:00:00+03:00",
-    "end": "2026-02-14T07:30:00+03:00",
-    "category": "appointment",
+    "id": "0vda5hv9noj4d7gchr6et7bnj3",
+    "title": "Başhekimlik toplantı. [Ezgi sen de katıl]",
+    "start": "2026-02-13T09:30:00+03:00",
+    "end": "2026-02-13T10:00:00+03:00",
+    "category": "blocked",
+    "color": "#3d8b3d",
     "type": "google"
   },
   {
     "id": "j3bhreldkqcvjfevjsi0r1lrq8",
     "title": "K1 abderrahim afli",
-    "start": "2026-02-14T07:30:00+03:00",
-    "end": "2026-02-14T07:45:00+03:00",
+    "start": "2026-02-13T10:00:00+03:00",
+    "end": "2026-02-13T10:15:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "q1ir1jr7af7olqr0rd4sfe3rbo",
+    "title": "K1 özge yılmaz",
+    "start": "2026-02-13T10:15:00+03:00",
+    "end": "2026-02-13T10:30:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 06 Şubat 2026\n👉🏻 Kontrol süresi: 7 gün\n👉🏻 bir önceki kontrol zamanı: Yok \n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "vr7f17j83pttfm3u64h5ftcis8",
+    "title": "6m Eylül naz ateş",
+    "start": "2026-02-13T10:30:00+03:00",
+    "end": "2026-02-13T10:45:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 14 Ağustos 2025\n👉🏻 Kontrol süresi: 5 ay\n👉🏻 bir önceki kontrol zamanı: 07 Ekim 2025 (1 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "ibkulefod7vp24q0ip2ijic5lk",
+    "title": "4m Bahar akalan",
+    "start": "2026-02-13T10:45:00+03:00",
+    "end": "2026-02-13T11:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 21 Ekim 2025\n👉🏻 Kontrol süresi: 3 ay\n👉🏻 bir önceki kontrol zamanı: 04 Ocak 2026 (2 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "4qrefmsisie9n4o6rstpu2p7jo",
+    "title": "m beyza acar (büşra) (+anestezi)",
+    "start": "2026-02-13T11:00:00+03:00",
+    "end": "2026-02-13T11:15:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "n46qrjvf7tgolm98rurudut8fc",
+    "title": "M (büşra) meryem kıroğlu",
+    "start": "2026-02-13T11:15:00+03:00",
+    "end": "2026-02-13T11:30:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "l5v4n32dbaj98gc8mdvc0ilc3g",
+    "title": "12.00🔪sudenur talay iy yaş 20",
+    "start": "2026-02-13T12:00:00+03:00",
+    "end": "2026-02-13T14:00:00+03:00",
+    "category": "surgery",
+    "color": "#ff887c",
+    "location": "1318",
+    "description": "85k",
+    "type": "google"
+  },
+  {
+    "id": "n49o1e2sklcm2jk1hqfm05d9nk",
+    "title": "K buse savaş",
+    "start": "2026-02-13T14:00:00+03:00",
+    "end": "2026-02-13T14:15:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 04 Şubat 2025\n👉🏻 Kontrol süresi: 12 ay\n👉🏻 bir önceki kontrol zamanı: 24 Eylül 2025 (7 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "p7s5jkaakm6ra1305riu2rt1r8",
+    "title": "7m Deniz çakır",
+    "start": "2026-02-13T14:15:00+03:00",
+    "end": "2026-02-13T14:30:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 20 Haziran 2025\n👉🏻 Kontrol süresi: 7 ay\n👉🏻 bir önceki kontrol zamanı: 22 Eylül 2025 (3 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "t086fvudk85gls6adqb8o4j1pk",
+    "title": "15.30🔪aleyna nur aksal iy yaş 24",
+    "start": "2026-02-13T14:45:00+03:00",
+    "end": "2026-02-13T17:45:00+03:00",
+    "category": "surgery",
+    "color": "#ff887c",
+    "location": "1314",
+    "description": "85k",
+    "type": "google"
+  },
+  {
+    "id": "bue32huc2d3eepbkh4lbsoe8h8",
+    "title": "op monica hernandez rodriguez",
+    "start": "2026-02-14T07:30:00+03:00",
+    "end": "2026-02-14T08:00:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "dnecd9222tsnpvs5agalj0b0f8",
+    "title": "K Ebru karataş",
+    "start": "2026-02-14T08:45:00+03:00",
+    "end": "2026-02-14T09:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 27 Ocak 2026\n👉🏻 Kontrol süresi: 18 gün\n👉🏻 bir önceki kontrol zamanı: 07 Şubat 2026 (11 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "86i0ni426uorlv6hjl71kr49sk",
+    "title": "Anestezi şeyma bostancı",
+    "start": "2026-02-14T09:00:00+03:00",
+    "end": "2026-02-14T09:15:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "k6qcpm2cob1dcsklrer6as2h50",
-    "title": "🔪monica hernandez rodriguez (medproper)",
-    "start": "2026-02-14T08:00:00+03:00",
-    "end": "2026-02-14T10:30:00+03:00",
+    "title": "09.00🔪monica hernandez rodriguez (medproper) yaş 52",
+    "start": "2026-02-14T09:15:00+03:00",
+    "end": "2026-02-14T12:00:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
-    "description": "ispanyolca",
+    "color": "#ff887c",
+    "location": "1016",
+    "description": "ispanyolca\nsabiha dönüş-10:15 20 şubat",
     "type": "google"
   },
   {
-    "id": "bl7aafajsd3j7vhkhb8kmjhuro",
-    "title": "1,5m İlayda nur abaramak",
-    "start": "2026-02-14T09:00:00+03:00",
-    "end": "2026-02-14T09:15:00+03:00",
+    "id": "puuivi77lrv8f4g4f1gumk3e7c",
+    "title": "1,5m Onur kızılkurt",
+    "start": "2026-02-14T11:45:00+03:00",
+    "end": "2026-02-14T12:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 29 Aralık 2026\n👉🏻 Kontrol süresi: -318 gün\n👉🏻 bir önceki kontrol zamanı: 13 Ocak 2026 (-350 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "tckokpdv612pnnubia3u2fdjbk",
+    "title": "1m Şevval naz soydan",
+    "start": "2026-02-14T12:15:00+03:00",
+    "end": "2026-02-14T12:30:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "033kgckmqcaudjrcaodm65tb1o",
+    "title": "1m Mehmet arda erdoğan",
+    "start": "2026-02-14T12:45:00+03:00",
+    "end": "2026-02-14T13:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 17 Ocak 2026\n👉🏻 Kontrol süresi: 28 gün\n👉🏻 bir önceki kontrol zamanı: 31 Ocak 2026 (14 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "94lg7masqd273ou6j6u0edmib8",
+    "title": "1,5m Adem cihan soylu",
+    "start": "2026-02-14T13:00:00+03:00",
+    "end": "2026-02-14T13:15:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "7evlj6mobrmvp90tsc60luoml7",
+    "title": "M Mocanu Vıcentıu (Doina hanımın hastası)",
+    "start": "2026-02-14T13:15:00+03:00",
+    "end": "2026-02-14T13:45:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "ngj6i0n8cg887358v2skgsph0o",
-    "title": "🔪ceren özen şeker iy yaş 20",
-    "start": "2026-02-16T08:00:00+03:00",
-    "end": "2026-02-16T10:30:00+03:00",
+    "title": "06.00🔪ceren özen şeker iy yaş 20",
+    "start": "2026-02-16T07:00:00+03:00",
+    "end": "2026-02-16T09:15:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
-    "description": "85k",
+    "color": "#ff887c",
+    "location": "1301",
+    "description": "85k ödeme alındı\nonamları tam",
     "type": "google"
   },
   {
     "id": "1b16fb4r63tpdcjgnlb26pfp5s",
     "title": "anestezi lara boybaşı",
-    "start": "2026-02-16T10:00:00+03:00",
-    "end": "2026-02-16T10:15:00+03:00",
+    "start": "2026-02-16T08:45:00+03:00",
+    "end": "2026-02-16T09:00:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "56meesegvsant2mpt7b3mk7iqg",
     "title": "K1 merve aydın",
-    "start": "2026-02-16T10:30:00+03:00",
-    "end": "2026-02-16T10:45:00+03:00",
+    "start": "2026-02-16T09:15:00+03:00",
+    "end": "2026-02-16T09:30:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "8jpapbdmgvdc7ufmsrd378d6qg",
+    "title": "op Anestezi svitlana mykolaivna",
+    "start": "2026-02-16T09:30:00+03:00",
+    "end": "2026-02-16T09:45:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "n0j5qmqcc5331vegcmcaje1988",
-    "title": "🔪beyza acar (büşra) yaş 19",
-    "start": "2026-02-16T11:00:00+03:00",
-    "end": "2026-02-16T13:30:00+03:00",
+    "title": "09.00🔪beyza acar (büşra) yaş 19",
+    "start": "2026-02-16T10:30:00+03:00",
+    "end": "2026-02-16T13:00:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
-    "description": "+90 501 575 38 37",
+    "color": "#ff887c",
+    "location": "1313",
+    "description": "+90 501 575 38 37\ntetkikler yapıldı",
     "type": "google"
   },
   {
-    "id": "t8tbhd2vsvcp5ev0chqbqanlck",
-    "title": "1,5m melek kavak",
-    "start": "2026-02-16T14:00:00+03:00",
-    "end": "2026-02-16T14:15:00+03:00",
-    "category": "appointment",
+    "id": "n3snc14k1sb3q9bvc92pd7i8q4",
+    "title": "K Gülda alkan",
+    "start": "2026-02-16T13:00:00+03:00",
+    "end": "2026-02-16T13:15:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 31 Ocak 2025\n👉🏻 Kontrol süresi: 12 ay\n👉🏻 bir önceki kontrol zamanı: 30 Temmuz 2025 (5 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "sv6q3jaurtovqme2pu7irskvl0",
+    "title": "12.00🔪 26.02.16 Svitlana Mykolaivna Tetik (KOSTALI yaş 39)",
+    "start": "2026-02-16T13:45:00+03:00",
+    "end": "2026-02-16T17:15:00+03:00",
+    "category": "surgery",
+    "color": "#ff887c",
+    "location": "1308",
+    "description": "flemenkçe \n22 şubat saat 12.00 dönüş",
     "type": "google"
   },
   {
     "id": "92i8i699lvejt83dtmkdp69tss",
-    "title": "🔪lara boybaşı iy yaş 21",
-    "start": "2026-02-17T08:00:00+03:00",
-    "end": "2026-02-17T10:30:00+03:00",
+    "title": "08.00🔪lara boybaşı iy yaş 21",
+    "start": "2026-02-17T08:30:00+03:00",
+    "end": "2026-02-17T11:00:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
+    "color": "#ff887c",
+    "location": "1105",
     "description": "85k",
+    "type": "google"
+  },
+  {
+    "id": "oaqnqscjhljuonhckrp4gq6chc",
+    "title": "K1 hanife al",
+    "start": "2026-02-17T11:00:00+03:00",
+    "end": "2026-02-17T11:15:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "8amflke27sgts4f049oqcsvjr8",
     "title": "Anestezi melek baş",
-    "start": "2026-02-17T10:00:00+03:00",
-    "end": "2026-02-17T10:15:00+03:00",
+    "start": "2026-02-17T11:15:00+03:00",
+    "end": "2026-02-17T11:30:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "piv5k8v46dbd4010kak1mjtpis",
+    "title": "K1 sıla arslanca",
+    "start": "2026-02-17T11:30:00+03:00",
+    "end": "2026-02-17T11:45:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "d12skr1bl6t94pbvvodf8vo484",
+    "title": "K sinem özdemir",
+    "start": "2026-02-17T11:45:00+03:00",
+    "end": "2026-02-17T12:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 29 Ekim 2024\n👉🏻 Kontrol süresi: 15 ay\n👉🏻 bir önceki kontrol zamanı: 13 Haziran 2025 (7 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "0nu5jak8bfb9mthvmi8cf9vd8k",
     "title": "Anestezi ışıl hüzmeli",
-    "start": "2026-02-17T11:00:00+03:00",
-    "end": "2026-02-17T11:15:00+03:00",
+    "start": "2026-02-17T12:15:00+03:00",
+    "end": "2026-02-17T12:30:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "ka6k7tvgmgvmdrq68m1udhvug4",
+    "title": "m iy sevde ebrar şen",
+    "start": "2026-02-17T12:30:00+03:00",
+    "end": "2026-02-17T12:45:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "pjvkn1r9qvd024imnia3nm5pvk",
+    "title": "9m Ayşenur şahin",
+    "start": "2026-02-17T12:45:00+03:00",
+    "end": "2026-02-17T13:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 23 Nisan 2025\n👉🏻 Kontrol süresi: 9 ay\n👉🏻 bir önceki kontrol zamanı: 02 Aralık 2025 (7 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "uiakl3k0ucgd8k13v7gdkmvnc0",
+    "title": "3m ipek şengül",
+    "start": "2026-02-17T13:00:00+03:00",
+    "end": "2026-02-17T13:15:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 15 Kasım 2025\n👉🏻 Kontrol süresi: 3 ay\n👉🏻 bir önceki kontrol zamanı: 28 Kasım 2025 (13 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "la7jot6ash5q3ov7nc34mohklk",
+    "title": "3m Funda bayındır",
+    "start": "2026-02-17T13:15:00+03:00",
+    "end": "2026-02-17T13:30:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 19 Kasım 2025\n👉🏻 Kontrol süresi: 2 ay\n👉🏻 bir önceki kontrol zamanı: 02 Ocak 2026 (1 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "hffqgg4u6tgu3k9p1bver59mvc",
+    "title": "1,5m Eyüp bayansalduz",
+    "start": "2026-02-17T13:30:00+03:00",
+    "end": "2026-02-17T13:45:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\n⚠️ Bu kontrol randevusu aşağıdaki kişilerden biri olabilir:\n• 02.08.2024 tarihinde ameliyat edilen Eyüp Bayansalduz\n• 26.12.2025 tarihinde ameliyat edilen Eyüp Bayansalduz\n\nHangisi olduğunu kesin olarak bilmediğimden detay veremiyorum.\n\nimza: gemini\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "v5eevrac1j29q13kkd3u6ar0h4",
+    "title": "M iy esranur yıldız",
+    "start": "2026-02-17T14:00:00+03:00",
+    "end": "2026-02-17T14:15:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "isnfbm26ju9qc524d7at9jra8s",
+    "title": "m iy ahmet serhat özer",
+    "start": "2026-02-18T09:30:00+03:00",
+    "end": "2026-02-18T09:45:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "pgsd9fau35vv17psffqbjk9ics",
+    "title": "oğuz çekim",
+    "start": "2026-02-18T10:00:00+03:00",
+    "end": "2026-02-18T10:30:00+03:00",
+    "category": "appointment",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "goa03jtng779mlpravr90fdndk",
+    "title": "K2 orhan şahinkuşu",
+    "start": "2026-02-18T11:30:00+03:00",
+    "end": "2026-02-18T11:45:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 04 Şubat 2026\n👉🏻 Kontrol süresi: 14 gün\n👉🏻 bir önceki kontrol zamanı: 11 Şubat 2026 (7 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
+    "type": "google"
+  },
+  {
+    "id": "7klfavdeal6uo5kas0plpq9tu4",
+    "title": "K samet koçak",
+    "start": "2026-02-18T12:30:00+03:00",
+    "end": "2026-02-18T12:45:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "nvtdrodihroacsqkv35l63vg2k",
+    "title": "k1 bahar kuşçi",
+    "start": "2026-02-18T12:45:00+03:00",
+    "end": "2026-02-18T13:00:00+03:00",
+    "category": "checkup",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "3clcj7lr433ifpgms3ask0roqo",
+    "title": "op Gabriella Stoiculescu",
+    "start": "2026-02-19T07:30:00+03:00",
+    "end": "2026-02-19T08:00:00+03:00",
     "category": "appointment",
     "type": "google"
   },
   {
-    "id": "0ee99aknet04lofbsim3s7tugg",
-    "title": "6m 2x muhammet bağrıyanık",
-    "start": "2026-02-17T11:15:00+03:00",
-    "end": "2026-02-17T11:45:00+03:00",
+    "id": "g5o6g4au7o6tggflnfut9f3kf8",
+    "title": "08.00🔪şeyma bostancı iy KOSTALI yaş 20",
+    "start": "2026-02-19T08:30:00+03:00",
+    "end": "2026-02-19T12:00:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
+    "description": "90k-40k ödeme yaptı ödeme alındı\nonamlar teslim edildi\nkan verdi",
+    "type": "google"
+  },
+  {
+    "id": "lpvqt7akosuecpo58vuhe7jjs4",
+    "title": "K2 özge yılmaz",
+    "start": "2026-02-19T12:00:00+03:00",
+    "end": "2026-02-19T12:15:00+03:00",
     "category": "checkup",
     "type": "google"
   },
   {
-    "id": "6bppmj07i3cist0vbthu77v02s",
-    "title": "6m yasin gülger",
-    "start": "2026-02-17T11:45:00+03:00",
-    "end": "2026-02-17T12:00:00+03:00",
+    "id": "nk5r8s2fmd4par9ikmuqffo39c",
+    "title": "k1 asena buket taşdemir",
+    "start": "2026-02-19T12:15:00+03:00",
+    "end": "2026-02-19T12:30:00+03:00",
     "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "rljqqgehvnsn7tpsv15gn89ihc",
+    "title": "m (büşra) Gamze Odabaşıoğlu",
+    "start": "2026-02-19T12:30:00+03:00",
+    "end": "2026-02-19T12:45:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "mst0m93fr4mjci3ujbt8vk43ak",
+    "title": "K1 monica hernandez rodriguez",
+    "start": "2026-02-19T12:45:00+03:00",
+    "end": "2026-02-19T13:00:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "pr2nio00v2aa58cvdkfvm2ipds",
+    "title": "12.00🔪 Gabriella Stoiculescu (enes) yaş 17",
+    "start": "2026-02-19T13:00:00+03:00",
+    "end": "2026-02-19T15:30:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
+    "description": "Romence",
+    "type": "google"
+  },
+  {
+    "id": "6jhbk1pk88ukvk8s16epbs8lcg",
+    "title": "2m sema nur güner",
+    "start": "2026-02-19T15:30:00+03:00",
+    "end": "2026-02-19T15:45:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "5kf15r7smf7173plakphhp01nb",
+    "title": "M iy Bengisu erözdemir",
+    "start": "2026-02-19T15:45:00+03:00",
+    "end": "2026-02-19T16:00:00+03:00",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -49029,7 +49229,7 @@
     "end": "2026-02-20T10:30:00+03:00",
     "category": "surgery",
     "color": "#46a67a",
-    "description": "85k",
+    "description": "85k ödeme alındı\nOnamlar alındı \nTetkikler tamamlandı",
     "type": "google"
   },
   {
@@ -49041,13 +49241,53 @@
     "type": "google"
   },
   {
+    "id": "ts9rlojr36h398bklsechmjasg",
+    "title": "k1 sudenur talay",
+    "start": "2026-02-20T10:30:00+03:00",
+    "end": "2026-02-20T10:45:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "93thl4e3js9fp334dvfn7uidhg",
+    "title": "k1 aleyna nur aksal",
+    "start": "2026-02-20T10:45:00+03:00",
+    "end": "2026-02-20T11:00:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
     "id": "j6al45ksmjirnc28kg00s56e7s",
     "title": "🔪melek baş iy yaş 20",
     "start": "2026-02-20T11:00:00+03:00",
     "end": "2026-02-20T13:30:00+03:00",
     "category": "surgery",
     "color": "#46a67a",
-    "description": "85k",
+    "description": "85k 20k ödeme alındı\nkan verdi\nonamlar alındı",
+    "type": "google"
+  },
+  {
+    "id": "e2r43bbphheg01tqfhab6l6n7c",
+    "title": "1,5m Melek kavak",
+    "start": "2026-02-20T13:30:00+03:00",
+    "end": "2026-02-20T13:45:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "t8as0h5mnsbv3nrf4nhck00v98",
+    "title": "k filiz aytı",
+    "start": "2026-02-20T13:45:00+03:00",
+    "end": "2026-02-20T14:00:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "585achb71gdnnas7d5c47jg40g",
+    "title": "K2 tuğba mutlu döğer",
+    "start": "2026-02-20T14:00:00+03:00",
+    "end": "2026-02-20T14:15:00+03:00",
+    "category": "checkup",
     "type": "google"
   },
   {
@@ -49059,13 +49299,72 @@
     "type": "google"
   },
   {
+    "id": "b7a6oefvk6et7b0d9fucau09lg",
+    "title": "🔪 esranur yıldız iy yaş 27",
+    "start": "2026-02-21T08:30:00+03:00",
+    "end": "2026-02-21T11:00:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
+    "description": "77k \nCuma ödeme yapcak\nKan verdi ekg çektirdi",
+    "type": "google"
+  },
+  {
+    "id": "kvckkbfr97riqms748cfr4be0g",
+    "title": "k1 svitlana mykolaivna",
+    "start": "2026-02-21T09:00:00+03:00",
+    "end": "2026-02-21T09:15:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "qd779918t2s54f756k1onuvgbc",
+    "title": "2m Cansel eken",
+    "start": "2026-02-21T11:00:00+03:00",
+    "end": "2026-02-21T11:15:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "1h5gch4q05e5i2q9csmdnh263k",
+    "title": "1,5m Büşra ataman",
+    "start": "2026-02-21T11:15:00+03:00",
+    "end": "2026-02-21T11:30:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
     "id": "38cg8p85she5kcmnak5amk5olc",
     "title": "🔪miss freya ındia trinity sanger (medproper)",
-    "start": "2026-02-21T08:00:00+03:00",
-    "end": "2026-02-21T10:30:00+03:00",
+    "start": "2026-02-21T11:30:00+03:00",
+    "end": "2026-02-21T14:00:00+03:00",
     "category": "surgery",
     "color": "#46a67a",
     "description": "ingilizce",
+    "type": "google"
+  },
+  {
+    "id": "8q6maojtk5u9s9crksh278sr74",
+    "title": "3m yağmur ipek",
+    "start": "2026-02-21T13:00:00+03:00",
+    "end": "2026-02-21T13:15:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "510a6m27fvrntjmbocennpfa40",
+    "title": "m iy Eylül Buldur",
+    "start": "2026-02-21T14:30:00+03:00",
+    "end": "2026-02-21T14:45:00+03:00",
+    "category": "appointment",
+    "description": "yaş 17",
+    "type": "google"
+  },
+  {
+    "id": "ifo57gc7l1r4otdbnhjmj5bpt4",
+    "title": "M iy züleyha gökmen",
+    "start": "2026-02-22T08:00:00+03:00",
+    "end": "2026-02-22T08:15:00+03:00",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -49076,6 +49375,64 @@
     "category": "surgery",
     "color": "#46a67a",
     "description": "85k",
+    "type": "google"
+  },
+  {
+    "id": "cpd8g8uld325s8jabv05fq5jf8",
+    "title": "k1 ceren özen şeker",
+    "start": "2026-02-23T11:00:00+03:00",
+    "end": "2026-02-23T11:15:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "9etpnjduotiu4kcdm1vdp8q144",
+    "title": "k1 beyza acar",
+    "start": "2026-02-23T11:15:00+03:00",
+    "end": "2026-02-23T11:30:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "tcgmdklc77ra7a45o45sluk6lo",
+    "title": "1,5m rojda akpolat",
+    "start": "2026-02-23T11:30:00+03:00",
+    "end": "2026-02-23T11:45:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "qoc2pgird179m077d5vhg327es",
+    "title": "M iy şilan ayaz",
+    "start": "2026-02-23T11:45:00+03:00",
+    "end": "2026-02-23T12:00:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "tlqjq87g0r2utb8l32kjuaoj7o",
+    "title": "k1 lara boybaşı",
+    "start": "2026-02-24T08:00:00+03:00",
+    "end": "2026-02-24T08:15:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "b0dofqphd0qu2bm5fah70hs0as",
+    "title": "🔪ahmet serhat özer iy yaş 19",
+    "start": "2026-02-25T08:00:00+03:00",
+    "end": "2026-02-25T10:30:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
+    "description": "85k-20k ödeme alındı\nonamlar alındı\ntetkikler yapıldı",
+    "type": "google"
+  },
+  {
+    "id": "blslu6tade88tcioa3137ejiac",
+    "title": "7m gamze yılmaz",
+    "start": "2026-02-25T12:45:00+03:00",
+    "end": "2026-02-25T13:00:00+03:00",
+    "category": "checkup",
     "type": "google"
   },
   {
@@ -49106,6 +49463,14 @@
     "type": "google"
   },
   {
+    "id": "uqfhth8ebe1a0o44j09d95qga0",
+    "title": "3m cansel karagöz",
+    "start": "2026-03-02T09:00:00+03:00",
+    "end": "2026-03-02T09:15:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
     "id": "2qh73q9vanb30bbs7drlhmd74c",
     "title": "op Arturo Sebastian Palomino Zegarra",
     "start": "2026-03-06T07:00:00+03:00",
@@ -49123,6 +49488,14 @@
     "type": "google"
   },
   {
+    "id": "4h3eo8fqtuc05aa5dc9uh475vc",
+    "title": "anestezi zeynep engin parmaksız",
+    "start": "2026-03-06T11:00:00+03:00",
+    "end": "2026-03-06T11:15:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
     "id": "9k7i9q4cj6220qf8uo1gjek2d0",
     "title": "anestezi fikriye yudum bilgin",
     "start": "2026-03-06T11:15:00+03:00",
@@ -49135,54 +49508,16 @@
     "title": "1,5m Rahime nur savklı saat?",
     "start": "2026-03-06T13:00:00+03:00",
     "end": "2026-03-06T13:15:00+03:00",
-    "category": "appointment",
+    "category": "checkup",
     "type": "google"
   },
   {
-    "id": "272a4aos3knc65dugi2lktpa3b",
-    "title": "ℹ️ İZİN",
-    "start": "2026-03-09T14:30:00+03:00",
-    "end": "2026-03-10T00:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "location": "Gidiş uçuşum 9 Mart 21:00 SAW kalkış.",
-    "type": "google"
-  },
-  {
-    "id": "45jihaid68t4geejumpgmo1f6v",
-    "title": "ℹ️ İZİN",
-    "start": "2026-03-10T03:00:00+03:00",
-    "end": "2026-03-10T22:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "7dhub2pg7dq2mvj4oskpeco5ru",
-    "title": "ℹ️ İZİN",
-    "start": "2026-03-11T03:00:00+03:00",
-    "end": "2026-03-11T22:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "7gkji6j0eem08b8hcu9iniu1o9",
-    "title": "ℹ️ İZİN",
-    "start": "2026-03-12T00:00:00+03:00",
-    "end": "2026-03-12T22:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "type": "google"
-  },
-  {
-    "id": "69hv0ujkcs88pa1ohu738ovm3k",
-    "title": "ℹ️ İZİN",
-    "start": "2026-03-13T00:00:00+03:00",
-    "end": "2026-03-13T10:00:00+03:00",
-    "category": "blocked",
-    "color": "#dc2127",
-    "location": "Dönüş uçuşum 13 mart Cuma 08:00 SAW iniş",
+    "id": "d87ivl73bvmu2eb6cq56a7bs1o",
+    "title": "🔪zeynep engin parmaksız iy yaş 19",
+    "start": "2026-03-07T08:00:00+03:00",
+    "end": "2026-03-07T10:30:00+03:00",
+    "category": "surgery",
+    "description": "80k",
     "type": "google"
   },
   {
@@ -49208,7 +49543,15 @@
     "start": "2026-03-13T14:00:00+03:00",
     "end": "2026-03-13T16:30:00+03:00",
     "category": "surgery",
-    "description": "85k",
+    "description": "85k 15k ödeme alındı",
+    "type": "google"
+  },
+  {
+    "id": "2rbij4ttonieeiml9pv7rtr3ud",
+    "title": "🔪 Luis Sandra Olmo and Noemi Duran",
+    "start": "2026-03-14T08:00:00+03:00",
+    "end": "2026-03-14T16:15:00+03:00",
+    "category": "surgery",
     "type": "google"
   },
   {

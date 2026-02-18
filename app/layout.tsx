@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   description: "Op.Dr. İbrahim YAĞCI randevu ekranı",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,9 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-full max-w-[430px] min-h-screen bg-white shadow-xl mx-auto overflow-hidden relative">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );
