@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from 'react';
-import { format, isSameDay, addDays, eachDayOfInterval, startOfDay, addMinutes, isBefore, subMinutes, addMonths } from 'date-fns';
+import { format, isSameDay, addDays, eachDayOfInterval, startOfDay, addMinutes, isBefore, subMinutes } from 'date-fns';
 import { tr, enUS } from 'date-fns/locale';
 import clsx from 'clsx';
 
@@ -212,11 +212,10 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
 
     const plannedPatients = useMemo(() => {
         const todayStart = startOfDay(new Date());
-        const threeMonthsLater = addMonths(todayStart, 3);
         const plannedEvents = events
             .filter(e => {
                 const eventDate = new Date(e.start);
-                return e.type === 'Surgery' && eventDate >= todayStart && eventDate <= threeMonthsLater;
+                return e.type === 'Surgery' && eventDate >= todayStart;
             })
             .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
