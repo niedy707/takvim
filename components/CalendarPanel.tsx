@@ -253,9 +253,9 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
 
 
     return (
-        <div className="h-screen flex flex-col bg-slate-950 font-sans overflow-hidden">
+        <div className="h-screen flex flex-col bg-slate-800 font-sans overflow-hidden">
             {/* Header */}
-            <header className="flex-shrink-0 flex flex-row items-center justify-between z-40 bg-slate-900 border-b border-slate-800 px-3 py-2 shadow-md gap-2">
+            <header className="flex-shrink-0 flex flex-row items-center justify-between z-40 bg-slate-700 border-b border-slate-600 px-3 py-2 shadow-md gap-2">
                 {/* Left: Logo + WhatsApp */}
                 <div className="flex items-center gap-2">
                     {/* Logo */}
@@ -283,24 +283,24 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                     </a>
 
                     {/* Divider */}
-                    <div className="w-px h-6 bg-slate-700" />
+                    <div className="w-px h-6 bg-slate-500" />
 
                     {/* Language */}
                     <div className="flex gap-1">
                         <button
                             onClick={() => setLang('tr')}
-                            className={clsx("text-lg transition-all hover:scale-110 leading-none p-0.5 rounded hover:bg-slate-800")}
+                            className={clsx("text-lg transition-all hover:scale-110 leading-none p-0.5 rounded hover:bg-slate-600")}
                             title="Türkçe"
                         >🇹🇷</button>
                         <button
                             onClick={() => setLang('en')}
-                            className={clsx("text-lg transition-all hover:scale-110 leading-none p-0.5 rounded hover:bg-slate-800")}
+                            className={clsx("text-lg transition-all hover:scale-110 leading-none p-0.5 rounded hover:bg-slate-600")}
                             title="English"
                         >🇬🇧</button>
                     </div>
 
                     {/* Divider */}
-                    <div className="w-px h-6 bg-slate-700" />
+                    <div className="w-px h-6 bg-slate-500" />
 
                     {/* Date & Time */}
                     <div className="flex flex-col items-end">
@@ -331,15 +331,15 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
 
                                 return (
                                     <div key={day.toISOString()} className={clsx(
-                                        "flex flex-col border-2 rounded-xl bg-slate-900 transition-all",
-                                        isToday ? "border-blue-500/50 shadow-lg shadow-blue-900/20 ring-2 ring-blue-500/20" : "border-slate-800"
+                                        "flex flex-col border-2 rounded-xl bg-slate-700 transition-all",
+                                        isToday ? "border-blue-500/50 shadow-lg shadow-blue-900/20 ring-2 ring-blue-500/20" : "border-slate-600"
                                     )}>
                                         {/* Header with Background */}
                                         <h2 className={clsx(
                                             "text-lg font-bold py-3 px-4 border-b-2 flex flex-col justify-center items-start transition-all gap-1 rounded-t-xl",
                                             isToday
                                                 ? "bg-blue-900/60 text-blue-200 border-blue-500/30"
-                                                : "bg-slate-800 text-orange-200/80 border-slate-700/50"
+                                                : "bg-slate-600 text-orange-200/80 border-slate-500/50"
                                         )}>
                                             <div className="flex justify-between items-center w-full">
                                                 <span className="leading-none">{format(day, 'EEEE', { locale })}</span>
@@ -368,9 +368,9 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                         </h2>
 
                                         {/* Content Area */}
-                                        <div className="p-3 flex flex-col gap-2 flex-grow bg-slate-950/30">
+                                        <div className="p-3 flex flex-col gap-2 flex-grow bg-slate-800/30">
                                             {dayEvents.length === 0 ? (
-                                                <div className="flex flex-col items-center justify-center h-full text-slate-700 text-sm italic py-4">
+                                                <div className="flex flex-col items-center justify-center h-full text-slate-500 text-sm italic py-4">
                                                     <span className="text-2xl mb-2 opacity-20">📅</span>
                                                     {t.noEvents}
                                                 </div>
@@ -451,8 +451,8 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                     </div>
 
                     {/* Right Column: Planned Patients Side Panel (Desktop Only) */}
-                    <div className="hidden lg:flex lg:col-span-1 h-full overflow-hidden flex-col bg-slate-900 border border-slate-800 rounded-xl">
-                        <div className="p-4 border-b border-slate-800 bg-slate-900/50">
+                    <div className="hidden lg:flex lg:col-span-1 h-full overflow-hidden flex-col bg-slate-700 border border-slate-600 rounded-xl">
+                        <div className="p-4 border-b border-slate-600 bg-slate-700/50">
                             <h3 className="text-lg font-bold text-white">{t.plannedPatientsTitle}</h3>
                             <p className="text-xs text-slate-500 mt-1">
                                 {t.totalPlanned} {plannedPatients.length} {t.totalPlannedSuffix}
@@ -472,9 +472,9 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                         acc[dateKey].push(patient);
                                         return acc;
                                     }, {} as Record<string, typeof plannedPatients>)).map(([dateKey, patients]) => (
-                                        <div key={dateKey} className="border border-slate-800 rounded-xl overflow-hidden bg-slate-950/30">
+                                        <div key={dateKey} className="border border-slate-600 rounded-xl overflow-hidden bg-slate-800/30">
                                             {/* Date Header */}
-                                            <div className="bg-violet-900/20 px-3 py-2 border-b border-slate-800 flex justify-between items-center">
+                                            <div className="bg-violet-900/20 px-3 py-2 border-b border-slate-600 flex justify-between items-center">
                                                 <div className="flex items-center gap-2">
                                                     <span className="font-bold text-slate-300 text-sm">
                                                         {format(new Date(dateKey), 'd MMM', { locale })}
@@ -489,9 +489,9 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                             </div>
 
                                             {/* Patients List */}
-                                            <div className="divide-y divide-slate-800/50">
+                                            <div className="divide-y divide-slate-600/50">
                                                 {patients.map((patient) => (
-                                                    <div key={patient.id} className="flex items-center gap-3 p-3 hover:bg-slate-800/50 transition-colors">
+                                                    <div key={patient.id} className="flex items-center gap-3 p-3 hover:bg-slate-600/50 transition-colors">
                                                         <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-violet-500/10 text-violet-400 font-bold rounded text-xs border border-violet-500/20">
                                                             {patient.index}
                                                         </span>
@@ -531,15 +531,15 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                     onClick={() => setShowMobilePlannedModal(false)}
                 >
                     <div
-                        className="w-full max-w-md bg-slate-900 border-t border-slate-800 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] animate-in slide-in-from-bottom duration-300"
+                        className="w-full max-w-md bg-slate-700 border-t border-slate-600 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] animate-in slide-in-from-bottom duration-300"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Header */}
-                        <div className="flex justify-between items-center p-4 bg-slate-900 border-b border-slate-800">
+                        <div className="flex justify-between items-center p-4 bg-slate-700 border-b border-slate-600">
                             <h3 className="text-lg font-bold text-white flex gap-2 items-center">
                                 <span>🔪</span> {t.plannedPatientsTitle}
                             </h3>
-                            <button onClick={() => setShowMobilePlannedModal(false)} className="bg-slate-800 p-2 rounded-full text-white/70 hover:text-white">
+                            <button onClick={() => setShowMobilePlannedModal(false)} className="bg-slate-600 p-2 rounded-full text-white/70 hover:text-white">
                                 <span className="sr-only">{t.close}</span>
                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -548,7 +548,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                         </div>
 
                         {/* Content */}
-                        <div className="flex-grow overflow-y-auto p-4 bg-slate-950">
+                        <div className="flex-grow overflow-y-auto p-4 bg-slate-800">
                             {plannedPatients.length === 0 ? (
                                 <div className="text-center text-slate-500 py-12">
                                     {t.noPlannedSurgeries}
@@ -561,8 +561,8 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                         acc[dateKey].push(patient);
                                         return acc;
                                     }, {} as Record<string, typeof plannedPatients>)).map(([dateKey, patients]) => (
-                                        <div key={dateKey} className="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/50">
-                                            <div className="bg-violet-900/20 px-4 py-3 border-b border-slate-800 flex justify-between items-center">
+                                        <div key={dateKey} className="border border-slate-600 rounded-xl overflow-hidden bg-slate-700/50">
+                                            <div className="bg-violet-900/20 px-4 py-3 border-b border-slate-600 flex justify-between items-center">
                                                 <div className="flex items-center gap-2">
                                                     <span className="font-bold text-slate-200">
                                                         {format(new Date(dateKey), 'd MMM', { locale })}
@@ -575,7 +575,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                                     {patients.length}
                                                 </span>
                                             </div>
-                                            <div className="divide-y divide-slate-800/50">
+                                            <div className="divide-y divide-slate-600/50">
                                                 {patients.map((patient) => (
                                                     <div key={patient.id} className="flex items-center gap-4 p-4">
                                                         <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-violet-500/10 text-violet-400 font-bold rounded-lg text-sm border border-violet-500/20">
@@ -600,7 +600,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
             {
                 selectedSlot && (
                     <div className="fixed inset-0 bg-black/70 z-[60] flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setSelectedSlot(null)}>
-                        <div className="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-md overflow-hidden shadow-2xl transform transition-all scale-100" onClick={e => e.stopPropagation()}>
+                        <div className="bg-slate-700 border border-slate-600 rounded-3xl w-full max-w-md overflow-hidden shadow-2xl transform transition-all scale-100" onClick={e => e.stopPropagation()}>
                             <div className="bg-gradient-to-r from-violet-600 to-indigo-600 p-6 text-white text-center relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_50%_120%,white_0%,transparent_50%)]"></div>
                                 <h3 className="text-2xl font-bold mb-1 relative z-10">{t.createAppointment}</h3>
@@ -621,7 +621,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                         type="text"
                                         value={patientName}
                                         onChange={(e) => setPatientName(e.target.value)}
-                                        className="w-full p-4 border border-slate-700 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all text-slate-200 placeholder-slate-600 bg-slate-950 focus:bg-slate-900 font-medium shadow-sm hover:border-slate-600"
+                                        className="w-full p-4 border border-slate-500 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all text-slate-200 placeholder-slate-600 bg-slate-800 focus:bg-slate-700 font-medium shadow-sm hover:border-slate-600"
                                         placeholder={t.placeholderName}
                                         autoFocus
                                     />
@@ -638,7 +638,7 @@ export default function CalendarPanel({ lastUpdate }: CalendarPanelProps) {
                                                     "py-2 px-1 text-sm rounded-lg font-medium transition-all text-center border",
                                                     selectedTime === time
                                                         ? "bg-violet-600 text-white border-violet-600 shadow-md transform scale-105"
-                                                        : "bg-slate-800 text-slate-300 border-slate-700 hover:border-violet-500/50 hover:bg-slate-700/80"
+                                                        : "bg-slate-600 text-slate-300 border-slate-500 hover:border-violet-500/50 hover:bg-slate-500/80"
                                                 )}
                                             >
                                                 {time}
@@ -694,7 +694,7 @@ function EventCard({ event, t }: { event: Event, t: any }) {
         Surgery: 'bg-violet-600/20 border-l-4 border-violet-500 text-violet-100 min-h-[7rem] flex flex-col justify-center',
         Control: 'bg-blue-600/10 border-l-4 border-blue-500 text-blue-100',
         Online: 'bg-indigo-600/10 border-l-4 border-indigo-500 text-indigo-100',
-        Busy: 'bg-slate-800 border-l-4 border-slate-600 text-slate-400',
+        Busy: 'bg-slate-600 border-l-4 border-slate-400 text-slate-300',
         Available: 'bg-emerald-900/20 border border-emerald-800 text-emerald-400 border-dashed opacity-80 hover:opacity-100 hover:bg-emerald-900/40 hover:border-emerald-600 hover:shadow-sm cursor-pointer',
         Cancelled: 'hidden',
         Anesthesia: 'bg-fuchsia-600/10 border-l-4 border-fuchsia-500 text-fuchsia-100',

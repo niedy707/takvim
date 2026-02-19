@@ -49110,15 +49110,6 @@
     "type": "google"
   },
   {
-    "id": "pgsd9fau35vv17psffqbjk9ics",
-    "title": "oğuz çekim",
-    "start": "2026-02-18T10:00:00+03:00",
-    "end": "2026-02-18T10:30:00+03:00",
-    "category": "appointment",
-    "color": "#46a67a",
-    "type": "google"
-  },
-  {
     "id": "goa03jtng779mlpravr90fdndk",
     "title": "K2 orhan şahinkuşu",
     "start": "2026-02-18T11:30:00+03:00",
@@ -49152,15 +49143,17 @@
     "start": "2026-02-19T07:30:00+03:00",
     "end": "2026-02-19T08:00:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "g5o6g4au7o6tggflnfut9f3kf8",
     "title": "08.00🔪şeyma bostancı iy KOSTALI yaş 20",
-    "start": "2026-02-19T08:30:00+03:00",
+    "start": "2026-02-19T09:00:00+03:00",
     "end": "2026-02-19T12:00:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
+    "color": "#ff887c",
+    "location": "1318",
     "description": "90k-40k ödeme yaptı ödeme alındı\nonamlar teslim edildi\nkan verdi",
     "type": "google"
   },
@@ -49170,6 +49163,8 @@
     "start": "2026-02-19T12:00:00+03:00",
     "end": "2026-02-19T12:15:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 06 Şubat 2026\n👉🏻 Kontrol süresi: 13 gün\n👉🏻 bir önceki kontrol zamanı: 13 Şubat 2026 (7 gün)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
@@ -49178,6 +49173,7 @@
     "start": "2026-02-19T12:15:00+03:00",
     "end": "2026-02-19T12:30:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
     "type": "google"
   },
   {
@@ -49186,6 +49182,7 @@
     "start": "2026-02-19T12:30:00+03:00",
     "end": "2026-02-19T12:45:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
@@ -49194,39 +49191,44 @@
     "start": "2026-02-19T12:45:00+03:00",
     "end": "2026-02-19T13:00:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "pr2nio00v2aa58cvdkfvm2ipds",
     "title": "12.00🔪 Gabriella Stoiculescu (enes) yaş 17",
-    "start": "2026-02-19T13:00:00+03:00",
+    "start": "2026-02-19T13:30:00+03:00",
     "end": "2026-02-19T15:30:00+03:00",
     "category": "surgery",
-    "color": "#46a67a",
+    "color": "#ff887c",
+    "location": "1322",
     "description": "Romence",
     "type": "google"
   },
   {
     "id": "6jhbk1pk88ukvk8s16epbs8lcg",
     "title": "2m sema nur güner",
-    "start": "2026-02-19T15:30:00+03:00",
-    "end": "2026-02-19T15:45:00+03:00",
+    "start": "2026-02-19T16:00:00+03:00",
+    "end": "2026-02-19T16:15:00+03:00",
     "category": "checkup",
+    "color": "#46a67a",
+    "description": "--- ℹ️ OTOMASYON BAŞLANGICI ---\nℹ️ <b>Dosya Taraması Sonucu:</b>\n👉🏻 Hastanın ameliyat tarihi: 17 Aralık 2025\n👉🏻 Kontrol süresi: 2 ay\n👉🏻 bir önceki kontrol zamanı: 20 Ocak 2026 (1 ay)\n\nBu bilgiler Gemini tarafından otomasyon şeklinde oluşturulmuştur.\n--- ℹ️ OTOMASYON BİTİŞİ ---",
     "type": "google"
   },
   {
     "id": "5kf15r7smf7173plakphhp01nb",
     "title": "M iy Bengisu erözdemir",
-    "start": "2026-02-19T15:45:00+03:00",
-    "end": "2026-02-19T16:00:00+03:00",
+    "start": "2026-02-19T16:15:00+03:00",
+    "end": "2026-02-19T16:30:00+03:00",
     "category": "appointment",
+    "color": "#46a67a",
     "type": "google"
   },
   {
     "id": "8ir7a01j6hmkvftid7svsduv5k",
-    "title": "🔪ışıl hüzmeli iy yaş 32",
-    "start": "2026-02-20T08:00:00+03:00",
-    "end": "2026-02-20T10:30:00+03:00",
+    "title": "08.00🔪ışıl hüzmeli iy yaş 32",
+    "start": "2026-02-20T08:30:00+03:00",
+    "end": "2026-02-20T11:00:00+03:00",
     "category": "surgery",
     "color": "#46a67a",
     "description": "85k ödeme alındı\nOnamlar alındı \nTetkikler tamamlandı",
@@ -49258,9 +49260,9 @@
   },
   {
     "id": "j6al45ksmjirnc28kg00s56e7s",
-    "title": "🔪melek baş iy yaş 20",
-    "start": "2026-02-20T11:00:00+03:00",
-    "end": "2026-02-20T13:30:00+03:00",
+    "title": "11.00🔪melek baş iy yaş 20",
+    "start": "2026-02-20T11:30:00+03:00",
+    "end": "2026-02-20T14:00:00+03:00",
     "category": "surgery",
     "color": "#46a67a",
     "description": "85k 20k ödeme alındı\nkan verdi\nonamlar alındı",
@@ -49436,6 +49438,22 @@
     "type": "google"
   },
   {
+    "id": "virhgtuo76tr117qb78uvvnu2g",
+    "title": "K1 şeyma bostancı",
+    "start": "2026-02-26T08:00:00+03:00",
+    "end": "2026-02-26T08:15:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "jb9hdpm5qs8d8d1n6uj2f1nrlo",
+    "title": "k1 Gabriella Stoiculescu",
+    "start": "2026-02-26T08:15:00+03:00",
+    "end": "2026-02-26T08:30:00+03:00",
+    "category": "checkup",
+    "type": "google"
+  },
+  {
     "id": "49qm72uhmoa07squ1n8ina4k4k",
     "title": "op adelina elena savu",
     "start": "2026-02-27T07:00:00+03:00",
@@ -49454,12 +49472,11 @@
     "type": "google"
   },
   {
-    "id": "oh3792mdf9c06fh2v30l9pdtao",
-    "title": "🔪mafalda cardıllo(medproper) yaş 22",
+    "id": "fkb8ev2suedjqaonh2ptil7upg",
+    "title": "op mafalda cardıllo",
     "start": "2026-03-02T08:00:00+03:00",
-    "end": "2026-03-02T10:30:00+03:00",
-    "category": "surgery",
-    "description": "13.40 geliş\nistanbul havalimanı\ndönüş 7 mart 18.05\nitalyanca",
+    "end": "2026-03-02T08:30:00+03:00",
+    "category": "appointment",
     "type": "google"
   },
   {
@@ -49468,6 +49485,16 @@
     "start": "2026-03-02T09:00:00+03:00",
     "end": "2026-03-02T09:15:00+03:00",
     "category": "checkup",
+    "type": "google"
+  },
+  {
+    "id": "oh3792mdf9c06fh2v30l9pdtao",
+    "title": "🔪mafalda cardıllo(medproper) yaş 22",
+    "start": "2026-03-02T10:30:00+03:00",
+    "end": "2026-03-02T13:00:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
+    "description": "13.40 geliş\nistanbul havalimanı\ndönüş 7 mart 18.05\nitalyanca",
     "type": "google"
   },
   {
@@ -49484,6 +49511,7 @@
     "start": "2026-03-06T08:00:00+03:00",
     "end": "2026-03-06T10:30:00+03:00",
     "category": "surgery",
+    "color": "#46a67a",
     "description": "ispanyolca\ndönüş 11 mart\nkontrolü 9 martta yapılıcak",
     "type": "google"
   },
@@ -49517,6 +49545,7 @@
     "start": "2026-03-07T08:00:00+03:00",
     "end": "2026-03-07T10:30:00+03:00",
     "category": "surgery",
+    "color": "#46a67a",
     "description": "80k",
     "type": "google"
   },
@@ -49534,6 +49563,7 @@
     "start": "2026-03-13T11:00:00+03:00",
     "end": "2026-03-13T13:30:00+03:00",
     "category": "surgery",
+    "color": "#46a67a",
     "description": "85k",
     "type": "google"
   },
@@ -49543,15 +49573,42 @@
     "start": "2026-03-13T14:00:00+03:00",
     "end": "2026-03-13T16:30:00+03:00",
     "category": "surgery",
+    "color": "#46a67a",
     "description": "85k 15k ödeme alındı",
     "type": "google"
   },
   {
+    "id": "i9ajoepbcn9t33n0uj1ksdt2hg",
+    "title": "op Luis Sandra Olmo",
+    "start": "2026-03-14T07:00:00+03:00",
+    "end": "2026-03-14T07:30:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
+    "id": "fgjffno7fa493aobnaktlbdrus",
+    "title": "op Noemi Duran",
+    "start": "2026-03-14T07:30:00+03:00",
+    "end": "2026-03-14T08:00:00+03:00",
+    "category": "appointment",
+    "type": "google"
+  },
+  {
     "id": "2rbij4ttonieeiml9pv7rtr3ud",
-    "title": "🔪 Luis Sandra Olmo and Noemi Duran",
+    "title": "🔪 Luis Sandra Olmo (medproper)",
     "start": "2026-03-14T08:00:00+03:00",
-    "end": "2026-03-14T16:15:00+03:00",
+    "end": "2026-03-14T10:30:00+03:00",
     "category": "surgery",
+    "color": "#46a67a",
+    "type": "google"
+  },
+  {
+    "id": "2qhbam582hvks4ibc8aasnfhi8",
+    "title": "🔪 Noemi Duran (medproper)",
+    "start": "2026-03-14T11:00:00+03:00",
+    "end": "2026-03-14T13:30:00+03:00",
+    "category": "surgery",
+    "color": "#46a67a",
     "type": "google"
   },
   {
@@ -49560,6 +49617,7 @@
     "start": "2026-03-16T08:00:00+03:00",
     "end": "2026-03-16T10:30:00+03:00",
     "category": "surgery",
+    "color": "#46a67a",
     "description": "85k\n\n05455993926",
     "type": "google"
   }
