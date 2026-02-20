@@ -170,9 +170,19 @@ export function normalizeName(name: string): string {
  * - Remove "tel" or "telefon" followed by digits
  * - Remove "yas" or "yaş" followed by a 2-digit age
  * - Remove specific keywords: Kosta, kostalı, rino, revizyon, ortak, vaka
+ * - PRESERVE: 🎂YYYY birth-year annotations (e.g. 🎂2002)
+ * - PRESERVE: [Rev1], [Rev2] revision tags
  */
 export function cleanDisplayName(name: string): string {
     let n = name.normalize('NFC');
+
+    // 0. Extract preserved suffixes (🎂YYYY and [RevN]) before cleaning
+    const cakeMatch = n.match(/\s*(🎂\S*)/);
+    const revMatch = n.match(/\s*(\[Rev\d+\])/);
+    const cakeSuffix = cakeMatch ? cakeMatch[1] : '';
+    const revSuffix = revMatch ? revMatch[1] : '';
+    if (cakeSuffix) n = n.replace(cakeMatch![0], '');
+    if (revSuffix) n = n.replace(revMatch![0], '');
 
     // 1. Remove emoji and time
     n = n.replace(/🔪/g, ' ')
@@ -185,13 +195,10 @@ export function cleanDisplayName(name: string): string {
     n = n.replace(/\b(tel|telefon)\b\s*[:.]?\s*[\d\s]+/gi, ' ');
 
     // 4. Remove standalone "yas/yaş" + 2-digit numbers
-    // Using Unicode property escapes for Turkish character support in word boundaries
     n = n.replace(/(?<!\p{L})(yas|yaş)(?!\p{L})\s*[:.]?\s*\d{2}/gui, ' ');
 
-    // 5. Remove specific keywords and "iy" 
+    // 5. Remove specific keywords and "iy"
     const noise = ['kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka', 'iy'];
-
-    // Split into words, filter out noise, then join back
     n = n.split(/\s+/)
         .filter(word => {
             const low = word.toLocaleLowerCase('tr-TR');
@@ -199,13 +206,16 @@ export function cleanDisplayName(name: string): string {
         })
         .join(' ');
 
-    // 7. Title Case Formatting
-    // Split by spaces, capitalize first letter, lowercase rest (Turkish aware)
-    return n.replace(/\s+/g, ' ').trim()
+    // 6. Title Case Formatting
+    const cleaned = n.replace(/\s+/g, ' ').trim()
         .split(' ')
         .map(word => {
             if (!word) return '';
             return word.charAt(0).toLocaleUpperCase('tr-TR') + word.slice(1).toLocaleLowerCase('tr-TR');
         })
         .join(' ');
+
+    // 7. Reattach preserved suffixes
+    const extras = [cakeSuffix, revSuffix].filter(Boolean).join(' ');
+    return extras ? `${cleaned} ${extras}` : cleaned;
 }
