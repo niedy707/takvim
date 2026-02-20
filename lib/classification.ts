@@ -198,6 +198,9 @@ export function cleanDisplayName(name: string): string {
     // 4. Remove standalone "yas/yaş" + 2-digit numbers
     n = n.replace(/(?<!\p{L})(yas|yaş)(?!\p{L})\s*[:.]?\s*\d{2}/gui, ' ');
 
+    // 4.5. Remove [iy] bracket-prefix coming from BHT/Google Calendar events
+    n = n.replace(/^\s*\[iy\]\s*/i, '');
+
     // 5. Remove specific keywords and "iy"
     const noise = ['kosta', 'kostalı', 'rino', 'revizyon', 'ortak', 'vaka', 'iy'];
     n = n.split(/\s+/)
@@ -245,17 +248,17 @@ export function extractSurgeryType(title: string): string | undefined {
     // 2. Keyword → canonical isim eşlemesi (Türkçe/ingilizce takvim girdileri)
     const t = title.toLowerCase();
     const map: [RegExp, string][] = [
-        [/septorino|septorinoplast/,     'Septorino'],
-        [/rinoplast|rhinoplast|rino/,    'Rinoplasti'],
-        [/otoplast/,                     'Otoplasti'],
-        [/septoplast/,                   'Septoplasti'],
-        [/blefar/,                       'Blefaroplasti'],
-        [/tipplast|tip plast/,           'Tipplasti'],
-        [/mentoplast|genioplast/,        'Mentoplasti'],
-        [/implant/,                      'İmplant'],
-        [/fess|endoskop/,               'FESS'],
-        [/dudak/,                        'Dudak'],
-        [/kulak|kulağ/,                  'Kulak'],
+        [/septorino|septorinoplast/, 'Septorino'],
+        [/rinoplast|rhinoplast|rino/, 'Rinoplasti'],
+        [/otoplast/, 'Otoplasti'],
+        [/septoplast/, 'Septoplasti'],
+        [/blefar/, 'Blefaroplasti'],
+        [/tipplast|tip plast/, 'Tipplasti'],
+        [/mentoplast|genioplast/, 'Mentoplasti'],
+        [/implant/, 'İmplant'],
+        [/fess|endoskop/, 'FESS'],
+        [/dudak/, 'Dudak'],
+        [/kulak|kulağ/, 'Kulak'],
     ];
 
     for (const [pattern, label] of map) {
