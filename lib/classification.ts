@@ -76,12 +76,13 @@ export function categorizeEvent(
     }
 
     // CHECKUP: k, k1, k2, or patterns like "1m ", "3m ", "1.5m " (with space after)
-    if (/^[kK]\d?/.test(title) || /^\d+\.?\d*m\s/.test(normalizedTitle) || normalizedTitle.includes('kontrol')) {
+    // Also: "Op " prefix = examination/checkup (not surgery)
+    if (/^[kK]\d?/.test(title) || /^\d+\.?\d*m\s/.test(normalizedTitle) || normalizedTitle.includes('kontrol') || /^op\s/i.test(title)) {
         return 'checkup';
     }
 
-    // APPOINTMENT: m or op prefix, or contains 'online'
-    if (/^[mM]\s/.test(title) || /^op\s/i.test(title) || normalizedTitle.includes('online') || normalizedTitle.includes('muayene') || normalizedTitle.includes('exam')) {
+    // APPOINTMENT: m prefix, online, muayene, exam
+    if (/^[mM]\s/.test(title) || normalizedTitle.includes('online') || normalizedTitle.includes('muayene') || normalizedTitle.includes('exam')) {
         return 'appointment';
     }
 
@@ -205,6 +206,12 @@ export function cleanDisplayName(name: string): string {
             return !noise.includes(low);
         })
         .join(' ');
+
+    // 5.5. Strip leading comma/punctuation (e.g. ", Hatice Kaya" → "Hatice Kaya")
+    n = n.replace(/^[,;.\-/\s]+/, '');
+
+    // NOTE: "|" is intentionally NOT removed — it denotes a separate procedure
+    // e.g. "Özge Kaplan | Otoplasti" = same patient, different operation type
 
     // 6. Title Case Formatting
     const cleaned = n.replace(/\s+/g, ' ').trim()
