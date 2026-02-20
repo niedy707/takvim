@@ -226,3 +226,41 @@ export function cleanDisplayName(name: string): string {
     const extras = [cakeSuffix, revSuffix].filter(Boolean).join(' ');
     return extras ? `${cleaned} ${extras}` : cleaned;
 }
+
+/**
+ * Extracts the surgery procedure type from a calendar event title.
+ * Returns a clean, human-readable procedure name or undefined if not detectable.
+ *
+ * Priority:
+ *  1. Pipe notation: "Adı Soyadı | Rinoplasti" → "Rinoplasti"
+ *  2. Keyword scan on the raw title
+ */
+export function extractSurgeryType(title: string): string | undefined {
+    // 1. Pipe notation — en güvenilir kaynak
+    if (title.includes('|')) {
+        const part = title.split('|')[1].trim();
+        if (part.length >= 3) return part;
+    }
+
+    // 2. Keyword → canonical isim eşlemesi (Türkçe/ingilizce takvim girdileri)
+    const t = title.toLowerCase();
+    const map: [RegExp, string][] = [
+        [/septorino|septorinoplast/,     'Septorino'],
+        [/rinoplast|rhinoplast|rino/,    'Rinoplasti'],
+        [/otoplast/,                     'Otoplasti'],
+        [/septoplast/,                   'Septoplasti'],
+        [/blefar/,                       'Blefaroplasti'],
+        [/tipplast|tip plast/,           'Tipplasti'],
+        [/mentoplast|genioplast/,        'Mentoplasti'],
+        [/implant/,                      'İmplant'],
+        [/fess|endoskop/,               'FESS'],
+        [/dudak/,                        'Dudak'],
+        [/kulak|kulağ/,                  'Kulak'],
+    ];
+
+    for (const [pattern, label] of map) {
+        if (pattern.test(t)) return label;
+    }
+
+    return undefined;
+}
